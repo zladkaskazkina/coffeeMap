@@ -42,6 +42,9 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 .nav {
   display: flex;

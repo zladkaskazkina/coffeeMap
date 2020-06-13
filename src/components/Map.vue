@@ -44,9 +44,11 @@ export default {
 </script>
 <style>
 .mapa {
+  position: relative;
   width: 80vw;
   height: 80vw;
   margin: 0 auto;
+  z-index: 0;
 }
 .picsCafe {
   display: flex;
