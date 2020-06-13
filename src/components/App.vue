@@ -10,6 +10,7 @@
       </div>
       <div class="search">
         <input class="searchBar" type="text" placeholder="search" />
+        <button>Search</button>
       </div>
     </div>
 
@@ -23,6 +24,9 @@
 <script>
 export default {
   name: "App",
+  data() {
+    return {};
+  },
 };
 </script>
 

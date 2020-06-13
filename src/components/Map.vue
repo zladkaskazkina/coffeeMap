@@ -26,6 +26,7 @@
   </div>
 </template>
 <script>
+import { db } from "../db.js";
 export default {
   name: "Map",
   data() {

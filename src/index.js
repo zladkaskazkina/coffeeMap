@@ -7,9 +7,11 @@ import App from './components/App';
 import './index.html';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import { firestorePlugin } from 'vuefire';
 
 Vue.use(VueRouter);
 Vue.use(ElementUI);
+Vue.use(firestorePlugin);
 
 
 const router = new VueRouter({
