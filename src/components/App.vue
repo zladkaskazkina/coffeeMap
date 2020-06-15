@@ -32,7 +32,6 @@ export default {
 * {
   box-sizing: border-box;
 }
-
 html {
   font-family: 'Muli', sans-serif;
 }
@@ -60,3 +59,4 @@ html {
   text-align: center;
 }
 </style>
+
