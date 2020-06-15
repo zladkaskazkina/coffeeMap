@@ -7,8 +7,8 @@
         <router-link class="navItem" to="/cafe">Coffeeshop</router-link>
       </div>
       <div class="search">
-        <input class="searchBar" type="text" placeholder="search" />
-        <button>Search</button>
+        <input class="searchBar" type="text" placeholder="Search" />
+        <b-button variant="secondary" class="btn">Search</b-button>
       </div>
     </div>
 
@@ -24,7 +24,7 @@ export default {
   name: "App",
   data() {
     return {};
-  }
+  },
 };
 </script>
 
@@ -42,6 +42,9 @@ html {
 }
 .container {
   background-color: #eff0f4;
+  font-family: "Muli", sans-serif;
+  width: 100vw;
+  margin: 0 auto;
 }
 .fixBar {
   display: flex;
@@ -52,19 +55,33 @@ html {
   z-index: 1;
 }
 .nav {
+  list-style-type: none;
+  overflow: hidden;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   top: 0;
-  width: 100%;
+  width: 100vw;
   background-color: #2b7e86;
 }
 .navItem {
+  flex: 1 1 20%;
+  text-align: center;
   text-decoration: none;
   color: #fff;
+  padding: 1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
 }
-.suggest {
+.navItem:hover {
+  background-color: #16283e;
+  text-decoration: none;
+  padding: 1rem;
+  color: #fff;
+}
+.footer {
   position: sticky;
-  bottom: 2rem;
+  bottom: 0;
   text-align: center;
   background-color: #2b7e86;
   color: #fff;
@@ -74,7 +91,15 @@ html {
   width: 100vw;
   display: flex;
   justify-content: center;
+  padding: 10px 0;
 }
 .searchBar {
+  padding: 0.2rem;
+  margin-right: 0.5rem;
+  border-radius: 4px;
+  width: 30vw;
+}
+.btn {
+  margin: ;
 }
 </style>

@@ -7,7 +7,7 @@
 
     <div class="picsCafe">
       <div class="imgCafe">
-        <img src="../assets/img/cohledajmeno.jpg" alt="" />
+        <img src="../assets/img/cohledajmeno.jpg" alt="kavarna" />
       </div>
 
       <div class="imgCafe">
@@ -43,11 +43,18 @@ export default {
 };
 </script>
 <style>
+.container {
+  background-color: #eff0f4;
+  font-family: "Muli", sans-serif;
+  width: 100vw;
+  margin: 0;
+}
 .mapa {
   position: relative;
   width: 80vw;
   height: 80vw;
-  margin: 0 auto;
+  margin: 1rem auto;
+  padding: 1rem;
   z-index: 0;
 }
 .picsCafe {
