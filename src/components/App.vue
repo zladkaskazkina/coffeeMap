@@ -2,9 +2,7 @@
   <div class="container">
     <div class="fixBar">
       <div class="nav">
-        <router-link class="navItem" to="/">
-          Map
-        </router-link>
+        <router-link class="navItem" to="/">Map</router-link>
         <router-link class="navItem" to="/filter">Filter</router-link>
         <router-link class="navItem" to="/cafe">Coffeeshop</router-link>
       </div>
@@ -26,17 +24,24 @@ export default {
   name: "App",
   data() {
     return {};
-  },
+  }
 };
 </script>
 
 <style lang="css">
+/* colors: #2B7E86, #F7AE85, #16283E, #EFF0F4 */
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
 
 html {
-  font-family: sans-serif;
+  font-family: "Muli", sans-serif;
+}
+.container {
+  background-color: #eff0f4;
 }
 .fixBar {
   display: flex;
@@ -51,14 +56,25 @@ html {
   justify-content: space-around;
   top: 0;
   width: 100%;
+  background-color: #2b7e86;
 }
 .navItem {
   text-decoration: none;
-  color: black;
+  color: #fff;
 }
 .suggest {
   position: sticky;
-  bottom: 1rem;
+  bottom: 2rem;
   text-align: center;
+  background-color: #2b7e86;
+  color: #fff;
+}
+.search {
+  background-color: #16283e;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+.searchBar {
 }
 </style>
