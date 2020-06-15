@@ -36,7 +36,6 @@ export default {
   margin: 0;
   border: 0;
 }
-
 html {
   font-family: "Muli", sans-serif;
 }
@@ -103,3 +102,4 @@ html {
   margin: ;
 }
 </style>
+
