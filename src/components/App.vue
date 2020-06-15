@@ -2,9 +2,7 @@
   <div class="container">
     <div class="fixBar">
       <div class="nav">
-        <router-link class="navItem" to="/">
-          Map
-        </router-link>
+        <router-link class="navItem" to="/">Map</router-link>
         <router-link class="navItem" to="/filter">Filter</router-link>
         <router-link class="navItem" to="/cafe">Coffeeshop</router-link>
       </div>
@@ -36,7 +34,7 @@ export default {
 }
 
 html {
-  font-family: sans-serif;
+  font-family: 'Muli', sans-serif;
 }
 .fixBar {
   display: flex;
@@ -56,9 +54,9 @@ html {
   text-decoration: none;
   color: black;
 }
-.suggest {
+.footer {
   position: sticky;
-  bottom: 1rem;
+  bottom: 0;
   text-align: center;
 }
 </style>

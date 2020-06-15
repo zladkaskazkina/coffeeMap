@@ -21,9 +21,11 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
+    "bootstrap": "^4.5.0",
+    "bootstrap-vue": "^2.15.0",
     "element-ui": "^2.13.2",
     "firebase": "^7.15.1",
-    "vue": "^2.6.10",
+    "vue": "^2.6.11",
     "vue-router": "^3.3.2",
     "vuefire": "^2.2.2",
     "webpack-dev-server": "^3.11.0"
