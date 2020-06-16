@@ -78,17 +78,7 @@ html {
   padding: 1rem;
   color: #fff;
 }
-.footer {
-  position: sticky;
-  bottom: 0;
-  text-align: center;
-  background-color: #2b7e86;
-  color: #fff;
-  padding: 1rem;
-  font-weight: 600;
-  font-size: 1.2rem;
-  letter-spacing: 0.2rem;
-}
+
 .search {
   background-color: #16283e;
   width: 100vw;
@@ -101,5 +91,22 @@ html {
   margin-right: 0.5rem;
   border-radius: 4px;
   width: 30vw;
+}
+.footer {
+  position: sticky;
+  bottom: 0;
+}
+.suggest {
+  text-align: center;
+  background-color: #2b7e86;
+  color: #fff;
+  padding: 1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  width: 35vw;
+  margin: 0 auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
 </style>

@@ -73,6 +73,7 @@ export default {
 <style>
 .mapPart {
   width: 80vw;
+  margin: 2rem auto;
 }
 .mapPart__map {
   position: relative;
