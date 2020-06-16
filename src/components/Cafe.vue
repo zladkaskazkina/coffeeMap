@@ -20,7 +20,7 @@
           class="filters row border my-3 d-flex flex-wrap justify-content-center"
         >
           <div class="selectedFilter badge badge-light col-3 m-3">
-            <img class="w-100" src="../assets/img/baby.png" alt="icon" />
+            <img class="w-100" src="../assets/img/baby.svg" alt="icon" />
           </div>
           <div class="selectedFilter badge badge-light col-3 m-3">
             <img

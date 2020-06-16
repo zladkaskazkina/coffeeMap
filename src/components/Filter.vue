@@ -11,6 +11,7 @@
     <div class="icon btn btn-light m-2 p-2 d-flex align-items-center justify-content-center"><img src="../assets/img/outdoors.png" alt="Outside seating ">Outside seating</div>
   </div>
   <div class="find btn">Find</div>
+  <img src="../assets/img/baby.png" alt="">
 </div>
   
 </template>
