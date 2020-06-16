@@ -6,19 +6,19 @@
           <i class="ico fa fa-laptop fa-3x"></i>
         </div>
         <div class="filterPart__icon">
-          <i class="ico fas fa-wifi fa-3x"></i>
+          <iframe class="ico" src="../assets/img/milk.svg" height="50" width="50">Yo</iframe>
         </div>
         <div class="filterPart__icon">
           <i class="ico fas fa-baby-carriage fa-3x"></i>
         </div>
         <div class="filterPart__icon">
-          <i class="ico fas fa-wifi fa-3x"></i>
+          <i class="ico fas fa-paw fa-3x"></i>
         </div>
         <div class="filterPart__icon">
-          <i class="ico fa fa-laptop fa-3x"></i>
+          <iframe class="ico" src="../assets/img/terrace.svg" height="50" width="50">Yo</iframe>
         </div>
         <div class="filterPart__icon">
-          <i class="ico fas fa-baby-carriage fa-3x"></i>
+          <i class="ico fas fa-utensils fa-3x"></i>
         </div>
         <div class="filterPart__icon">
           <i class="ico fas fa-wheelchair fa-3x"></i>
@@ -31,56 +31,32 @@
     </div>
     <div class="cafePart">
       <div class="cafePart__img">
-        <img
-          class="cafePart__bg"
-          src="../assets/img/caffe/cohledajmeno.jpg"
-          alt="kavarna"
-        />
+        <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
         <div class="cafePart__title"></div>
       </div>
 
       <div class="cafePart__img">
-        <img
-          class="cafePart__bg"
-          src="../assets/img/caffe/cohledajmeno.jpg"
-          alt="kavarna"
-        />
+        <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
         <div class="cafePart__title"></div>
       </div>
 
       <div class="cafePart__img">
-        <img
-          class="cafePart__bg"
-          src="../assets/img/caffe/cohledajmeno.jpg"
-          alt="kavarna"
-        />
+        <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
         <div class="cafePart__title"></div>
       </div>
 
       <div class="cafePart__img">
-        <img
-          class="cafePart__bg"
-          src="../assets/img/caffe/cohledajmeno.jpg"
-          alt="kavarna"
-        />
+        <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
         <div class="cafePart__title"></div>
       </div>
 
       <div class="cafePart__img">
-        <img
-          class="cafePart__bg"
-          src="../assets/img/caffe/cohledajmeno.jpg"
-          alt="kavarna"
-        />
+        <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
         <div class="cafePart__title"></div>
       </div>
 
       <div class="cafePart__img">
-        <img
-          class="cafePart__bg"
-          src="../assets/img/caffe/cohledajmeno.jpg"
-          alt="kavarna"
-        />
+        <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
         <div class="cafePart__title"></div>
       </div>
     </div>
@@ -100,7 +76,7 @@ export default {
     let map = new SMap(main, center, 13);
     map.addDefaultLayer(SMap.DEF_BASE).enable();
     map.addDefaultControls();
-  },
+  }
 };
 </script>
 <style>
@@ -115,6 +91,8 @@ export default {
 }
 .ico {
   margin: 1rem 1rem 0;
+}
+.flaticon {
 }
 .mapPart {
   width: 80vw;
