@@ -1,26 +1,54 @@
 <template>
   <div class="container">
-    <div class="mapFilters">
-      <div class="selectedFilters"></div>
-      <div class="mapa" id="map"></div>
+    <div class="mapPart">
+      <div class="mapPart__filters"></div>
+      <div class="mapPart__map" id="map"></div>
     </div>
 
-    <div class="picsCafe">
-      <div class="imgCafe">
-        <img src="../assets/img/cohledajmeno.jpg" alt="kavarna" />
+    <div class="cafePart">
+      <div class="cafePart__img">
+        <img
+          class="cafePart__bg"
+          src="../assets/img/cohledajmeno.jpg"
+          alt="kavarna"
+        />
+        <div class="cafePart__title"></div>
       </div>
 
-      <div class="imgCafe">
-        <img src="../assets/img/cohledajmeno.jpg" alt="" />
+      <div class="cafePart__img">
+        <img
+          class="cafePart__bg"
+          src="../assets/img/cohledajmeno.jpg"
+          alt="kavarna"
+        />
+        <div class="cafePart__title"></div>
       </div>
-      <div class="imgCafe">
-        <img src="../assets/img/cohledajmeno.jpg" alt="" />
+
+      <div class="cafePart__img">
+        <img
+          class="cafePart__bg"
+          src="../assets/img/cohledajmeno.jpg"
+          alt="kavarna"
+        />
+        <div class="cafePart__title"></div>
       </div>
-      <div class="imgCafe">
-        <img src="../assets/img/cohledajmeno.jpg" alt="" />
+
+      <div class="cafePart__img">
+        <img
+          class="cafePart__bg"
+          src="../assets/img/cohledajmeno.jpg"
+          alt="kavarna"
+        />
+        <div class="cafePart__title"></div>
       </div>
-      <div class="imgCafe">
-        <img src="../assets/img/cohledajmeno.jpg" alt="" />
+
+      <div class="cafePart__img">
+        <img
+          class="cafePart__bg"
+          src="../assets/img/cohledajmeno.jpg"
+          alt="kavarna"
+        />
+        <div class="cafePart__title"></div>
       </div>
     </div>
   </div>
@@ -43,30 +71,25 @@ export default {
 };
 </script>
 <style>
-.container {
-  background-color: #eff0f4;
-  font-family: "Muli", sans-serif;
-  width: 100vw;
-  margin: 0;
-}
-.mapa {
-  position: relative;
+.mapPart {
   width: 80vw;
+}
+.mapPart__map {
+  position: relative;
+  width: 100%;
   height: 80vw;
-  margin: 1rem auto;
-  padding: 1rem;
   z-index: 0;
 }
-.picsCafe {
+.cafePart {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.imgCafe {
+.cafePart__img {
   width: 80vw;
   margin: 10px 0;
 }
-img {
+.cafePart__bg {
   width: 100%;
 }
 </style>

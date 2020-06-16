@@ -84,6 +84,10 @@ html {
   text-align: center;
   background-color: #2b7e86;
   color: #fff;
+  padding: 1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
 }
 .search {
   background-color: #16283e;
@@ -98,8 +102,4 @@ html {
   border-radius: 4px;
   width: 30vw;
 }
-.btn {
-  margin: ;
-}
 </style>
-
