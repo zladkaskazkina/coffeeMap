@@ -1,15 +1,25 @@
 <template>
   <div class="container">
-    <div class="mapPart">
-      <div class="mapPart__filters"></div>
-      <div class="mapPart__map" id="map"></div>
+    <div class="topPart">
+      <div class="filterPart">
+        <div class="filterPart__icon"></div>
+        <div class="filterPart__icon"></div>
+        <div class="filterPart__icon"></div>
+        <div class="filterPart__icon"></div>
+        <div class="filterPart__icon"></div>
+        <div class="filterPart__icon"></div>
+        <div class="filterPart__icon"></div>
+      </div>
+      <div class="mapPart">
+        <div class="mapPart__filters"></div>
+        <div class="mapPart__map" id="map"></div>
+      </div>
     </div>
-
     <div class="cafePart">
       <div class="cafePart__img">
         <img
           class="cafePart__bg"
-          src="../assets/img/cohledajmeno.jpg"
+          src="../assets/img/caffe/cohledajmeno.jpg"
           alt="kavarna"
         />
         <div class="cafePart__title"></div>
@@ -18,7 +28,7 @@
       <div class="cafePart__img">
         <img
           class="cafePart__bg"
-          src="../assets/img/cohledajmeno.jpg"
+          src="../assets/img/caffe/cohledajmeno.jpg"
           alt="kavarna"
         />
         <div class="cafePart__title"></div>
@@ -27,7 +37,7 @@
       <div class="cafePart__img">
         <img
           class="cafePart__bg"
-          src="../assets/img/cohledajmeno.jpg"
+          src="../assets/img/caffe/cohledajmeno.jpg"
           alt="kavarna"
         />
         <div class="cafePart__title"></div>
@@ -36,7 +46,7 @@
       <div class="cafePart__img">
         <img
           class="cafePart__bg"
-          src="../assets/img/cohledajmeno.jpg"
+          src="../assets/img/caffe/cohledajmeno.jpg"
           alt="kavarna"
         />
         <div class="cafePart__title"></div>
@@ -45,7 +55,16 @@
       <div class="cafePart__img">
         <img
           class="cafePart__bg"
-          src="../assets/img/cohledajmeno.jpg"
+          src="../assets/img/caffe/cohledajmeno.jpg"
+          alt="kavarna"
+        />
+        <div class="cafePart__title"></div>
+      </div>
+
+      <div class="cafePart__img">
+        <img
+          class="cafePart__bg"
+          src="../assets/img/caffe/cohledajmeno.jpg"
           alt="kavarna"
         />
         <div class="cafePart__title"></div>
@@ -92,5 +111,16 @@ export default {
 }
 .cafePart__bg {
   width: 100%;
+}
+@media only screen and (min-width: 720px) {
+  .cafePart {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .cafePart__img {
+    flex: 1 1 25%;
+    margin: 1rem;
+  }
 }
 </style>
