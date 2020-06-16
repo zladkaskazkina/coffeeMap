@@ -1,29 +1,6 @@
 <template>
-  <div class="container">
+  <div class="container mainPart">
     <div class="topPart">
-      <div class="filterPart">
-        <div class="filterPart__icon">
-          <i class="ico fa fa-laptop fa-3x"></i>
-        </div>
-        <div class="filterPart__icon">
-          <iframe class="ico" src="../assets/img/milk.svg" height="50" width="50">Yo</iframe>
-        </div>
-        <div class="filterPart__icon">
-          <i class="ico fas fa-baby-carriage fa-3x"></i>
-        </div>
-        <div class="filterPart__icon">
-          <i class="ico fas fa-paw fa-3x"></i>
-        </div>
-        <div class="filterPart__icon">
-          <iframe class="ico" src="../assets/img/terrace.svg" height="50" width="50">Yo</iframe>
-        </div>
-        <div class="filterPart__icon">
-          <i class="ico fas fa-utensils fa-3x"></i>
-        </div>
-        <div class="filterPart__icon">
-          <i class="ico fas fa-wheelchair fa-3x"></i>
-        </div>
-      </div>
       <div class="mapPart">
         <div class="mapPart__filters"></div>
         <div class="mapPart__map" id="map"></div>
@@ -32,7 +9,7 @@
     <div class="cafePart">
       <div class="cafePart__img">
         <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-        <div class="cafePart__title"></div>
+        <h2 class="cafePart__title">Co hleda jmeno</h2>
       </div>
 
       <div class="cafePart__img">
@@ -80,28 +57,25 @@ export default {
 };
 </script>
 <style>
-.topPart {
+.container {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+.mainPart {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
-.filterPart {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.ico {
-  margin: 1rem 1rem 0;
-}
-.flaticon {
+.topPart {
+  width: 100%;
 }
 .mapPart {
-  width: 80vw;
-  margin: 2rem auto;
+  width: 100%;
 }
 .mapPart__map {
   position: relative;
   width: 100%;
-  height: 70vh;
+  height: 100vw;
   z-index: 0;
 }
 .cafePart {
@@ -110,31 +84,39 @@ export default {
   align-items: center;
 }
 .cafePart__img {
-  width: 80vw;
+  width: 100%;
   margin: 10px 0;
+  position: relative;
 }
 .cafePart__bg {
   width: 100%;
+  filter: brightness(50%);
+  object-fit: cover;
+}
+.cafePart__title {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  transform: translate(0%, -50%);
+  color: white;
 }
 @media only screen and (min-width: 720px) {
-  .cafePart {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  .cafePart__img {
-    flex: 1 1 25%;
-    margin: 1rem;
+  .mainPart {
+    flex-direction: row-reverse;
+    align-items: stretch;
   }
   .topPart {
-    flex-direction: row;
+    flex: 2;
   }
-  .filterPart {
-    margin-top: 1rem;
-    flex-direction: column;
-    flex: 1 1 25%;
-    align-items: center;
-    justify-content: flex-start;
+  .mapPart__map {
+    height: 100vh;
+  }
+  .cafePart {
+    flex: 1;
+  }
+  .cafePart__img {
+    margin-top: 0;
   }
 }
 </style>

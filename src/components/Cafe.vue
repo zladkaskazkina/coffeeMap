@@ -4,11 +4,7 @@
       <div class="profil col-12 col-md-8 border">
         <h1>Kavárna Orient</h1>
         <div class="cafeImg">
-          <img
-            class="img-fluid"
-            src="../assets/img/caffe/cohledajmeno.jpg"
-            alt="kavarna"
-          />
+          <img class="img-fluid" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
         </div>
       </div>
 
@@ -16,14 +12,12 @@
         class="filtersRating col-12 col-md-4 border d-flex flex-column justify-content-center mt-5"
       >
         <div class="text-left">Selected filters</div>
-        <div
-          class="filters row border my-3 d-flex flex-wrap justify-content-center"
-        >
+        <div class="filters row border my-3 d-flex flex-wrap justify-content-center">
           <div class="selectedFilter badge badge-light col-2 m-3">
             <img class="w-100" src="../assets/img/baby.png" alt="icon" />
           </div>
           <div class="selectedFilter badge badge-light col-2 m-3">
-            <img class="w-100" src="../assets/img/decaf.png" alt="icon"/>
+            <img class="w-100" src="../assets/img/decaf.png" alt="icon" />
           </div>
           <div class="selectedFilter badge badge-light col-2 m-3">
             <img class="w-100" src="../assets/img/laptop.png" alt="icon" />
@@ -40,17 +34,12 @@
         </div>
         <div class="border">
           RATING
-          <img
-            img
-            class="w-100"
-            src="../assets/img/ratingSample.jpg"
-            alt="rating"
-          />
+          <img img class="w-100" src="../assets/img/ratingSample.jpg" alt="rating" />
         </div>
       </div>
     </div>
     <div class="bottom">
-      <div class=" col-12 border p-3">
+      <div class="col-12 border p-3">
         OPENING HOURS
         <table>
           <tr>
@@ -83,7 +72,7 @@
           </tr>
         </table>
       </div>
-      <div class=" col-12 border p-3">
+      <div class="col-12 border p-3">
         SOCIAL LINKS
         <i class="fab fa-instagram fa-3x"></i>
         <i class="fab fa-facebook-f fa-3x"></i>
@@ -95,9 +84,6 @@
 <style scoped>
 .selectedFilter {
   background-color: rgb(240, 208, 149);
-}
-
-img {
 }
 
 .fab {
