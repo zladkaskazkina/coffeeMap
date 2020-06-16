@@ -3,25 +3,25 @@
     <div class="topPart">
       <div class="filterPart">
         <div class="filterPart__icon">
-          <img src="../assets/img/baby.png" alt="" srcset="" />
+          <i class="ico fa fa-laptop fa-3x"></i>
         </div>
         <div class="filterPart__icon">
-          <img src="../assets/img/baby.png" alt="" srcset="" />
+          <i class="ico fas fa-wifi fa-3x"></i>
         </div>
         <div class="filterPart__icon">
-          <img src="../assets/img/baby.png" alt="" srcset="" />
+          <i class="ico fas fa-baby-carriage fa-3x"></i>
         </div>
         <div class="filterPart__icon">
-          <img src="../assets/img/baby.png" alt="" srcset="" />
+          <i class="ico fas fa-wifi fa-3x"></i>
         </div>
         <div class="filterPart__icon">
-          <img src="../assets/img/baby.png" alt="" srcset="" />
+          <i class="ico fa fa-laptop fa-3x"></i>
         </div>
         <div class="filterPart__icon">
-          <img src="../assets/img/baby.png" alt="" srcset="" />
+          <i class="ico fas fa-baby-carriage fa-3x"></i>
         </div>
         <div class="filterPart__icon">
-          <img src="../assets/img/baby.png" alt="" srcset="" />
+          <i class="ico fas fa-wheelchair fa-3x"></i>
         </div>
       </div>
       <div class="mapPart">
@@ -104,6 +104,18 @@ export default {
 };
 </script>
 <style>
+.topPart {
+  display: flex;
+  flex-direction: column;
+}
+.filterPart {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.ico {
+  margin: 1rem 1rem 0;
+}
 .mapPart {
   width: 80vw;
   margin: 2rem auto;
@@ -111,7 +123,7 @@ export default {
 .mapPart__map {
   position: relative;
   width: 100%;
-  height: 80vw;
+  height: 70vh;
   z-index: 0;
 }
 .cafePart {
@@ -135,6 +147,16 @@ export default {
   .cafePart__img {
     flex: 1 1 25%;
     margin: 1rem;
+  }
+  .topPart {
+    flex-direction: row;
+  }
+  .filterPart {
+    margin-top: 1rem;
+    flex-direction: column;
+    flex: 1 1 25%;
+    align-items: center;
+    justify-content: flex-start;
   }
 }
 </style>
