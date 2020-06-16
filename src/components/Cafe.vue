@@ -11,12 +11,12 @@
       <div class="filtersRating col-12 col-md-6 border d-flex flex-column justify-content-center "> 
         <div class="text-left">Selected filters</div>
         <div class="filters row border my-3 d-flex flex-wrap justify-content-center">
-            <img class="singleFilter col-3" src="../assets/img/sampleIcon.png" alt="icon" />
-            <img class="singleFilter col-3" src="../assets/img/sampleIcon.png" alt="icon" />
-            <img class="singleFilter col-3" src="../assets/img/sampleIcon.png" alt="icon" />
-            <img class="singleFilter col-3" src="../assets/img/sampleIcon.png" alt="icon" />
-            <img class="singleFilter col-3" src="../assets/img/sampleIcon.png" alt="icon" />
-            <img class="singleFilter col-3" src="../assets/img/sampleIcon.png" alt="icon" />
+            <div class="selectedFilter badge badge-light col-3 m-3"><img src="../assets/img/baby.png" alt="icon" /></div>
+            <div class="selectedFilter badge badge-light col-3 m-3"><img src="../assets/img/coffee-beans.png" alt="icon" /></div>
+            <div class="selectedFilter badge badge-light col-3 m-3"><img src="../assets/img/laptop.png" alt="icon" /></div>
+            <div class="selectedFilter badge badge-light col-3 m-3"><img src="../assets/img/milk-bottle.png" alt="icon" /></div>
+            <div class="selectedFilter badge badge-light col-3 m-3"><img src="../assets/img/pawprint.png" alt="icon" /></div>            
+            <div class="selectedFilter badge badge-light col-3 m-3"><img src="../assets/img/outdoors.png" alt="icon" /></div>
         </div>
         <div class="border">RATING
           <img src="../assets/img/ratingSample.jpg" alt="rating">
@@ -36,12 +36,15 @@
         </table>
       </div>
       <div class=" col-12 border p-3">LINKS TO FB
-        <img class="singleFilter col-2" src="../assets/img/instagram.png" alt="icon" />
-        <img class="singleFilter col-2" src="../assets/img/fb.png" alt="icon" />
+        <img class="singleLink col-2" src="../assets/img/instagram.png" alt="icon" />
+        <img class="singleLink col-2" src="../assets/img/fb.png" alt="icon" />
       </div>
     </div>
   </div>
 </template>
 
-<style> 
+<style scoped>
+.selectedFilter {
+  background-color: turquoise;
+} 
 </style>
