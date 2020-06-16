@@ -2,16 +2,16 @@
 <div class="d-flex flex-column align-items-center justify-content-center">
   <h1>Select filters</h1>
   <div class="filterList d-flex flex-column flex-md-row flex-md-wrap align-items-center justify-content-center">
-    <div class="icon btn btn-light m-2 p-2 d-flex align-items-center justify-content-center"><img src="../assets/img/coffee-beans.png" alt="Decaf">Decaf coffee</div>
-    <div class="icon btn btn-light m-2 p-2 d-flex align-items-center justify-content-center"><img src="../assets/img/milk-bottle.png" alt="VegiMilk">Alternative milk</div>
+    <div class="icon btn btn-light m-2 p-2 d-flex align-items-center justify-content-center"><img src="../assets/img/decaf.png" alt="Decaf">Decaf coffee</div>
+    <div class="icon btn btn-light m-2 p-2 d-flex align-items-center justify-content-center"><img src="../assets/img/milk.png" alt="VegiMilk">Alternative milk</div>
     <div class="icon btn btn-light m-2 p-2 d-flex align-items-center justify-content-center"><img src="../assets/img/soup.png" alt="Hot Food">Hot food</div>
+    <div class="icon btn btn-light m-2 p-2 d-flex align-items-center justify-content-center"><img src="../assets/img/disabled.png" alt="Wheelchair">Barrier-free</div>
     <div class="icon btn btn-light m-2 p-2 d-flex align-items-center justify-content-center"><img src="../assets/img/laptop.png" alt="Freelance Friendly">Freelance friendly</div>
     <div class="icon btn btn-light m-2 p-2 d-flex align-items-center justify-content-center"><img src="../assets/img/baby.png" alt="Family Friendly">Family friendly</div>
     <div class="icon btn btn-light m-2 p-2 d-flex align-items-center justify-content-center"><img src="../assets/img/pawprint.png" alt="Pet friendly ">Pet friendly</div>
     <div class="icon btn btn-light m-2 p-2 d-flex align-items-center justify-content-center"><img src="../assets/img/outdoors.png" alt="Outside seating ">Outside seating</div>
   </div>
   <div class="find btn">Find</div>
-  <img src="../assets/img/baby.png" alt="">
 </div>
   
 </template>

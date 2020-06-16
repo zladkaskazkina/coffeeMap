@@ -1,7 +1,7 @@
 <template>
   <div class="coffeeshop">
     <div class="top d-md-flex">
-      <div class="profil col-12 col-md-6 border">
+      <div class="profil col-12 col-md-8 border">
         <h1>Kavárna Orient</h1>
         <div class="cafeImg">
           <img
@@ -13,32 +13,28 @@
       </div>
 
       <div
-        class="filtersRating col-12 col-md-6 border d-flex flex-column justify-content-center "
+        class="filtersRating col-12 col-md-4 border d-flex flex-column justify-content-center mt-5"
       >
         <div class="text-left">Selected filters</div>
         <div
           class="filters row border my-3 d-flex flex-wrap justify-content-center"
         >
-          <div class="selectedFilter badge badge-light col-3 m-3">
-            <img class="w-100" src="../assets/img/baby.svg" alt="icon" />
+          <div class="selectedFilter badge badge-light col-2 m-3">
+            <img class="w-100" src="../assets/img/baby.png" alt="icon" />
           </div>
-          <div class="selectedFilter badge badge-light col-3 m-3">
-            <img
-              class="w-100"
-              src="../assets/img/coffee-beans.png"
-              alt="icon"
-            />
+          <div class="selectedFilter badge badge-light col-2 m-3">
+            <img class="w-100" src="../assets/img/decaf.png" alt="icon"/>
           </div>
-          <div class="selectedFilter badge badge-light col-3 m-3">
+          <div class="selectedFilter badge badge-light col-2 m-3">
             <img class="w-100" src="../assets/img/laptop.png" alt="icon" />
           </div>
-          <div class="selectedFilter badge badge-light col-3 m-3">
-            <img class="w-100" src="../assets/img/milk-bottle.png" alt="icon" />
+          <div class="selectedFilter badge badge-light col-2 m-3">
+            <img class="w-100" src="../assets/img/milk.png" alt="icon" />
           </div>
-          <div class="selectedFilter badge badge-light col-3 m-3">
+          <div class="selectedFilter badge badge-light col-2 m-3">
             <img class="w-100" src="../assets/img/pawprint.png" alt="icon" />
           </div>
-          <div class="selectedFilter badge badge-light col-3 m-3">
+          <div class="selectedFilter badge badge-light col-2 m-3">
             <img class="w-100" src="../assets/img/outdoors.png" alt="icon" />
           </div>
         </div>
@@ -53,7 +49,7 @@
         </div>
       </div>
     </div>
-    <div class="bottom ">
+    <div class="bottom">
       <div class=" col-12 border p-3">
         OPENING HOURS
         <table>
@@ -98,7 +94,10 @@
 
 <style scoped>
 .selectedFilter {
-  background-color: turquoise;
+  background-color: rgb(240, 208, 149);
+}
+
+img {
 }
 
 .fab {
