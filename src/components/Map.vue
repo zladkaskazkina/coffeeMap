@@ -57,6 +57,7 @@ export default {
 };
 </script>
 <style>
+/* pro prepis stylu Bootstrapu */
 .container {
   max-width: 100% !important;
   padding: 0 !important;
@@ -66,6 +67,7 @@ export default {
   flex-direction: column;
   align-items: center;
 }
+/* mapa */
 .topPart {
   width: 100%;
 }
@@ -78,6 +80,7 @@ export default {
   height: 100vw;
   z-index: 0;
 }
+/* kavarny */
 .cafePart {
   display: flex;
   flex-direction: column;
@@ -101,6 +104,7 @@ export default {
   transform: translate(0%, -50%);
   color: white;
 }
+/* Responzivita */
 @media only screen and (min-width: 720px) {
   .mainPart {
     flex-direction: row-reverse;
@@ -114,6 +118,7 @@ export default {
   }
   .cafePart {
     flex: 2;
+    margin-right: 1rem;
   }
   .cafePart__img {
     margin-top: 0;
