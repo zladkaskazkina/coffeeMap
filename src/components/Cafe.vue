@@ -88,13 +88,9 @@
         </table>
       </div>
       <div class=" col-12 border p-3">
-        LINKS TO FB
-        <img
-          class="singleLink col-2"
-          src="../assets/img/instagram.png"
-          alt="icon"
-        />
-        <img class="singleLink col-2" src="../assets/img/fb.png" alt="icon" />
+        SOCIAL LINKS
+        <i class="fab fa-instagram fa-3x"></i>
+        <i class="fab fa-facebook-f fa-3x"></i>
       </div>
     </div>
   </div>
@@ -105,7 +101,7 @@
   background-color: turquoise;
 }
 
-.singleLink {
-  width: 80px;
+.fab {
+  margin: 1rem;
 }
 </style>

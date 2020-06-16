@@ -2,13 +2,27 @@
   <div class="container">
     <div class="topPart">
       <div class="filterPart">
-        <div class="filterPart__icon"></div>
-        <div class="filterPart__icon"></div>
-        <div class="filterPart__icon"></div>
-        <div class="filterPart__icon"></div>
-        <div class="filterPart__icon"></div>
-        <div class="filterPart__icon"></div>
-        <div class="filterPart__icon"></div>
+        <div class="filterPart__icon">
+          <img src="../assets/img/baby.png" alt="" srcset="" />
+        </div>
+        <div class="filterPart__icon">
+          <img src="../assets/img/baby.png" alt="" srcset="" />
+        </div>
+        <div class="filterPart__icon">
+          <img src="../assets/img/baby.png" alt="" srcset="" />
+        </div>
+        <div class="filterPart__icon">
+          <img src="../assets/img/baby.png" alt="" srcset="" />
+        </div>
+        <div class="filterPart__icon">
+          <img src="../assets/img/baby.png" alt="" srcset="" />
+        </div>
+        <div class="filterPart__icon">
+          <img src="../assets/img/baby.png" alt="" srcset="" />
+        </div>
+        <div class="filterPart__icon">
+          <img src="../assets/img/baby.png" alt="" srcset="" />
+        </div>
       </div>
       <div class="mapPart">
         <div class="mapPart__filters"></div>
