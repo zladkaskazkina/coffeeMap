@@ -98,14 +98,15 @@ html {
   flex: 1 1 20%;
   text-align: center;
   text-decoration: none;
-  color: #2b7e86;
+  color: #55bece;
   padding: 1rem;
+  margin: 0 1rem;
   font-weight: 500;
   font-size: 1.2rem;
   letter-spacing: 0.2rem;
 }
 .navItem:hover {
-  background-color: #2b7e86;
+  background-color: #55bece;
   text-decoration: none;
   padding: 1rem;
   color: #fff;
@@ -123,7 +124,7 @@ html {
 }
 .suggest {
   text-align: center;
-  background-color: #2b7e86;
+  background-color: #55bece;
   color: #fff;
   padding: 0.2rem;
   font-weight: 400;

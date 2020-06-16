@@ -107,13 +107,13 @@ export default {
     align-items: stretch;
   }
   .topPart {
-    flex: 2;
+    flex: 5;
   }
   .mapPart__map {
     height: 100vh;
   }
   .cafePart {
-    flex: 1;
+    flex: 2;
   }
   .cafePart__img {
     margin-top: 0;
