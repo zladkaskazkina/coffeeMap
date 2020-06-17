@@ -4,43 +4,43 @@
   <div class="filterList d-flex flex-column flex-md-row flex-md-wrap align-items-center justify-content-center">
 
     <div class="icon btn btn-light m-2 p-2 pl-4 d-flex align-items-center justify-content-left pl-md-5"
-         @click="milkSelect"
-         :class="{milkSelected}">
+          @click="milkSelect"
+         :class="{'selected': milkSelected}">
       <img src="../assets/img/milk.png" alt="VegiMilk">Alternative milk</div>   
 
     <div class="icon btn btn-light m-2 p-2 pl-4 d-flex align-items-center justify-content-left pl-md-5"
          @click="decafSelect"
-         :class="{decafSelected}">
+         :class="{'selected': decafSelected}">
       <img src="../assets/img/decaf.png" alt="Decaf">Decaf coffee</div>
 
     <div class="icon btn btn-light m-2 p-2 pl-4 d-flex align-items-center justify-content-left pl-md-5"
          @click="foodSelect"
-         :class="{foodSelected}">
+         :class="{'selected': foodSelected}">
       <img src="../assets/img/soup.png" alt="Hot Food">Hot food</div>
 
     <div class="icon btn btn-light m-2 p-2 pl-4 d-flex align-items-center justify-content-left pl-md-5"
          @click="barrierSelect"
-         :class="{barrierSelected}">
+         :class="{'selected': barrierSelected}">
       <img src="../assets/img/disabled.png" alt="Wheelchair">Barrier-free</div>
 
     <div class="icon btn btn-light m-2 p-2 pl-4 d-flex align-items-center justify-content-left pl-md-5"
          @click="freelanceSelect"
-         :class="{freelanceSelected}">
+         :class="{'selected': freelanceSelected}">
       <img src="../assets/img/laptop.png" alt="Freelance Friendly">Freelance friendly</div>
 
     <div class="icon btn btn-light m-2 p-2 pl-4 d-flex align-items-center justify-content-left pl-md-5"
          @click="familySelect"
-         :class="{familySelected}">
+         :class="{'selected': familySelected}">
       <img src="../assets/img/baby.png" alt="Family Friendly">Family friendly</div>
 
     <div class="icon btn btn-light m-2 p-2 pl-4 d-flex align-items-center justify-content-left pl-md-5"
          @click="petSelect"
-         :class="{petSelected}">
+         :class="{'selected': petSelected}">
       <img src="../assets/img/pawprint.png" alt="Pet friendly ">Pet friendly</div>
 
     <div class="icon btn btn-light m-2 p-2 pl-4 d-flex align-items-center justify-content-left pl-md-5"
          @click="outdoorSelect"
-         :class="{outdoorSelected}">
+         :class="{'selected': outdoorSelected}">
       <img src="../assets/img/outdoors.png" alt="Outside seating ">Outside seating</div>
   </div>
   <div class="find btn m-5 w-50">Save filters</div>
@@ -118,18 +118,12 @@ img{
   color: #eff0f4;
 }
 
+
 .icon:hover{
     background-color: #f9be60;
 }
 
-.outdoorSelected,
-.milkSelected,
-.decafSelected,
-.foodSelected,
-.barrierSelected,
-.freelanceSelected,
-.familySelected,
-.petSelected
+.selected
  {
   background-color: #ffdd8f;
 }
