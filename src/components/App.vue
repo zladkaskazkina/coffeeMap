@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style lang="css">
-/* colors: #2B7E86, #F7AE85, #16283E, #EFF0F4 */
+/* colors: #55bece, #16283E, #EFF0F4 */
 * {
   padding: 0;
   margin: 0;
