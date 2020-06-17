@@ -47,12 +47,32 @@ export default {
     return {};
   },
   mounted() {
+    // vlozeni mapy
     let main = document.querySelector("#map");
     console.log(main);
-    let center = SMap.Coords.fromWGS84(14.4179, 50.12655);
+    let center = SMap.Coords.fromWGS84(14.40315, 50.06934);
     let map = new SMap(main, center, 13);
     map.addDefaultLayer(SMap.DEF_BASE).enable();
     map.addDefaultControls();
+    // vlozeni znacky
+    let layer = new SMap.Layer.Marker();
+    map.addLayer(layer);
+    layer.enable();
+    let coords = SMap.Coords.fromWGS84(14.40315, 50.06934);
+    let marker = new SMap.Marker(coords);
+    layer.addMarker(marker);
+
+    let card = new SMap.Card();
+    card.setSize(300, 200);
+    card.getContainer().classList.add("cardCafe"); //nefunguje
+    card.getHeader().innerHTML = `<h3 class=''>Kavárna Orient</h3>`;
+    card.getBody().innerHTML = `<div class='profil'>
+                                <div class="cafeImg">
+                                  <img class="img-fluid" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
+                                </div>
+                                </div>`;
+    // znacka z predchozi ukazky
+    marker.decorate(SMap.Marker.Feature.Card, card);
   }
 };
 </script>
@@ -102,7 +122,10 @@ export default {
   width: 100%;
   text-align: center;
   transform: translate(0%, -50%);
-  color: white;
+  color: #eff0f4;
+}
+.cardCafe {
+  background-color: blue;
 }
 /* Responzivita */
 @media only screen and (min-width: 720px) {
