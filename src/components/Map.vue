@@ -64,15 +64,13 @@ export default {
 
     let card = new SMap.Card();
     card.setSize(300, 200);
+
     // card.getContainer().classList.add("cardCafe"); //nefunguje
     card.getContainer().style.backgroundColor = "red";
     card.getContainer().style.display = "flex"; //nefunguje
+    card.getHeader().innerHTML =`<h5>Kavarna, co hleda jmeno</h5>`;
 
-
-    card.getHeader().style.textAlign = "center";
-    card.getHeader().style.padding = "5px";
-    card.getHeader().style.backgroundColor = "green";
-    card.getHeader().innerHTML = `<h6 class='title'>Kavárna, co hledá jméno</h6>`;
+    card.getHeader().className = "test"; //nefunguje
     
 
     card.getBody().style.padding = "5px";
@@ -130,6 +128,12 @@ export default {
 };
 </script>
 <style>
+.test {
+  background-color: beige;
+  width: 100%;
+  height: 100%;
+}
+
 /* pro prepis stylu Bootstrapu */
 .container {
   max-width: 100% !important;

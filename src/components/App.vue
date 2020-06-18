@@ -5,6 +5,8 @@
         <router-link class="navItem" to="/">Map</router-link>
         <input class="searchBar" type="text" placeholder="Search" />
         <router-link class="navItem" to="/filter">Filter</router-link>
+        <!--cafe je jen na ukazku jak ma vypadat vizitka-->
+        <router-link class="navItem" to="/Cafe">Cafe</router-link>
       </div>
     </div>
 
