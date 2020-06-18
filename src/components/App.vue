@@ -4,7 +4,9 @@
       <div class="nav">
         <router-link class="navItem" to="/">Map</router-link>
         <input class="searchBar" type="text" placeholder="Search" />
-        <router-link class="navItem" to="/filter">Filter</router-link>
+        <router-link class="navItem" to="/filter">
+          <i class="fas fa-filter"></i>
+        </router-link>
       </div>
     </div>
 
@@ -95,11 +97,11 @@ html {
   background-color: #16283e;
 }
 .navItem {
-  flex: 1 1 20%;
+  flex: 1;
   text-align: center;
   text-decoration: none;
   color: #55bece;
-  padding: 1rem;
+  padding: 0.5rem;
   margin: 0 1rem;
   font-weight: 500;
   font-size: 1.2rem;
@@ -108,7 +110,7 @@ html {
 .navItem:hover {
   background-color: #55bece;
   text-decoration: none;
-  padding: 1rem;
+  padding: 0.5rem;
   color: #fff;
 }
 

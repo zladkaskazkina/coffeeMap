@@ -46,6 +46,7 @@ export default {
   data() {
     return {};
   },
+
   mounted() {
     // vlozeni mapy
     let main = document.querySelector("#map");
@@ -61,10 +62,9 @@ export default {
     let coords = SMap.Coords.fromWGS84(14.40315, 50.06934);
     let marker = new SMap.Marker(coords);
     layer.addMarker(marker);
-
+    //vlozeni karty
     let card = new SMap.Card();
     card.setSize(300, 200);
-    card.getContainer().classList.add("cardCafe"); //nefunguje
     card.getHeader().innerHTML = `<h3 class=''>Kavárna Orient</h3>`;
     card.getBody().innerHTML = `<div class='profil'>
                                 <div class="cafeImg">
@@ -124,9 +124,7 @@ export default {
   transform: translate(0%, -50%);
   color: #eff0f4;
 }
-.cardCafe {
-  background-color: blue;
-}
+
 /* Responzivita */
 @media only screen and (min-width: 720px) {
   .mainPart {
