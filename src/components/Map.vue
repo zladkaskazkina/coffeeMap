@@ -64,13 +64,66 @@ export default {
 
     let card = new SMap.Card();
     card.setSize(300, 200);
-    card.getContainer().classList.add("cardCafe"); //nefunguje
-    card.getHeader().innerHTML = `<h3 class=''>Kavárna Orient</h3>`;
+    // card.getContainer().classList.add("cardCafe"); //nefunguje
+    card.getContainer().style.backgroundColor = "red";
+    card.getContainer().style.display = "flex"; //nefunguje
+
+
+    card.getHeader().style.textAlign = "center";
+    card.getHeader().style.padding = "5px";
+    card.getHeader().style.backgroundColor = "green";
+    card.getHeader().innerHTML = `<h6 class='title'>Kavárna, co hledá jméno</h6>`;
+    
+
+    card.getBody().style.padding = "5px";
+    card.getBody().style.backgroundColor = "yellowgreen";
     card.getBody().innerHTML = `<div class='profil'>
-                                <div class="cafeImg">
-                                  <img class="img-fluid" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-                                </div>
+                                  <div class="leftSide">
+                                    <div class="cafeImg">
+                                      <img class="img-fluid" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
+                                    </div>
+                                    <div>Rating</div>
+                                  </div>
+                                  <div class="openingHours">
+                                    OPENING HOURS
+                                    <table>
+                                      <tr>
+                                        <th>MO</th>
+                                        <td>8:00 - 17:00</td>
+                                      </tr>
+                                      <tr>
+                                        <th>TU</th>
+                                        <td>8:00 - 17:00</td>
+                                      </tr>
+                                      <tr>
+                                        <th>WE</th>
+                                        <td>8:00 - 17:00</td>
+                                      </tr>
+                                      <tr>
+                                        <th>TH</th>
+                                        <td>8:00 - 17:00</td>
+                                      </tr>
+                                      <tr>
+                                        <th>FR</th>
+                                        <td>8:00 - 17:00</td>
+                                      </tr>
+                                      <tr>
+                                        <th>SAT</th>
+                                        <td>9:00 - 16:00</td>
+                                      </tr>
+                                      <tr>
+                                        <th>SU</th>
+                                        <td>Closed</td>
+                                      </tr>
+                                    </table>
+                                  </div>
                                 </div>`;
+    
+    card.getFooter().style.padding = "5px";
+    card.getFooter().style.backgroundColor = "blue";
+    card.getFooter().innerHTML = ` <div>Footer</div>` 
+    
+      
     // znacka z predchozi ukazky
     marker.decorate(SMap.Marker.Feature.Card, card);
   }
@@ -124,8 +177,21 @@ export default {
   transform: translate(0%, -50%);
   color: #eff0f4;
 }
-.cardCafe {
-  background-color: blue;
+
+/* vizitka */
+.title {
+  margin: 0;
+}
+.profil {
+  display: flex;
+  padding: 0;
+}
+.cafeImg {
+  width: 100px;
+}
+.openingHours {
+  width: 160px;
+  font-size: 12px;
 }
 /* Responzivita */
 @media only screen and (min-width: 720px) {

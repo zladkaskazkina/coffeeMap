@@ -43,7 +43,7 @@
          :class="{'selected': outdoorSelected}">
       <img src="../assets/img/outdoors.png" alt="Outside seating ">Outside seating</div>
   </div>
-  <div class="find btn m-5 w-50">Save filters</div>
+  <router-link class="find btn m-5 w-50" to="/">Save filters</router-link>
 </div>
   
 </template>
@@ -143,14 +143,15 @@ img{
 
 
 @media only screen and (min-width : 768px)   {
-.icon {
-width: 46%;
+  .icon {
+  width: 46%;
+  }
 }
 
-@media only screen and (min-width : 992px)   {
-.filterComponent {
-  margin: 0 150px;
+@media only screen and (min-width : 1024px)   {
+  .filterComponent {
+    width: 1000px;
+  }
 }
-}
-}
+
 </style>
