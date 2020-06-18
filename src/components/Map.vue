@@ -64,62 +64,7 @@ export default {
 
     let card = new SMap.Card();
     card.setSize(300, 200);
-
-    // card.getContainer().classList.add("cardCafe"); //nefunguje
-    card.getContainer().style.backgroundColor = "red";
-    card.getContainer().style.display = "flex"; //nefunguje
-    card.getHeader().innerHTML =`<h5>Kavarna, co hleda jmeno</h5>`;
-
-    card.getHeader().className = "test"; //nefunguje
-    
-
-    card.getBody().style.padding = "5px";
-    card.getBody().style.backgroundColor = "yellowgreen";
-    card.getBody().innerHTML = `<div class='profil'>
-                                  <div class="leftSide">
-                                    <div class="cafeImg">
-                                      <img class="img-fluid" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-                                    </div>
-                                    <div>Rating</div>
-                                  </div>
-                                  <div class="openingHours">
-                                    OPENING HOURS
-                                    <table>
-                                      <tr>
-                                        <th>MO</th>
-                                        <td>8:00 - 17:00</td>
-                                      </tr>
-                                      <tr>
-                                        <th>TU</th>
-                                        <td>8:00 - 17:00</td>
-                                      </tr>
-                                      <tr>
-                                        <th>WE</th>
-                                        <td>8:00 - 17:00</td>
-                                      </tr>
-                                      <tr>
-                                        <th>TH</th>
-                                        <td>8:00 - 17:00</td>
-                                      </tr>
-                                      <tr>
-                                        <th>FR</th>
-                                        <td>8:00 - 17:00</td>
-                                      </tr>
-                                      <tr>
-                                        <th>SAT</th>
-                                        <td>9:00 - 16:00</td>
-                                      </tr>
-                                      <tr>
-                                        <th>SU</th>
-                                        <td>Closed</td>
-                                      </tr>
-                                    </table>
-                                  </div>
-                                </div>`;
-    
-    card.getFooter().style.padding = "5px";
-    card.getFooter().style.backgroundColor = "blue";
-    card.getFooter().innerHTML = ` <div>Footer</div>` 
+    card.getContainer().style.backgroundColor = "lightblue";
     
       
     // znacka z predchozi ukazky
