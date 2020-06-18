@@ -6,6 +6,13 @@
         <div class="mapPart__map" id="map"></div>
       </div>
     </div>
+    <cafePart
+      v-on:click="openCard"
+      v-for="(cafe, index) in profiles"
+      :title="cafe.title"
+      :src="cafe.src"
+      :key="index"
+    />
     <div class="cafePart">
       <div class="cafePart__img">
         <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
@@ -41,12 +48,43 @@
 </template>
 <script>
 import { db } from "../db.js";
+import cafePart from ".cafePart.vue";
+
 export default {
   name: "Map",
-  data() {
-    return {};
+  components: {
+    cafePart
   },
+  data() {
+    return {
+      profiles: [],
+      title: "",
+      src: "",
+      rating: "",
+      address: "",
+      website: "",
+      location: {},
+      openingHours: {},
+      filters: {}
+    };
+  },
+  methods: {
+  openCard(id) {
+      let card = new SMap.Card();
+      //vlozit div ???
+      card.getBody().innerHTML = `<div></div>`;
 
+      id.decorate(SMap.Marker.Feature.Card, card);
+    },
+  isOpenNow(place) {
+      // what day is today
+      // place.openingHours
+      return 
+    }
+    }
+  firestore: {
+    profiles: db.collection("profiles").orderBy("id")
+  },
   mounted() {
     // vlozeni mapy
     let main = document.querySelector("#map");
@@ -65,12 +103,51 @@ export default {
     //vlozeni karty
     let card = new SMap.Card();
     card.setSize(300, 200);
-    card.getHeader().innerHTML = `<h3 class=''>Kavárna Orient</h3>`;
+
+    card.getBody().style.padding = "5px";
+    card.getBody().style.backgroundColor = "yellowgreen";
     card.getBody().innerHTML = `<div class='profil'>
-                                <div class="cafeImg">
-                                  <img class="img-fluid" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-                                </div>
+                                  <div class="leftSide">
+                                    <div class="cafeImg">
+                                      <img class="img-fluid" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
+                                    </div>
+                                    <div>Rating</div>
+                                  </div>
+                                  <div class="openingHours">
+                                    OPENING HOURS
+                                    <table>
+                                      <tr>
+                                        <th>MO</th>
+                                        <td>8:00 - 17:00</td>
+                                      </tr>
+                                      <tr>
+                                        <th>TU</th>
+                                        <td>8:00 - 17:00</td>
+                                      </tr>
+                                      <tr>
+                                        <th>WE</th>
+                                        <td>8:00 - 17:00</td>
+                                      </tr>
+                                      <tr>
+                                        <th>TH</th>
+                                        <td>8:00 - 17:00</td>
+                                      </tr>
+                                      <tr>
+                                        <th>FR</th>
+                                        <td>8:00 - 17:00</td>
+                                      </tr>
+                                      <tr>
+                                        <th>SAT</th>
+                                        <td>9:00 - 16:00</td>
+                                      </tr>
+                                      <tr>
+                                        <th>SU</th>
+                                        <td>Closed</td>
+                                      </tr>
+                                    </table>
+                                  </div>
                                 </div>`;
+
     // znacka z predchozi ukazky
     marker.decorate(SMap.Marker.Feature.Card, card);
   }
@@ -125,6 +202,24 @@ export default {
   color: #eff0f4;
 }
 
+<<<<<<< HEAD
+=======
+/* vizitka */
+.title {
+  margin: 0;
+}
+.profil {
+  display: flex;
+  padding: 0;
+}
+.cafeImg {
+  width: 100px;
+}
+.openingHours {
+  width: 160px;
+  font-size: 12px;
+}
+>>>>>>> d761ffb44c077fad4692b62dc72185424d08fb8f
 /* Responzivita */
 @media only screen and (min-width: 720px) {
   .mainPart {

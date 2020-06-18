@@ -14,6 +14,7 @@
       "lat": 50.0912818,
       "lng": 14.4253929
     },
+    "openingHours": {},
     "terrace": 1,
     "baby": 1,
     "freelance": 1,
@@ -37,31 +38,6 @@
     "location": {
       "lat": 50.0982349,
       "lng": 14.4253655
-    },
-    "terrace": 1,
-    "baby": 1,
-    "freelance": 1,
-    "pets": 1,
-    "nonDairy": 1,
-    "barrierFree": 0,
-    "deCaf": 1,
-    "hotFood": 0
-  },
-
-  {
-    "title": "Orient Coffee",
-    "totalScore": 4.7,
-    "categoryName": "Coffee shop",
-    "address": "135/21, nám. Republiky 3/3, 301 00 Plzeň 3-Vnitřní Město, Czechia",
-    "plusCode": "P9WG+GV Pilsen, Czechia",
-    "website": "orientcoffee.com",
-    "phone": "+420 731 166 768",
-    "rank": 2,
-    "placeId": "ChIJBYQuJuXxCkcRm22sxGKwZ5k",
-    "url": "https://www.google.com/maps/place/Orient+Coffee/@49.7463004,13.375042,17z/data=!3m1!4b1!4m5!3m4!1s0x470af1e5262e8405:0x9967b062c4ac6d9b!8m2!3d49.7463004!4d13.3772307",
-    "location": {
-      "lat": 49.7463004,
-      "lng": 13.3772307
     },
     "terrace": 1,
     "baby": 1,

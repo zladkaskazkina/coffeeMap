@@ -40,7 +40,7 @@
         <img src="../assets/img/outdoors.png" alt="Outside seating " />Outside seating
       </div>
     </div>
-    <div class="find btn m-5 w-50">Save filters</div>
+    <router-link class="find btn m-5 w-50" to="/">Save filters</router-link>
   </div>
 </template>
 
@@ -60,6 +60,21 @@ export default {
     };
   },
   methods: {
+    filterPlaces(places, filter) {
+      const filteredPlaces = [];
+
+      places.forEach(place => {
+        let result = false;
+        if (filter.nonDairy === place.nonDairy) result = result && true;
+        if (result === true) {
+          filteredPlaces.push(place);
+        }
+      });
+
+      // const filteredPlaces = places.filter(...)
+
+      return filteredPlaces;
+    },
     milkSelect() {
       this.milkSelected = !this.milkSelected;
     },
@@ -122,20 +137,24 @@ img {
   background-color: #cd6e48;
   color: #eff0f4;
 }
+
 .icon:hover {
   background-color: #f9be60;
 }
+
 .selected {
   background-color: #ffdd8f;
 }
+
 @media only screen and (min-width: 768px) {
   .icon {
     width: 46%;
   }
-  @media only screen and (min-width: 992px) {
-    .filterComponent {
-      margin: 0 150px;
-    }
+}
+
+@media only screen and (min-width: 1024px) {
+  .filterComponent {
+    width: 1000px;
   }
 }
 </style>
