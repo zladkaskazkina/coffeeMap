@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "webpack -d",
     "watch": "webpack -wd",
@@ -25,6 +26,8 @@
     "bootstrap-vue": "^2.15.0",
     "element-ui": "^2.13.2",
     "firebase": "^7.15.1",
+    "firebase-admin": "^8.12.1",
+    "firestore-export-import": "^0.6.0",
     "vue": "^2.6.11",
     "vue-router": "^3.3.2",
     "vuefire": "^2.2.2",
