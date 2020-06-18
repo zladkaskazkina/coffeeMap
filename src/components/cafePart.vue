@@ -12,11 +12,10 @@
 export default {
   name: "cafe",
   props: ["id", "name", "src"],
-  methods: {
-    
-  
+  methods: {}
 };
 </script>
+
 <style>
 .cafePart {
   display: flex;
@@ -40,5 +39,14 @@ export default {
   text-align: center;
   transform: translate(0%, -50%);
   color: #eff0f4;
+}
+@media only screen and (min-width: 720px) {
+  .cafePart {
+    flex: 2;
+    margin-right: 1rem;
+  }
+  .cafePart__img {
+    margin-top: 0;
+  }
 }
 </style>

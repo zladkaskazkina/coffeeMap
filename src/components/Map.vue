@@ -13,37 +13,6 @@
       :src="cafe.src"
       :key="index"
     />
-    <div class="cafePart">
-      <div class="cafePart__img">
-        <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-        <h2 class="cafePart__title">Co hleda jmeno</h2>
-      </div>
-
-      <div class="cafePart__img">
-        <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-        <div class="cafePart__title"></div>
-      </div>
-
-      <div class="cafePart__img">
-        <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-        <div class="cafePart__title"></div>
-      </div>
-
-      <div class="cafePart__img">
-        <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-        <div class="cafePart__title"></div>
-      </div>
-
-      <div class="cafePart__img">
-        <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-        <div class="cafePart__title"></div>
-      </div>
-
-      <div class="cafePart__img">
-        <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-        <div class="cafePart__title"></div>
-      </div>
-    </div>
   </div>
 </template>
 <script>
@@ -69,19 +38,19 @@ export default {
     };
   },
   methods: {
-  openCard(id) {
+    openCard(id) {
       let card = new SMap.Card();
       //vlozit div ???
       card.getBody().innerHTML = `<div></div>`;
 
       id.decorate(SMap.Marker.Feature.Card, card);
     },
-  isOpenNow(place) {
+    isOpenNow(place) {
       // what day is today
       // place.openingHours
-      return 
+      return;
     }
-    }
+  },
   firestore: {
     profiles: db.collection("profiles").orderBy("id")
   },
@@ -93,63 +62,16 @@ export default {
     let map = new SMap(main, center, 13);
     map.addDefaultLayer(SMap.DEF_BASE).enable();
     map.addDefaultControls();
+  },
+  created() {
     // vlozeni znacky
+    // forEach na vse znacky
     let layer = new SMap.Layer.Marker();
     map.addLayer(layer);
     layer.enable();
     let coords = SMap.Coords.fromWGS84(14.40315, 50.06934);
     let marker = new SMap.Marker(coords);
     layer.addMarker(marker);
-    //vlozeni karty
-    let card = new SMap.Card();
-    card.setSize(300, 200);
-
-    card.getBody().style.padding = "5px";
-    card.getBody().style.backgroundColor = "yellowgreen";
-    card.getBody().innerHTML = `<div class='profil'>
-                                  <div class="leftSide">
-                                    <div class="cafeImg">
-                                      <img class="img-fluid" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-                                    </div>
-                                    <div>Rating</div>
-                                  </div>
-                                  <div class="openingHours">
-                                    OPENING HOURS
-                                    <table>
-                                      <tr>
-                                        <th>MO</th>
-                                        <td>8:00 - 17:00</td>
-                                      </tr>
-                                      <tr>
-                                        <th>TU</th>
-                                        <td>8:00 - 17:00</td>
-                                      </tr>
-                                      <tr>
-                                        <th>WE</th>
-                                        <td>8:00 - 17:00</td>
-                                      </tr>
-                                      <tr>
-                                        <th>TH</th>
-                                        <td>8:00 - 17:00</td>
-                                      </tr>
-                                      <tr>
-                                        <th>FR</th>
-                                        <td>8:00 - 17:00</td>
-                                      </tr>
-                                      <tr>
-                                        <th>SAT</th>
-                                        <td>9:00 - 16:00</td>
-                                      </tr>
-                                      <tr>
-                                        <th>SU</th>
-                                        <td>Closed</td>
-                                      </tr>
-                                    </table>
-                                  </div>
-                                </div>`;
-
-    // znacka z predchozi ukazky
-    marker.decorate(SMap.Marker.Feature.Card, card);
   }
 };
 </script>
@@ -177,49 +99,7 @@ export default {
   height: 100vw;
   z-index: 0;
 }
-/* kavarny */
-.cafePart {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.cafePart__img {
-  width: 100%;
-  margin: 10px 0;
-  position: relative;
-}
-.cafePart__bg {
-  width: 100%;
-  filter: brightness(50%);
-  object-fit: cover;
-}
-.cafePart__title {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  text-align: center;
-  transform: translate(0%, -50%);
-  color: #eff0f4;
-}
 
-<<<<<<< HEAD
-=======
-/* vizitka */
-.title {
-  margin: 0;
-}
-.profil {
-  display: flex;
-  padding: 0;
-}
-.cafeImg {
-  width: 100px;
-}
-.openingHours {
-  width: 160px;
-  font-size: 12px;
-}
->>>>>>> d761ffb44c077fad4692b62dc72185424d08fb8f
 /* Responzivita */
 @media only screen and (min-width: 720px) {
   .mainPart {
@@ -231,13 +111,6 @@ export default {
   }
   .mapPart__map {
     height: 100vh;
-  }
-  .cafePart {
-    flex: 2;
-    margin-right: 1rem;
-  }
-  .cafePart__img {
-    margin-top: 0;
   }
 }
 </style>
