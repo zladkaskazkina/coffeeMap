@@ -1,43 +1,47 @@
 <template>
-  <div class="container mainPart">
-    <div class="topPart">
-      <div class="mapPart">
-        <div class="mapPart__filters"></div>
-        <div class="mapPart__map" id="map"></div>
-      </div>
-    </div>
-    <div class="cafePart">
-      <div class="cafePart__img">
-        <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-        <h2 class="cafePart__title">Co hleda jmeno</h2>
-      </div>
+<div class="background">
+  <div class= "responsiveWidth">
+    <div class="container mainPart">
+        <div class="topPart">
+          <div class="mapPart">
+            <div class="mapPart__filters"></div>
+            <div class="mapPart__map" id="map"></div>
+          </div>
+        </div>
+        <div class="cafePart">
+          <div class="cafePart__img">
+            <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
+            <h2 class="cafePart__title">Co hleda jmeno</h2>
+          </div>
 
-      <div class="cafePart__img">
-        <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-        <div class="cafePart__title"></div>
-      </div>
+          <div class="cafePart__img">
+            <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
+            <div class="cafePart__title"></div>
+          </div>
 
-      <div class="cafePart__img">
-        <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-        <div class="cafePart__title"></div>
-      </div>
+          <div class="cafePart__img">
+            <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
+            <div class="cafePart__title"></div>
+          </div>
 
-      <div class="cafePart__img">
-        <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-        <div class="cafePart__title"></div>
-      </div>
+          <div class="cafePart__img">
+            <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
+            <div class="cafePart__title"></div>
+          </div>
 
-      <div class="cafePart__img">
-        <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-        <div class="cafePart__title"></div>
-      </div>
+          <div class="cafePart__img">
+            <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
+            <div class="cafePart__title"></div>
+          </div>
 
-      <div class="cafePart__img">
-        <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-        <div class="cafePart__title"></div>
+          <div class="cafePart__img">
+            <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
+            <div class="cafePart__title"></div>
+          </div>
+        </div>
       </div>
-    </div>
   </div>
+</div>
 </template>
 <script>
 import { db } from "../db.js";
@@ -72,14 +76,17 @@ export default {
   }
 };
 </script>
+
+
 <style>
-.test {
-  background-color: beige;
+.background {
+  background-color: pink;
   width: 100%;
   height: 100%;
 }
 
 /* pro prepis stylu Bootstrapu */
+
 .container {
   max-width: 100% !important;
   padding: 0 !important;
@@ -144,9 +151,14 @@ export default {
 }
 /* Responzivita */
 @media only screen and (min-width: 720px) {
+.responsiveWidth {
+  padding: 1rem;
+}
+
   .mainPart {
     flex-direction: row-reverse;
     align-items: stretch;
+    width: 900px
   }
   .topPart {
     flex: 5;
@@ -161,5 +173,14 @@ export default {
   .cafePart__img {
     margin-top: 0;
   }
+  
 }
+@media only screen and (min-width: 1024px) {
+ .responsiveWidth {
+  width:80%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+} 
 </style>

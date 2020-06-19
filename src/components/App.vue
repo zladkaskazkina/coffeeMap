@@ -8,8 +8,7 @@
         <!--cafe je jen na ukazku jak ma vypadat vizitka-->
         <router-link class="navItem" to="/Cafe">Cafe</router-link>
       </div>
-    </div>
-
+    </div>    
     <router-view></router-view>
     <div class="footer">
       <div class="suggest">Add new Coffeeshop</div>
@@ -120,6 +119,8 @@ html {
   width: 40vw;
   height: 50%;
 }
+
+
 .footer {
   position: sticky;
   bottom: 0;

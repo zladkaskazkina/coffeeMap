@@ -3,10 +3,13 @@
   <h1 class="m-3">Select filters</h1>
   <div class="filterList d-flex flex-column flex-md-row flex-md-wrap align-items-center justify-content-center">
 
-    <div class="icon btn btn-light"
-          @click="milkSelect"
+    <label class="icon btn btn-light"
          :class="{'selected': milkSelected}">
-      <img src="../assets/img/milk.png" alt="VegiMilk">Alternative milk</div>   
+      <img src="../assets/img/milk.png" alt="VegiMilk">Alternative milk
+      <input type="checkbox"
+            v-model="milkSelected"
+            v-show="false">
+      </label>   
 
     <div class="icon btn btn-light"
          @click="decafSelect"
@@ -64,9 +67,6 @@ export default {
     }
   },
   methods: {
-    milkSelect() {
-      this.milkSelected = !this.milkSelected;
-    },
     decafSelect() {
       this.decafSelected = !this.decafSelected;
     },
