@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Map from './components/Map.vue';
-import Cafe from './components/Cafe.vue';
+import CafePart from './components/CafePart.vue';
+import CafeCard from './components/CafeCard.vue';
 import Filter from './components/Filter.vue';
 import App from './components/App';
 import './index.html';
@@ -19,9 +20,10 @@ Vue.use(IconsPlugin);
 const router = new VueRouter({
   mode: 'history',
   routes: [
-    { path: '/cafe', component: Cafe },
+    { path: '/cafe/:id', component: CafePart },
     { path: '/filter', component: Filter },
     { path: '/', component: Map },
+    { path: '/cafecard/:id', component: CafeCard },
   ],
 });
 
@@ -31,25 +33,3 @@ new Vue({
   render: h => h(App),
 });
 
-//add Json to Firebase
-
-const admin = require('../node_modules/firebase-admin');
-const serviceAccount = require("../serviceAccount.json");
-const data = require("../data.json");
-const collectionKey = "coffeemap-aeaf4"; //name of the collection
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://coffeemap-aeaf4.firebaseio.com"
-});
-const firestore = admin.firestore();
-const settings = { timestampsInSnapshots: true };
-firestore.settings(settings);
-if (data && (typeof data === "object")) {
-  Object.keys(data).forEach(docKey => {
-    firestore.collection(collectionKey).doc(docKey).set(data[docKey]).then((res) => {
-      console.log("Document " + docKey + " successfully written!");
-    }).catch((error) => {
-      console.error("Error writing document: ", error);
-    });
-  });
-}

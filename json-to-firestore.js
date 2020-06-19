@@ -1,5 +1,6 @@
 import firebase from "firebase";
 // Required for side-effects
+import "firebase/firestore";
 
 // Initialize Cloud Firestore through Firebase
 firebase.initializeApp({
@@ -280,7 +281,26 @@ let places = [
 ];
 
 places.forEach(function (obj) {
-  db.collection("places").add(obj).then(function (docRef) {
+  db.collection("places").add({
+    title: obj.title,
+    totalScore: obj.totalScore,
+    address: obj.address,
+    website: obj.website,
+    location: {
+      lat: obj.lat,
+      lng: obj.lng
+    },
+    openingHours: obj.openingHours,
+    imgSrc: obj.imgSrc,
+    terrace: obj.terrace,
+    baby: obj.baby,
+    freelance: obj.freelance,
+    pets: obj.pets,
+    nonDairy: obj.nonDairy,
+    barrierFree: obj.barrierFree,
+    deCaf: obj.decaf,
+    hotFood: obj.hotFood
+  }).then(function (docRef) {
     console.log("Document written with ID: ", docRef.id);
   })
     .catch(function (error) {

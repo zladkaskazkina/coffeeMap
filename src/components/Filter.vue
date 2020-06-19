@@ -4,39 +4,35 @@
     <div
       class="filterList d-flex flex-column flex-md-row flex-md-wrap align-items-center justify-content-center"
     >
-      <div class="icon btn btn-light" @click="milkSelect" :class="{'selected': milkSelected}">
+      <div class="icon btn btn-light">
         <img src="../assets/img/milk.png" alt="VegiMilk" />Alternative milk
       </div>
 
-      <div class="icon btn btn-light" @click="decafSelect" :class="{'selected': decafSelected}">
+      <div class="icon btn btn-light">
         <img src="../assets/img/decaf.png" alt="Decaf" />Decaf coffee
       </div>
 
-      <div class="icon btn btn-light" @click="foodSelect" :class="{'selected': foodSelected}">
+      <div class="icon btn btn-light">
         <img src="../assets/img/soup.png" alt="Hot Food" />Hot food
       </div>
 
-      <div class="icon btn btn-light" @click="barrierSelect" :class="{'selected': barrierSelected}">
+      <div class="icon btn btn-light">
         <img src="../assets/img/disabled.png" alt="Wheelchair" />Barrier-free
       </div>
 
-      <div
-        class="icon btn btn-light"
-        @click="freelanceSelect"
-        :class="{'selected': freelanceSelected}"
-      >
+      <div class="icon btn btn-light">
         <img src="../assets/img/laptop.png" alt="Freelance Friendly" />Freelance friendly
       </div>
 
-      <div class="icon btn btn-light" @click="familySelect" :class="{'selected': familySelected}">
+      <div class="icon btn btn-light">
         <img src="../assets/img/baby.png" alt="Family Friendly" />Family friendly
       </div>
 
-      <div class="icon btn btn-light" @click="petSelect" :class="{'selected': petSelected}">
+      <div class="icon btn btn-light">
         <img src="../assets/img/pawprint.png" alt="Pet friendly " />Pet friendly
       </div>
 
-      <div class="icon btn btn-light" @click="outdoorSelect" :class="{'selected': outdoorSelected}">
+      <div class="icon btn btn-light">
         <img src="../assets/img/outdoors.png" alt="Outside seating " />Outside seating
       </div>
     </div>
@@ -49,58 +45,43 @@ export default {
   name: "FilterCoffee",
   data() {
     return {
-      milkSelected: false,
-      decafSelected: false,
-      foodSelected: false,
-      barrierSelected: false,
-      freelanceSelected: false,
-      familySelected: false,
-      petSelected: false,
-      outdoorSelected: false
-    };
-  },
-  methods: {
-    filterPlaces(places, filter) {
-      const filteredPlaces = [];
 
-      places.forEach(place => {
-        let result = false;
-        if (filter.nonDairy === place.nonDairy) result = result && true;
-        if (result === true) {
-          filteredPlaces.push(place);
-        }
-      });
-
-      // const filteredPlaces = places.filter(...)
-
-      return filteredPlaces;
-    },
-    milkSelect() {
-      this.milkSelected = !this.milkSelected;
-    },
-    decafSelect() {
-      this.decafSelected = !this.decafSelected;
-    },
-    foodSelect() {
-      this.foodSelected = !this.foodSelected;
-    },
-    barrierSelect() {
-      this.barrierSelected = !this.barrierSelected;
-    },
-    freelanceSelect() {
-      this.freelanceSelected = !this.freelanceSelected;
-    },
-    familySelect() {
-      this.familySelected = !this.familySelected;
-    },
-    petSelect() {
-      this.petSelected = !this.petSelected;
-    },
-    outdoorSelect() {
-      this.outdoorSelected = !this.outdoorSelected;
     }
-  }
-};
+  },
+  methods: { 
+  filterIt(){
+    this.$bind(
+      'coffeeShops',
+    db
+      .collection('coffeeShops')
+      // .where('title', '>', 200)
+      .equalTo()
+      .orderBy('title')
+)
+    }
+
+
+    // filterPlaces(places, filter) {
+
+
+
+    //   const filteredPlaces = [];
+
+    //   places.forEach(place => {
+    //     let result = false;
+    //     if (filter.nonDairy === place.nonDairy) result = result && true;
+    //     if (result === true) {
+    //       filteredPlaces.push(place);
+    //     }
+    //   });
+
+    //   // const filteredPlaces = places.filter(...)
+
+    //   return filteredPlaces;
+    // },
+    
+    
+}
 </script>
 
 <style scoped>

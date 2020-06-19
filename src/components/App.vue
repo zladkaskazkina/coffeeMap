@@ -3,7 +3,13 @@
     <div class="fixBar">
       <div class="nav">
         <router-link class="navItem" to="/">Map</router-link>
-        <input class="searchBar" type="text" placeholder="Search" />
+        <input
+          v-model.trim="searchValue"
+          @submit="searchIt"
+          class="searchBar"
+          type="text"
+          placeholder="Search"
+        />
         <router-link class="navItem" to="/filter">
           <i class="fas fa-filter"></i>
         </router-link>
@@ -12,16 +18,39 @@
 
     <router-view></router-view>
     <div class="footer">
-      <div class="suggest">Add new Coffeeshop</div>
+      <div action="mailto:you@yourdmainhere.com" class="suggest">Add new Coffeeshop</div>
     </div>
   </div>
 </template>
 
 <script>
+import db from "../utils/db";
+
 export default {
   name: "App",
   data() {
-    return {};
+    return {
+      searchValue: ""
+    };
+  },
+  methods: {
+    searchIt() {
+      //     var input, filter, ul, li, a, i, txtValue;
+      // input = document.getElementById('myInput');
+      // filter = input.value.toUpperCase();
+      // ul = document.getElementById("myUL");
+      // li = ul.getElementsByTagName('li');
+      // // Loop through all list items, and hide those who don't match the search query
+      // for (i = 0; i < li.length; i++) {
+      //   a = li[i].getElementsByTagName("a")[0];
+      //   txtValue = a.textContent || a.innerText;
+      //   if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      //     li[i].style.display = "";
+      //   } else {
+      //     li[i].style.display = "none";
+      //   }
+      // }
+    }
   }
 };
 </script>
@@ -119,6 +148,14 @@ html {
   border-radius: 4px;
   width: 40vw;
   height: 50%;
+
+  background-image: url("../assets/searchicon.svg"); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+
+  font-size: 16px; /* Increase font-size */
+
+  border: 1px solid #ddd; /* Add a grey border */
 }
 .footer {
   position: sticky;
