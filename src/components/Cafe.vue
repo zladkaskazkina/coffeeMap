@@ -50,6 +50,11 @@
           <div class="icon"><img src="../assets/img/disabled.png" alt="Wheelchair"></div>
           <div class="icon"><img src="../assets/img/soup.png" alt="Hot Food"></div>
           <div class="icon"><img src="../assets/img/milk.png" alt="VegiMilk"></div>
+          <div class="icon"><img src="../assets/img/soup.png" alt="Hot Food"></div>
+          <div class="icon"><img src="../assets/img/soup.png" alt="Hot Food"></div>
+          <div class="icon"><img src="../assets/img/soup.png" alt="Hot Food"></div>
+          <div class="icon"><img src="../assets/img/soup.png" alt="Hot Food"></div>
+          <div class="icon"><img src="../assets/img/soup.png" alt="Hot Food"></div>
         </div>
         <div class="links">      
           <div class="web btn btn-light">Web</div>
@@ -69,26 +74,48 @@
 }
 
 .header {
-  display: flex;
+  display: flex;  
+  background-color: hsl(188, 55%, 57%);
+  padding: 3px 5px;
 }
 .title {
   width: 80%;
 }
+.star {
+  height: 15px;
+  width: 15px;
+}
+
+.address{
+  font-size: 0.8rem;
+  color: rgb(98, 98, 98);
+  margin: 3px 5px;
+}
 
 .rating {
   width: 15%;
+  align-items: center;
 }
 
 .content {
   display: flex;
+  margin: 0 5px;
+  border-top: 1px solid #16283e;
 }
 
 .leftSide {
-  width: 80%
+  width: 55%
+}
+.openingHours {
+  font-size: 0.7rem;
+}
+td {
+  padding-left: 8px;
 }
 
 .rightSide {
-  width: 30%;
+  padding-top: 20px;
+  width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -100,20 +127,15 @@
 }
 .icon {
   border-radius: 5px;
-  width:30px;
-  height:30px;
+  width:25px;
+  height:25px;
   margin: 2px;
   padding: 3px;
   box-shadow: 0px 1px 3px 1px gray;
 }
 img{
-  width: 100%;
-  height: 100%;
-}
-
-.star {
-  height: 15px;
-  width: 15px;
+  width:100%;
+  height: 100%
 }
 
 .selectedFilter {
@@ -121,6 +143,7 @@ img{
 }
 .web {
   background-color: #cd6e48;
+  width: 90%;
 }
 .fab {
   margin: 1rem;
