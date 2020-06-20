@@ -1,81 +1,76 @@
 <template>
-<div class=" filterComponent d-flex flex-column align-items-center justify-content-center">
-  <h1 class="m-3">Select filters</h1>
-  <div class="filterList d-flex flex-column flex-md-row flex-md-wrap align-items-center justify-content-center">
-
-    <label class="icon btn btn-light"
-          v-for="(filter, index) in filters"
-         :key="index"
-         :class="{'selected': state[filter.key]}">
-      <img :src="`../assets/img/${filter.icon}.png`">{{filter.label}}
-      <input type="checkbox"
-            v-model= "state[filter.key]"
-            v-show="false">
-      </label>   
+  <div
+    class=" filterComponent d-flex flex-column align-items-center justify-content-center"
+  >
+    <h1 class="m-3">Select filters</h1>
+    <div
+      class="filterList d-flex flex-column flex-md-row flex-md-wrap align-items-center justify-content-center"
+    >
+      <label
+        class="icon btn btn-light"
+        v-for="(filter, index) in filters"
+        :key="index"
+        :class="{ selected: state[filter.key] }"
+      >
+        <img :src="`../assets/img/${filter.icon}.png`" />{{ filter.label }}
+        <input type="checkbox" v-model="state[filter.key]" v-show="false" />
+      </label>
+    </div>
+    <router-link class="find btn m-5 w-50" to="/">Save filters</router-link>
   </div>
-  <router-link class="find btn m-5 w-50" to="/">Save filters</router-link>
-</div>
-  
 </template>
 
 <script>
+import { state } from "../utils/state.js";
+
 export default {
   name: "FilterCoffee",
   data() {
     return {
-      state: {
-      milkSelected: false, 
-      decafSelected: false, 
-      foodSelected: false, 
-      barrierSelected: false, 
-      freelanceSelected: false, 
-      familySelected: false, 
-      petSelected: false, 
-      outdoorSelected: false, 
-      },
+      state,
       filters: [
         {
           icon: "milk",
           label: "Alternative milk",
-          key: "milkSelected"
+          key: "milkSelected",
         },
-         {
+        {
           icon: "decaf",
           label: "Decaf coffee",
-          key: "decafSelected"
+          key: "decafSelected",
         },
-         {
+        {
           icon: "soup",
           label: "Hot food",
-          key: "foodSelected"
+          key: "foodSelected",
         },
-         {
+        {
           icon: "disabled",
           label: "Barrier-free",
-          key: "barrierSelected"
+          key: "barrierSelected",
         },
-         {
+        {
           icon: "laptop",
           label: "Freelance friendly",
-          key: "freelanceSelected"
+          key: "freelanceSelected",
         },
-         {
+        {
           icon: "baby",
           label: "Family friendly",
-          key: "familySelected"
+          key: "familySelected",
         },
-         {
+        {
           icon: "pawprint",
           label: "Pet friendly",
-          key: "petSelected"
+          key: "petSelected",
         },
-         {
+        {
           icon: "outdoors",
           label: "Outside seating",
-          key: "outdoorSelected"
+          key: "outdoorSelected",
         },
-      ]
-    }
+      ],
+    };
   },
   methods: {
     decafSelect() {
@@ -99,8 +94,8 @@ export default {
     outdoorSelect() {
       this.outdoorSelected = !this.outdoorSelected;
     },
-  }
-}
+  },
+};
 </script>
 
 <style scoped>
@@ -122,47 +117,42 @@ yellow: #f9be60
   align-items: center;
   justify-content: center;
 }
-img{
- width: 2rem;
- height: 2rem;
- margin-right: 0.5rem;
+img {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
 }
 
 .icon {
-  width:100%;
+  width: 100%;
   margin: 0.5rem;
   padding: 0.5rem;
   padding-left: 2rem;
   display: flex;
   align-items: center;
-
 }
-.find{
+.find {
   background-color: #cd6e48;
   color: #eff0f4;
 }
 
-
-.icon:hover{
-    background-color: #f9be60;
+.icon:hover {
+  background-color: #f9be60;
 }
 
-.selected
- {
+.selected {
   background-color: #ffdd8f;
 }
 
-
-@media only screen and (min-width : 768px)   {
+@media only screen and (min-width: 768px) {
   .icon {
-  width: 46%;
+    width: 46%;
   }
 }
 
-@media only screen and (min-width : 1024px)   {
+@media only screen and (min-width: 1024px) {
   .filterComponent {
     width: 1000px;
   }
 }
-
 </style>

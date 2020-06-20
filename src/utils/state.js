@@ -12,6 +12,16 @@ export async function getCoffeeShops() {
 };
 
 export const state = {
+	filters: {
+		milkSelected: false,
+		decafSelected: false,
+		foodSelected: false,
+		barrierSelected: false,
+		freelanceSelected: false,
+		familySelected: false,
+		petSelected: false,
+		outdoorSelected: false,
+	},
 	coffeeShops: getCoffeeShops(),
 	// TODO
 };
