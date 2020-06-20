@@ -26,6 +26,7 @@
 import { db } from "../utils/db.js";
 import CafeCard from "./CafeCard.vue";
 import cafePart from "./cafePart.vue";
+import { state } from "../utils/state.js";
 
 export default {
   name: "Map",
@@ -60,10 +61,17 @@ export default {
     profiles: db.collection("coffeeShops").orderBy("title"),
   },
   mounted() {
-    const profiles = db.collection("coffeeShops").orderBy("title");
+    // const profiles = db
+    //   .collection("coffeeShops")
+    //   .orderBy("title")
+    //   .get()
+    //   .then((querySnapshot) => {
+    //     console.log(querySnapshot);
+    //     // do something with documents
+    //   });
     // vlozeni mapy
     let main = document.querySelector("#map");
-    console.log(main);
+
     let center = SMap.Coords.fromWGS84(14.40315, 50.06934);
     let map = new SMap(main, center, 13);
     map.addDefaultLayer(SMap.DEF_BASE).enable();
@@ -73,21 +81,25 @@ export default {
     map.addLayer(layer);
     layer.enable();
     // vlozeni znacky
-    // forEach na vse znacky
-    for (let i = 0; i < profiles.length; i++) {
-      //pridani koordinat
-      let coords = SMap.Coords.fromWGS84(
-        profiles[i].location.lng,
-        profiles[i].location.lat
-      );
-      let marker = new SMap.Marker(coords);
-      layer.addMarker(marker);
-      // vlozeni karticky
-      let card = new SMap.Card();
-      card.getBody().innerHTML = "Já jsem <em>obsah vizitky</em>!";
-      // znacka z predchozi ukazky
-      marker.decorate(SMap.Marker.Feature.Card, card);
-    }
+  },
+  updated() {
+    state.coffeeShops.then((profiles) => {
+      for (let i = 0; i < profiles.length; i++) {
+        //pridani.doc(this.user.id)
+        console.log(profiles);
+        let coords = SMap.Coords.fromWGS84(
+          profiles[i].location.lng,
+          profiles[i].location.lat
+        );
+        let marker = new SMap.Marker(coords);
+        layer.addMarker(marker);
+        // vlozeni karticky
+        let card = new SMap.Card();
+        card.getBody().innerHTML = "Já jsem <em>obsah vizitky</em>!";
+        // znacka z predchozi ukazky
+        marker.decorate(SMap.Marker.Feature.Card, card);
+      }
+    });
   },
 };
 </script>
