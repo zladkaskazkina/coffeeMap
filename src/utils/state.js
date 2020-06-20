@@ -24,4 +24,5 @@ export const state = {
 	},
 	coffeeShops: getCoffeeShops(),
 	// TODO
+
 };
