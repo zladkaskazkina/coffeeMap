@@ -1,5 +1,7 @@
 <template>
-  <div class="filterComponent d-flex flex-column align-items-center justify-content-center">
+  <div
+    class="filterComponent d-flex flex-column align-items-center justify-content-center"
+  >
     <h1 class="m-3">Select filters</h1>
     <div
       class="filterList d-flex flex-column flex-md-row flex-md-wrap align-items-center justify-content-center"
@@ -21,11 +23,13 @@
       </div>
 
       <div class="icon btn btn-light">
-        <img src="../assets/img/laptop.png" alt="Freelance Friendly" />Freelance friendly
+        <img src="../assets/img/laptop.png" alt="Freelance Friendly" />Freelance
+        friendly
       </div>
 
       <div class="icon btn btn-light">
-        <img src="../assets/img/baby.png" alt="Family Friendly" />Family friendly
+        <img src="../assets/img/baby.png" alt="Family Friendly" />Family
+        friendly
       </div>
 
       <div class="icon btn btn-light">
@@ -33,7 +37,8 @@
       </div>
 
       <div class="icon btn btn-light">
-        <img src="../assets/img/outdoors.png" alt="Outside seating " />Outside seating
+        <img src="../assets/img/outdoors.png" alt="Outside seating " />Outside
+        seating
       </div>
     </div>
     <router-link class="find btn m-5 w-50" to="/">Save filters</router-link>
@@ -44,19 +49,12 @@
 export default {
   name: "FilterCoffee",
   data() {
-    return {
-
-    }
+    return {};
   },
   methods: {
-    filterIt(){
-
-    }
-
+    filterIt() {},
 
     // filterPlaces(places, filter) {
-
-
 
     //   const filteredPlaces = [];
 
@@ -72,9 +70,8 @@ export default {
 
     //   return filteredPlaces;
     // },
-  }
-
-}
+  },
+};
 </script>
 
 <style scoped>
@@ -132,4 +129,3 @@ img {
   }
 }
 </style>
-

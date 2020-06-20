@@ -2,17 +2,21 @@
   <div class="container">
     <div class="cafePart">
       <div class="cafePart__img">
-        <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-        <h2 class="cafePart__title">Co hleda jmeno</h2>
+        <img
+          class="cafePart__bg"
+          v-bind:src="`./assets/img/caffe/${src}.jpg`"
+          alt="kavarna"
+        />
+        <h2 class="cafePart__title">{{ title }}</h2>
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: "cafe",
-  props: ["id", "name", "src"],
-  methods: {}
+  name: "Cafe",
+  props: ["id", "title", "src"],
+  methods: {},
 };
 </script>
 

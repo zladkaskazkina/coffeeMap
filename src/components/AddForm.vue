@@ -96,7 +96,7 @@ export default {
       db.collection("coffeeShops")
         .add({
           title: this.title,
-          address: this.lastName,
+          address: this.address,
           branch: this.branch,
           institution: this.institution,
           offer: this.offer,
@@ -119,6 +119,5 @@ export default {
       event.preventDefault();
     }
   }
-  name: "About"
 };
 </script> 
