@@ -13,31 +13,6 @@
             <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
             <h2 class="cafePart__title">Co hleda jmeno</h2>
           </div>
-
-          <div class="cafePart__img">
-            <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-            <div class="cafePart__title"></div>
-          </div>
-
-          <div class="cafePart__img">
-            <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-            <div class="cafePart__title"></div>
-          </div>
-
-          <div class="cafePart__img">
-            <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-            <div class="cafePart__title"></div>
-          </div>
-
-          <div class="cafePart__img">
-            <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-            <div class="cafePart__title"></div>
-          </div>
-
-          <div class="cafePart__img">
-            <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-            <div class="cafePart__title"></div>
-          </div>
         </div>
       </div>
   </div>
