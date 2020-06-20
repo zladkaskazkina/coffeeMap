@@ -4,47 +4,14 @@
   <div class="filterList d-flex flex-column flex-md-row flex-md-wrap align-items-center justify-content-center">
 
     <label class="icon btn btn-light"
-         :class="{'selected': milkSelected}">
-      <img src="../assets/img/milk.png" alt="VegiMilk">Alternative milk
+          v-for="(filter, index) in filters"
+         :key="index"
+         :class="{'selected': state[filter.key]}">
+      <img :src="`../assets/img/${filter.icon}.png`">{{filter.label}}
       <input type="checkbox"
-            v-model="milkSelected"
+            v-model= "state[filter.key]"
             v-show="false">
       </label>   
-
-    <div class="icon btn btn-light"
-         @click="decafSelect"
-         :class="{'selected': decafSelected}">
-      <img src="../assets/img/decaf.png" alt="Decaf">Decaf coffee</div>
-
-    <div class="icon btn btn-light"
-         @click="foodSelect"
-         :class="{'selected': foodSelected}">
-      <img src="../assets/img/soup.png" alt="Hot Food">Hot food</div>
-
-    <div class="icon btn btn-light"
-         @click="barrierSelect"
-         :class="{'selected': barrierSelected}">
-      <img src="../assets/img/disabled.png" alt="Wheelchair">Barrier-free</div>
-
-    <div class="icon btn btn-light"
-         @click="freelanceSelect"
-         :class="{'selected': freelanceSelected}">
-      <img src="../assets/img/laptop.png" alt="Freelance Friendly">Freelance friendly</div>
-
-    <div class="icon btn btn-light"
-         @click="familySelect"
-         :class="{'selected': familySelected}">
-      <img src="../assets/img/baby.png" alt="Family Friendly">Family friendly</div>
-
-    <div class="icon btn btn-light"
-         @click="petSelect"
-         :class="{'selected': petSelected}">
-      <img src="../assets/img/pawprint.png" alt="Pet friendly ">Pet friendly</div>
-
-    <div class="icon btn btn-light"
-         @click="outdoorSelect"
-         :class="{'selected': outdoorSelected}">
-      <img src="../assets/img/outdoors.png" alt="Outside seating ">Outside seating</div>
   </div>
   <router-link class="find btn m-5 w-50" to="/">Save filters</router-link>
 </div>
@@ -56,6 +23,7 @@ export default {
   name: "FilterCoffee",
   data() {
     return {
+      state: {
       milkSelected: false, 
       decafSelected: false, 
       foodSelected: false, 
@@ -64,6 +32,49 @@ export default {
       familySelected: false, 
       petSelected: false, 
       outdoorSelected: false, 
+      },
+      filters: [
+        {
+          icon: "milk",
+          label: "Alternative milk",
+          key: "milkSelected"
+        },
+         {
+          icon: "decaf",
+          label: "Decaf coffee",
+          key: "decafSelected"
+        },
+         {
+          icon: "soup",
+          label: "Hot food",
+          key: "foodSelected"
+        },
+         {
+          icon: "disabled",
+          label: "Barrier-free",
+          key: "barrierSelected"
+        },
+         {
+          icon: "laptop",
+          label: "Freelance friendly",
+          key: "freelanceSelected"
+        },
+         {
+          icon: "baby",
+          label: "Family friendly",
+          key: "familySelected"
+        },
+         {
+          icon: "pawprint",
+          label: "Pet friendly",
+          key: "petSelected"
+        },
+         {
+          icon: "outdoors",
+          label: "Outside seating",
+          key: "outdoorSelected"
+        },
+      ]
     }
   },
   methods: {
