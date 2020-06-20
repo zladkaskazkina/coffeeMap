@@ -2,11 +2,13 @@
   <div class="cafe">
     <div class="cafePart">
       <div class="cafePart__img">
+        <!--MUSIME PRIDAT DYNAMICKY ${imgSrc}-->
         <img
           class="cafePart__bg"
-          v-bind:src="`./assets/img/caffe/jen.jpg`"
+          v-bind:src="`./assets/img/caffe/orient.jpg`" 
           alt="kavarna"
-        />
+        /> 
+        
         <h2 class="cafePart__title">{{ title }}</h2>
       </div>
     </div>
