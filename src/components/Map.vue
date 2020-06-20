@@ -11,7 +11,7 @@
       <div class="coffees">
         <cafePart
           v-on:click="openCard"
-          v-for="(cafe, index) in profiles"
+          v-for="(cafe, index) in filteredProfiles"
           :title="cafe.title"
           :src="cafe.src"
           :key="index"
@@ -26,7 +26,7 @@
 import { db } from "../utils/db.js";
 import CafeCard from "./CafeCard.vue";
 import cafePart from "./cafePart.vue";
-import { state } from "../utils/state.js";
+import { state, getCoffeeShops } from "../utils/state.js";
 import renderCard from "../utils/renderCard.js";
 
 export default {
@@ -48,10 +48,13 @@ export default {
       filters: {},
       map: null,
       layer: null,
+      intialShops: null,
     };
   },
   methods: {
-    openCard: function() {},
+    openCard: function() {
+      //  makeVisible()
+    },
     addMarkers: function() {
       if (this.map != null && this.layer != null) {
         state.coffeeShops.then((shops) => {
@@ -78,8 +81,22 @@ export default {
       }
     },
   },
+  computed: {
+    filteredProfiles() {
+      if (this.intialShops) {
+        return state.getFilteredShops(state.filters, this.intialShops);
+      } else {
+        return [];
+      }
+    },
+  },
   firestore: {
     profiles: db.collection("coffeeShops").orderBy("title"),
+  },
+  created() {
+    getCoffeeShops().then((shops) => {
+      this.intialShops = shops;
+    });
   },
   mounted() {
     let main = document.querySelector("#map");
@@ -129,7 +146,8 @@ export default {
   width: 100%;
 }
 .mapPart__map {
-  position: relative;
+  position: fixed;
+  top: 50px;
   width: 100%;
   height: 100vw;
   z-index: 0;

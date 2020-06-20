@@ -17,8 +17,10 @@
     </div>
     <router-view></router-view>
     <div class="footer">
-      <div action="mailto:you@yourdmainhere.com" class="suggest">
-        Add new Coffeeshop
+      <div class="suggest">
+        <a class="suggest" href="mailto:you@yourdmainhere.com">
+          Add new Coffeeshop
+        </a>
       </div>
     </div>
   </div>
@@ -110,7 +112,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: sticky;
+  position: fixed;
   width: 100%;
   top: 0;
   z-index: 1;
@@ -159,7 +161,7 @@ html {
 }
 
 .footer {
-  position: sticky;
+  position: fixed;
   bottom: 0;
 }
 .suggest {
@@ -172,5 +174,9 @@ html {
   letter-spacing: 0.2rem;
   width: 100vw;
   margin-bottom: 10px;
+}
+.suggest:hover {
+  text-decoration: none;
+  color: white;
 }
 </style>
