@@ -45,61 +45,59 @@ export default {
       location: {},
       openingHours: {},
       filters: {},
+      map: null,
+      layer: null,
     };
   },
   methods: {
-    renderCard(card) {
+    renderCard: function(card) {
       return {
         //komponenta karticky
       };
     },
-    openCard(id) {
-      // otevira karticku
+    openCard: function() {},
+    addMarkers: function() {
+      if (this.map != null && this.layer != null) {
+        state.coffeeShops.then((profiles) => {
+          for (let i = 0; i < profiles.length; i++) {
+            //pridani.doc(this.user.id)
+            let coords = SMap.Coords.fromWGS84(
+              profiles[i].location.lng,
+              profiles[i].location.lat
+            );
+            let marker = new SMap.Marker(coords);
+            this.layer.addMarker(marker);
+            // vlozeni karticky
+            let card = new SMap.Card();
+            card.getBody().innerHTML = "Já jsem <em>obsah vizitky</em>!";
+            // znacka z predchozi ukazky
+            marker.decorate(SMap.Marker.Feature.Card, card);
+          }
+        });
+      }
     },
   },
   firestore: {
     profiles: db.collection("coffeeShops").orderBy("title"),
   },
   mounted() {
-    // const profiles = db
-    //   .collection("coffeeShops")
-    //   .orderBy("title")
-    //   .get()
-    //   .then((querySnapshot) => {
-    //     console.log(querySnapshot);
-    //     // do something with documents
-    //   });
-    // vlozeni mapy
     let main = document.querySelector("#map");
 
     let center = SMap.Coords.fromWGS84(14.40315, 50.06934);
-    let map = new SMap(main, center, 13);
-    map.addDefaultLayer(SMap.DEF_BASE).enable();
-    map.addDefaultControls();
+    this.map = new SMap(main, center, 13);
+    this.map.addDefaultLayer(SMap.DEF_BASE).enable();
+    this.map.addDefaultControls();
     //pridani vrstvy pro znacky
-    let layer = new SMap.Layer.Marker();
-    map.addLayer(layer);
-    layer.enable();
+    this.layer = new SMap.Layer.Marker();
+    this.map.addLayer(this.layer);
+    this.layer.enable();
     // vlozeni znacky
+    this.addMarkers();
   },
   updated() {
-    state.coffeeShops.then((profiles) => {
-      for (let i = 0; i < profiles.length; i++) {
-        //pridani.doc(this.user.id)
-        console.log(profiles);
-        let coords = SMap.Coords.fromWGS84(
-          profiles[i].location.lng,
-          profiles[i].location.lat
-        );
-        let marker = new SMap.Marker(coords);
-        layer.addMarker(marker);
-        // vlozeni karticky
-        let card = new SMap.Card();
-        card.getBody().innerHTML = "Já jsem <em>obsah vizitky</em>!";
-        // znacka z predchozi ukazky
-        marker.decorate(SMap.Marker.Feature.Card, card);
-      }
-    });
+    if (this.map != null && this.layer != null) {
+      this.addMarkers();
+    }
   },
 };
 </script>
