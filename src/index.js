@@ -1,9 +1,10 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Map from './components/Map.vue';
-import Cafe from './components/Cafe.vue';
+import CafePart from './components/cafePart.vue';
+import CafeCard from './components/CafeCard.vue';
 import Filter from './components/Filter.vue';
-import App from './components/App';
+import App from './components/App.vue';
 import './index.html';
 import { firestorePlugin } from 'vuefire';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
@@ -19,9 +20,10 @@ Vue.use(IconsPlugin);
 const router = new VueRouter({
   mode: 'history',
   routes: [
-    { path: '/cafe', component: Cafe },
+    { path: '/cafe/:id', component: CafePart },
     { path: '/filter', component: Filter },
     { path: '/', component: Map },
+    { path: '/cafecard/:id', component: CafeCard },
   ],
 });
 
@@ -30,3 +32,4 @@ new Vue({
   router: router,
   render: h => h(App),
 });
+

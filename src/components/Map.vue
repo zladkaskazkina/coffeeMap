@@ -1,29 +1,59 @@
 <template>
 <div class="background">
   <div class= "responsiveWidth">
-    <div class="container mainPart">
-        <div class="topPart">
-          <div class="mapPart">
-            <div class="mapPart__filters"></div>
-            <div class="mapPart__map" id="map"></div>
-          </div>
-        </div>
-        <div class="cafePart">
-          <div class="cafePart__img">
-            <img class="cafePart__bg" src="../assets/img/caffe/cohledajmeno.jpg" alt="kavarna" />
-            <h2 class="cafePart__title">Co hleda jmeno</h2>
-          </div>
-        </div>
+  <div class="container mainPart">
+    <div class="topPart">
+      <div class="mapPart">
+        <div class="mapPart__filters"></div>
+        <div class="mapPart__map" id="map"></div>
       </div>
+    </div>
+    <cafeCard />
+    <cafePart
+      v-on:click="openCard"
+      v-for="(cafe, index) in profiles"
+      :title="cafe.title"
+      :src="cafe.src"
+      :key="index"
+    />
   </div>
-</div>
+  </div>
+  </div>
 </template>
 <script>
-import { db } from "../db.js";
+import { db } from "../utils/db.js";
+import cafePart from "./cafePart.vue";
+
 export default {
   name: "Map",
+  components: {
+    cafePart
+  },
   data() {
-    return {};
+    return {
+      profiles: [],
+      title: "",
+      src: "",
+      rating: "",
+      address: "",
+      website: "",
+      location: {},
+      openingHours: {},
+      filters: {}
+    };
+  },
+  methods: {
+    renderCard(card) {
+      return {
+        //komponenta karticky
+      };
+    },
+    openCard(id) {
+      // otevira karticku
+    }
+  },
+  firestore: {
+    profiles: db.collection("coffeeShops").orderBy("title")
   },
   mounted() {
     // vlozeni mapy
@@ -33,21 +63,26 @@ export default {
     let map = new SMap(main, center, 13);
     map.addDefaultLayer(SMap.DEF_BASE).enable();
     map.addDefaultControls();
-    // vlozeni znacky
+    //pridani vrstvy pro znacky
     let layer = new SMap.Layer.Marker();
     map.addLayer(layer);
     layer.enable();
-    let coords = SMap.Coords.fromWGS84(14.40315, 50.06934);
+    // vlozeni znacky
+    // forEach na vse znacky
+    for (let i = 0; i < profiles.length; i++) {
+      //pridani koordinat
+      let coords = SMap.Coords.fromWGS84(
+        profiles[i].location.lng,
+        profiles[i].location.lat
+      );
     let marker = new SMap.Marker(coords);
     layer.addMarker(marker);
-
+      // vlozeni karticky
     let card = new SMap.Card();
-    card.setSize(300, 200);
-    card.getContainer().style.backgroundColor = "lightblue";
-    
-      
+      card.getBody().innerHTML = "Já jsem <em>obsah vizitky</em>!";
     // znacka z predchozi ukazky
     marker.decorate(SMap.Marker.Feature.Card, card);
+  }
   }
 };
 </script>
@@ -84,30 +119,6 @@ export default {
   height: 100vw;
   z-index: 0;
 }
-/* kavarny */
-.cafePart {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.cafePart__img {
-  width: 100%;
-  margin: 10px 0;
-  position: relative;
-}
-.cafePart__bg {
-  width: 100%;
-  filter: brightness(50%);
-  object-fit: cover;
-}
-.cafePart__title {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  text-align: center;
-  transform: translate(0%, -50%);
-  color: #eff0f4;
-}
 
 /* vizitka */
 .title {
@@ -141,14 +152,7 @@ export default {
   .mapPart__map {
     height: 100vh;
   }
-  .cafePart {
-    flex: 2;
-    margin-right: 1rem;
-  }
-  .cafePart__img {
-    margin-top: 0;
-  }
-  
+
 }
 @media only screen and (min-width: 1024px) {
  .responsiveWidth {
@@ -157,5 +161,5 @@ export default {
   left: 50%;
   transform: translateX(-50%);
 }
-} 
+}
 </style>

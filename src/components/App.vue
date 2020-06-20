@@ -3,30 +3,56 @@
     <div class="fixBar">
       <div class="nav">
         <router-link class="navItem" to="/">Map</router-link>
-        <input class="searchBar" type="text" placeholder="Search" />
-        <router-link class="navItem" to="/filter">Filter</router-link>
-        <!--cafe je jen na ukazku jak ma vypadat vizitka-->
-        <router-link class="navItem" to="/Cafe">Cafe</router-link>
+        <input
+          v-model.trim="searchValue"
+          @submit="searchIt"
+          class="searchBar"
+          type="text"
+          placeholder="Search"
+        />
+        <router-link class="navItem" to="/filter">
+          <i class="fas fa-filter"></i>
+        </router-link>
       </div>
-    </div>    
+    </div>
     <router-view></router-view>
     <div class="footer">
-      <div class="suggest">Add new Coffeeshop</div>
+      <div action="mailto:you@yourdmainhere.com" class="suggest">Add new Coffeeshop</div>
     </div>
   </div>
 </template>
 
 <script>
+import db from "../utils/db";
+
 export default {
   name: "App",
   data() {
-    return {};
+    return {
+      searchValue: "",
+      profiles: []
+    };
+  },
+  firestore: {
+    profiles: db.collection("coffeeShops").orderBy("title")
+  },
+  methods: {
+    searchIt() {
+      for (let i = 0; i < profiles.length; i++) {
+        if (searchValue == profiles[i].title) {
+          showSearched(profiles[i]);
+        }
+      }
+    },
+    showSearched(cafe) {
+      //otevri karticku na mape
+    }
   }
 };
 </script>
 
 <style lang="css">
-/* colors: #2B7E86, #F7AE85, #16283E, #EFF0F4 */
+/* colors: #55bece, #16283E, #EFF0F4 */
 * {
   padding: 0;
   margin: 0;
@@ -96,11 +122,11 @@ html {
   background-color: #16283e;
 }
 .navItem {
-  flex: 1 1 20%;
+  flex: 1;
   text-align: center;
   text-decoration: none;
   color: #55bece;
-  padding: 1rem;
+  padding: 0.5rem;
   margin: 0 1rem;
   font-weight: 500;
   font-size: 1.2rem;
@@ -109,7 +135,7 @@ html {
 .navItem:hover {
   background-color: #55bece;
   text-decoration: none;
-  padding: 1rem;
+  padding: 0.5rem;
   color: #fff;
 }
 
@@ -118,6 +144,14 @@ html {
   border-radius: 4px;
   width: 40vw;
   height: 50%;
+
+  background-image: url("../assets/img/searchicon.svg"); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+
+  font-size: 16px; /* Increase font-size */
+
+  border: 1px solid #ddd; /* Add a grey border */
 }
 
 
