@@ -9,57 +9,61 @@
     />
     <title>Vue starter</title>
     <style>
-      .card {
+      .smap .card {
+        padding: 0 !important;
+      }
+
+      .innerCard {
         width: 300px;
         height: 200px;
         background-color: #eff0f4;
       }
 
-      .card .header {
+      .innerCard .header {
         display: flex;
         background-color: hsl(188, 55%, 57%);
         padding: 3px 5px;
       }
-      .card .title {
+      .innerCard .title {
         width: 80%;
       }
 
-      .card .address {
+      .innerCard .address {
         font-size: 0.8rem;
         color: rgb(98, 98, 98);
         margin: 3px 5px;
       }
 
-      .card .rating {
+      .innerCard .rating {
         width: 15%;
         display: flex;
         align-items: center;
         justify-content: space-between;
       }
 
-      .card .star {
+      .innerCard .star {
         height: 15px;
         width: 15px;
         position: relative;
       }
 
-      .card .content {
+      .innerCard .content {
         display: flex;
         margin: 0 5px;
         border-top: 1px solid #16283e;
       }
 
-      .card .leftSide {
+      .innerCard .leftSide {
         width: 55%;
       }
-      .card .openingHours {
+      .innerCard .openingHours {
         font-size: 0.7rem;
       }
-      .card td {
+      .innerCard td {
         padding-left: 8px;
       }
 
-      .card .rightSide {
+      .innerCard .rightSide {
         padding-top: 20px;
         width: 45%;
         display: flex;
@@ -67,11 +71,14 @@
         justify-content: space-between;
       }
 
-      .card .filters {
+      .innerCard .filters {
         display: flex;
         flex-wrap: wrap;
       }
-      .card .icon {
+      .innerCard .hidden {
+        display: none;
+      }
+      .innerCard .icon {
         border-radius: 5px;
         width: 25px;
         height: 25px;
@@ -79,9 +86,9 @@
         box-shadow: 0px 1px 3px 1px gray;
         position: relative;
       }
-      .card img {
-        width: 80%;
-        height: 80%;
+      .innerCard img {
+        width: 80% !important;
+        height: 80% !important;
         position: absolute;
         margin: auto;
         top: 0;
@@ -90,14 +97,14 @@
         bottom: 0;
       }
 
-      .card .selectedFilter {
+      .innerCard .selectedFilter {
         background-color: rgb(240, 208, 149);
       }
-      .card .web {
+      .innerCard .web {
         background-color: #cd6e48;
         width: 90%;
       }
-      .card .fab {
+      .innerCard .fab {
         margin: 1rem;
       }
     </style>

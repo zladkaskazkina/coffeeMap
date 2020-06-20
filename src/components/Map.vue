@@ -69,8 +69,9 @@ export default {
             this.layer.addMarker(marker);
             // vlozeni karticky
             let card = new SMap.Card();
-            card.setSize(320, 220);
+            card.setSize(300, 220);
             card.getContainer().innerHTML = cardCafe;
+
             // znacka z predchozi ukazky
             marker.decorate(SMap.Marker.Feature.Card, card);
           }
