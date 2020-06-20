@@ -15,7 +15,7 @@
         "lat": 50.0912818,
         "lng": 14.4253929
       },
-      "openingHours": {},
+      
       "imgSrc": "",
       "terrace": 1,
       "baby": 1,
@@ -24,7 +24,16 @@
       "nonDairy": 1,
       "barrierFree": 0,
       "deCaf": 1,
-      "hotFood": 0
+      "hotFood": 0,
+      "openingHours": {
+        "monday":   [9,0,18,0],
+        "tuesday":  [9,0,18,0],
+        "wednesday":[9,0,18,0],
+        "thursday": [9,0,18,0],
+        "friday":   [9,0,18,0],
+        "saturday": false,
+        "sunday":   [10,0,17,0]
+      }
     },
     {
       "title": "Cafe Letka",
@@ -40,7 +49,7 @@
       "location": {
         "lat": 50.0982349,
         "lng": 14.4253655
-      },
+      },      
       "terrace": 1,
       "baby": 1,
       "freelance": 1,
@@ -48,7 +57,16 @@
       "nonDairy": 1,
       "barrierFree": 0,
       "deCaf": 1,
-      "hotFood": 0
+      "hotFood": 0,
+      "openingHours": {
+        "monday":   [8,0,0,0],
+        "tuesday":  [8,0,0,0],
+        "wednesday":[8,0,0,0],
+        "thursday": [8,0,0,0],
+        "friday":   [8,0,0,0],
+        "saturday": [8,0,0,0],
+        "sunday":   [9,0,22,0]
+      }
     },
     {
       "title": "mazelab.coffee",
@@ -72,7 +90,16 @@
       "nonDairy": 1,
       "barrierFree": 0,
       "deCaf": 1,
-      "hotFood": 0
+      "hotFood": 0,
+      "openingHours":{
+        "monday":   [9,0,18,0],
+        "tuesday":  [9,0,18,0],
+        "wednesday":[9,0,18,0],
+        "thursday": [9,0,18,0],
+        "friday":   [9,0,18,0],
+        "saturday": [9,0,18,0],
+        "sunday":   [10,0,17,0]
+      }
     },
     {
       "title": "EMA espresso bar",
@@ -96,7 +123,16 @@
       "nonDairy": 1,
       "barrierFree": 0,
       "deCaf": 1,
-      "hotFood": 0
+      "hotFood": 0,
+      "openingHours": {
+        "monday":   [8,0,18,0],
+        "tuesday":  [8,0,18,0],
+        "wednesday":[8,0,18,0],
+        "thursday": [8,0,18,0],
+        "friday":   [8,0,18,0],
+        "saturday": [10,0,18,0],
+        "sunday":   [10,0,18,0]
+      }
     },
     {
       "title": "Coffee Source Francouzská",
@@ -120,7 +156,16 @@
       "nonDairy": 1,
       "barrierFree": 0,
       "deCaf": 1,
-      "hotFood": 0
+      "hotFood": 0,
+      "openingHours":{
+        "monday":   [7,30,19,0],
+        "tuesday":  [7,30,19,0],
+        "wednesday":[7,30,19,0],
+        "thursday": [7,30,19,0],
+        "friday":   [7,30,19,0],
+        "saturday": [10,0,15,0],
+        "sunday":   false
+      }
     },
     {
       "title": "Café Tout va bien",
@@ -144,7 +189,16 @@
       "nonDairy": 1,
       "barrierFree": 0,
       "deCaf": 1,
-      "hotFood": 0
+      "hotFood": 0,
+      "openingHours":{
+        "monday":   [8,30,17,0],
+        "tuesday":  [8,30,17,0],
+        "wednesday":[8,30,17,0],
+        "thursday": [8,30,17,0],
+        "friday":   [8,30,17,0],
+        "saturday": [9,30,17,0],
+        "sunday":   false
+      }
     },
     {
       "title": "Super Tramp Coffee",
@@ -168,7 +222,16 @@
       "nonDairy": 1,
       "barrierFree": 0,
       "deCaf": 1,
-      "hotFood": 0
+      "hotFood": 0,
+      "openingHours":{
+        "monday":   [8,0,20,0],
+        "tuesday":  [8,0,20,0],
+        "wednesday":[8,0,20,0],
+        "thursday": [8,0,20,0],
+        "friday":   [8,0,20,0],
+        "saturday": false,
+        "sunday":   [10,0,17,0]
+      }
     },
     {
       "title": "Café Jen",
@@ -192,7 +255,16 @@
       "nonDairy": 1,
       "barrierFree": 0,
       "deCaf": 1,
-      "hotFood": 0
+      "hotFood": 0,
+      "openingHours":{
+        "monday":   [8,0,17,0],
+        "tuesday":  [8,0,17,0],
+        "wednesday":[8,0,17,0],
+        "thursday": [8,0,17,0],
+        "friday":   [8,0,17,0],
+        "saturday": [8,30,13,0],
+        "sunday":   false
+      }
     },
     {
       "title": "Můj šálek kávy",
@@ -216,7 +288,15 @@
       "nonDairy": 1,
       "barrierFree": 0,
       "deCaf": 1,
-      "hotFood": 0
+      "hotFood": 0,
+      "openingHours":{
+        "monday":   [9,0,21,0],
+        "tuesday":  [9,0,21,0],
+        "wednesday":[9,0,21,0],
+        "thursday": [9,0,21,0],
+        "friday":   [9,0,21,0],
+        "saturday": [9,0,21,0],
+        "sunday":   [10,0,18,0]}
     },
     {
       "title": "Kafe Orient",
@@ -240,7 +320,16 @@
       "nonDairy": 1,
       "barrierFree": 0,
       "deCaf": 1,
-      "hotFood": 0
+      "hotFood": 0,
+      "openingHours":{
+        "monday":   [7,0,20,0],
+        "tuesday":  [7,0,20,0],
+        "wednesday":[7,0,20,0],
+        "thursday": [7,0,20,0],
+        "friday":   [7,0,20,0],
+        "saturday": [10,0,22,0],
+        "sunday":   false
+      }
     },
     {
       "title": "Kofárna Café",
@@ -264,7 +353,16 @@
       "nonDairy": 1,
       "barrierFree": 0,
       "deCaf": 1,
-      "hotFood": 0
+      "hotFood": 0,
+      "openingHours":{
+        "monday":   [7,30,21,0],
+        "tuesday":  [7,30,21,0],
+        "wednesday":[7,30,21,0],
+        "thursday": [7,30,21,0],
+        "friday":   [7,30,21,0],
+        "saturday": [9,0,21,0],
+        "sunday":   [9,0,18,0]
+      }
     }
   ]
 }

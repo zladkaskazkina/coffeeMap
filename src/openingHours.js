@@ -132,3 +132,13 @@ let kofarna = {
   "saturday": [9,0,21,0],
   "sunday":   [9,0,18,0],
 };
+
+let mazelab = {
+  "monday":   [9,0,18,0],
+  "tuesday":  [9,0,18,0],
+  "wednesday":[9,0,18,0],
+  "thursday": [9,0,18,0],
+  "friday":   [9,0,18,0],
+  "saturday": [9,0,18,0],
+  "sunday":   [10,0,17,0],
+};

@@ -20,10 +20,10 @@ export default function renderCard(cafe) {
               <th>Monday</th>
               <td>
               ${cafe.openingHours.monday ? `
-              ${cafe.openingHours.monday[0]}:
-              ${cafe.openingHours.monday[0][1]} - 
-              ${cafe.openingHours.monday[0][2]}:
-              ${cafe.openingHours.monday[0][3]}`
+              ${cafe.openingHours.monday[0].toString.padStart(2, '0')}:
+              ${cafe.openingHours.monday[1].toString.padStart(2, '0')} - 
+              ${cafe.openingHours.monday[2].toString.padStart(2, '0')}:
+              ${cafe.openingHours.monday[3].toString.padStart(2, '0')}`
               : "CLOSED"}
               </td>
             </tr>
@@ -31,10 +31,10 @@ export default function renderCard(cafe) {
               <th>Tuesday</th>
               <td>
               ${cafe.openingHours.tuesday ? `
-              ${cafe.openingHours.tuesday[0]}:
-              ${cafe.openingHours.tuesday[1]} - 
-              ${cafe.openingHours.tuesday[2]}:
-              ${cafe.openingHours.tuesday[3]}`
+              ${cafe.openingHours.tuesday[0].toString.padStart(2, '0')}:
+              ${cafe.openingHours.tuesday[1].toString.padStart(2, '0')} - 
+              ${cafe.openingHours.tuesday[2].toString.padStart(2, '0')}:
+              ${cafe.openingHours.tuesday[3].toString.padStart(2, '0')}`
               : "CLOSED"}
               </td>
             </tr>
@@ -42,10 +42,10 @@ export default function renderCard(cafe) {
               <th>Wednesday</th> 
               <td>
               ${cafe.openingHours.wednesday ? `
-              ${cafe.openingHours.wednesday[2][0]}:
-              ${cafe.openingHours.wednesday[2][1]} - 
-              ${cafe.openingHours.wednesday[2][2]}:
-              ${cafe.openingHours.wednesday[2][3]}`
+              ${cafe.openingHours.wednesday[0].toString.padStart(2, '0')}:
+              ${cafe.openingHours.wednesday[1].toString.padStart(2, '0')} - 
+              ${cafe.openingHours.wednesday[2].toString.padStart(2, '0')}:
+              ${cafe.openingHours.wednesday[3].toString.padStart(2, '0')}`
               : "CLOSED"}
               </td>
             </tr>
@@ -53,10 +53,10 @@ export default function renderCard(cafe) {
               <th>Thursday</th>
               <td>
               ${cafe.openingHours.thursday ? `
-              ${cafe.openingHours.thursday[3][0]}:
-              ${cafe.openingHours.thursday[3][1]} - 
-              ${cafe.openingHours.thursday[3][2]}:
-              ${cafe.openingHours.thursday[3][3]}`
+              ${cafe.openingHours.thursday[0].toString.padStart(2, '0')}:
+              ${cafe.openingHours.thursday[1].toString.padStart(2, '0')} - 
+              ${cafe.openingHours.thursday[2].toString.padStart(2, '0')}:
+              ${cafe.openingHours.thursday[3].toString.padStart(2, '0')}`
               : "CLOSED"}
               </td>
             </tr>
@@ -64,10 +64,10 @@ export default function renderCard(cafe) {
               <th>Friday</th>
               <td>
               ${cafe.openingHours.friday ? `
-              ${cafe.openingHours.friday[0]}:
-              ${cafe.openingHours.friday[1]} - 
-              ${cafe.openingHours.friday[2]}:
-              ${cafe.openingHours.friday[3]}`
+              ${cafe.openingHours.friday[0].toString.padStart(2, '0')}:
+              ${cafe.openingHours.friday[1].toString.padStart(2, '0')} - 
+              ${cafe.openingHours.friday[2].toString.padStart(2, '0')}:
+              ${cafe.openingHours.friday[3].toString.padStart(2, '0')}`
               : "CLOSED"}
               </td>
             </tr>
@@ -75,10 +75,10 @@ export default function renderCard(cafe) {
               <th>Saturday</th>
               <td>
               ${cafe.openingHours.saturday ? `
-              ${cafe.openingHours.saturday[0]}:
-              ${cafe.openingHours.saturday[1]} - 
-              ${cafe.openingHours.saturday[2]}:
-              ${cafe.openingHours.saturday[3]}`
+              ${cafe.openingHours.saturday[0].toString.padStart(2, '0')}:
+              ${cafe.openingHours.saturday[1].toString.padStart(2, '0')} - 
+              ${cafe.openingHours.saturday[2].toString.padStart(2, '0')}:
+              ${cafe.openingHours.saturday[3].toString.padStart(2, '0')}`
               : "CLOSED"}
               </td>
             </tr>
@@ -86,10 +86,10 @@ export default function renderCard(cafe) {
               <th>Sunday</th>
               <td>
               ${cafe.openingHours.sunday ? `
-              ${cafe.openingHours.sunday[0]}:
-              ${cafe.openingHours.sunday[1]} - 
-              ${cafe.openingHours.sunday[2]}:
-              ${cafe.openingHours.sunday[3]}`
+              ${cafe.openingHours.sunday[0].toString.padStart(2, '0')}:
+              ${cafe.openingHours.sunday[1].toString.padStart(2, '0')} - 
+              ${cafe.openingHours.sunday[2].toString.padStart(2, '0')}:
+              ${cafe.openingHours.sunday[3].toString.padStart(2, '0')}`
               : "CLOSED"}
               </td>
             </tr>
