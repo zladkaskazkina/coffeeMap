@@ -33,6 +33,7 @@ export default {
       petSelected: false, 
       outdoorSelected: false, 
       },
+
       filters: [
         {
           icon: "milk",
