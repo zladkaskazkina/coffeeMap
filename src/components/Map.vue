@@ -54,7 +54,10 @@ export default {
     openCard: function() {},
     addMarkers: function() {
       if (this.map != null && this.layer != null) {
-        state.coffeeShops.then((profiles) => {
+        state.coffeeShops.then((shops) => {
+          const profiles = state.getFilteredShops(state.filters, shops);
+          console.log(profiles);
+          this.layer.removeAll();
           for (let i = 0; i < profiles.length; i++) {
             //pridani.doc(this.user.id)
             let coords = SMap.Coords.fromWGS84(
@@ -62,12 +65,12 @@ export default {
               profiles[i].location.lat
             );
             let cardCafe = renderCard(profiles[i]);
-            console.log(cardCafe);
             let marker = new SMap.Marker(coords);
             this.layer.addMarker(marker);
             // vlozeni karticky
             let card = new SMap.Card();
-            card.getBody().innerHTML = cardCafe;
+            card.setSize(320, 220);
+            card.getContainer().innerHTML = cardCafe;
             // znacka z predchozi ukazky
             marker.decorate(SMap.Marker.Feature.Card, card);
           }
