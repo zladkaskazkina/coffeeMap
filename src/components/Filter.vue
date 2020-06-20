@@ -10,17 +10,18 @@
         class="icon btn btn-light"
         v-for="(filter, index) in filters"
         :key="index"
-        :class="{ selected: state.filters[filter.key] }"
+        :class="{ selected: filter.selected }"
       >
         <img :src="`../assets/img/${filter.icon}.png`" />{{ filter.label }}
-        <input
-          type="checkbox"
-          v-model="state.filters[filter.key]"
-          v-show="false"
-        />
+        <input type="checkbox" v-model="filter.selected" v-show="false" />
       </label>
     </div>
-    <router-link class="find btn m-5 w-50" to="/">Save filters</router-link>
+    <div class="d-flex ">
+      <div @click="clearFilters" class="btn btn-light clean m-5 ">
+        Clean filters
+      </div>
+      <router-link class="find btn m-5" to="/">Save filters</router-link>
+    </div>
   </div>
 </template>
 
@@ -37,6 +38,7 @@ export default {
           icon: "milk",
           label: "Alternative milk",
           key: "milkSelected",
+          selected: false,
         },
         {
           icon: "decaf",
@@ -77,6 +79,11 @@ export default {
     };
   },
   methods: {
+    clearFilters() {
+      this.filters.forEach((element) => {
+        element.selected = false;
+      });
+    },
     decafSelect() {
       this.decafSelected = !this.decafSelected;
     },
@@ -139,7 +146,9 @@ img {
   background-color: #cd6e48;
   color: #eff0f4;
 }
-
+.clean:hover {
+  background-color: #f9be60;
+}
 .icon:hover {
   background-color: #f9be60;
 }

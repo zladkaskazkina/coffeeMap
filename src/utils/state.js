@@ -15,17 +15,16 @@ export const state = {
 	getFilteredShops: function (filters, shops) {
 		console.log(filters);
 		return shops.filter(shop => {
-			let result = true;
-			if (filters.milkSelected && filters.milkSelected != shop.nonDairy) result = result && false;
-			if (filters.decafSelected && filters.decafSelected != shop.deCaf) result = result && false;
-			if (filters.foodSelected && filters.foodSelected != shop.hotFood) result = result && false;
-			if (filters.barrierSelected && filters.barrierSelected != shop.barrierFree) result = result && false;
-			if (filters.freelanceSelected && filters.freelanceSelected != shop.freelance) result = result && false;
-			if (filters.familySelected && filters.familySelected != shop.baby) result = result && false;
-			if (filters.petSelected && filters.petSelected != shop.pet) result = result && false;
-			if (filters.outdoorSelected && filters.outdoorSelected != shop.terrace) result = result && false;
+			if (filters.milkSelected) return shop.nonDairy;
+			if (filters.decafSelected) return shop.deCaf;
+			if (filters.foodSelected) return shop.hotFood;
+			if (filters.barrierSelected) return shop.barrierFree;
+			if (filters.freelanceSelected) return shop.freelance;
+			if (filters.familySelected) return shop.baby;
+			if (filters.petSelected) return shop.pet;
+			if (filters.outdoorSelected) return shop.terrace;
 
-			return result;
+			return true;
 		});
 	},
 	filters: {
