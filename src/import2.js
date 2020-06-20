@@ -1,5 +1,5 @@
-import firebase from "firebase";
-import fs from 'fs';
+const firebase = require("firebase");
+const fs = require('fs');
 // Required for side-effects
 
 // Initialize Cloud Firestore through Firebase

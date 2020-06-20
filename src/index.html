@@ -8,7 +8,101 @@
       rel="stylesheet"
     />
     <title>Vue starter</title>
+    <style>
+      .card {
+        width: 300px;
+        height: 200px;
+        background-color: #eff0f4;
+      }
+
+      .card .header {
+        display: flex;
+        background-color: hsl(188, 55%, 57%);
+        padding: 3px 5px;
+      }
+      .card .title {
+        width: 80%;
+      }
+
+      .card .address {
+        font-size: 0.8rem;
+        color: rgb(98, 98, 98);
+        margin: 3px 5px;
+      }
+
+      .card .rating {
+        width: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .card .star {
+        height: 15px;
+        width: 15px;
+        position: relative;
+      }
+
+      .card .content {
+        display: flex;
+        margin: 0 5px;
+        border-top: 1px solid #16283e;
+      }
+
+      .card .leftSide {
+        width: 55%;
+      }
+      .card .openingHours {
+        font-size: 0.7rem;
+      }
+      .card td {
+        padding-left: 8px;
+      }
+
+      .card .rightSide {
+        padding-top: 20px;
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .card .filters {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .card .icon {
+        border-radius: 5px;
+        width: 25px;
+        height: 25px;
+        margin: 2px;
+        box-shadow: 0px 1px 3px 1px gray;
+        position: relative;
+      }
+      .card img {
+        width: 80%;
+        height: 80%;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      .card .selectedFilter {
+        background-color: rgb(240, 208, 149);
+      }
+      .card .web {
+        background-color: #cd6e48;
+        width: 90%;
+      }
+      .card .fab {
+        margin: 1rem;
+      }
+    </style>
   </head>
+
   <body>
     <script src="https://api.mapy.cz/loader.js"></script>
     <script>

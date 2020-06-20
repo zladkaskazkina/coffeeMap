@@ -27,6 +27,7 @@ import { db } from "../utils/db.js";
 import CafeCard from "./CafeCard.vue";
 import cafePart from "./cafePart.vue";
 import { state } from "../utils/state.js";
+import renderCard from "../utils/renderCard.js";
 
 export default {
   name: "Map",
@@ -50,11 +51,6 @@ export default {
     };
   },
   methods: {
-    renderCard: function(card) {
-      return {
-        //komponenta karticky
-      };
-    },
     openCard: function() {},
     addMarkers: function() {
       if (this.map != null && this.layer != null) {
@@ -65,11 +61,13 @@ export default {
               profiles[i].location.lng,
               profiles[i].location.lat
             );
+            let cardCafe = renderCard(profiles[i]);
+            console.log(cardCafe);
             let marker = new SMap.Marker(coords);
             this.layer.addMarker(marker);
             // vlozeni karticky
             let card = new SMap.Card();
-            card.getBody().innerHTML = "Já jsem <em>obsah vizitky</em>!";
+            card.getBody().innerHTML = cardCafe;
             // znacka z predchozi ukazky
             marker.decorate(SMap.Marker.Feature.Card, card);
           }

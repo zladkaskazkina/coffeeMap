@@ -9,7 +9,7 @@ export async function getCoffeeShops() {
 			})
 			.catch(reject);
 	});
-};
+}
 
 export const state = {
 	filters: {
