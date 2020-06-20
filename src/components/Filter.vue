@@ -10,10 +10,14 @@
         class="icon btn btn-light"
         v-for="(filter, index) in filters"
         :key="index"
-        :class="{ selected: state[filter.key] }"
+        :class="{ selected: state.filters[filter.key] }"
       >
         <img :src="`../assets/img/${filter.icon}.png`" />{{ filter.label }}
-        <input type="checkbox" v-model="state[filter.key]" v-show="false" />
+        <input
+          type="checkbox"
+          v-model="state.filters[filter.key]"
+          v-show="false"
+        />
       </label>
     </div>
     <router-link class="find btn m-5 w-50" to="/">Save filters</router-link>
