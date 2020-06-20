@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     openCard: function() {
-      //  makeVisible()
+      console.log("open");
     },
     addMarkers: function() {
       if (this.map != null && this.layer != null) {
