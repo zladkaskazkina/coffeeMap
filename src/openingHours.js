@@ -1,5 +1,5 @@
 
-let coffee = {
+let cafe = {
   "title": "Coffee Source Francouzská",
   "totalScore": 4.8,
   "categoryName": "Coffee shop",
@@ -21,45 +21,114 @@ let coffee = {
   "nonDairy": 1,
   "barrierFree": 0,
   "deCaf": 1,
-  "hotFood": 0
+  "hotFood": 0,
+  "openingHours": {
+    "monday":    [7,0,20,0],
+    "tuesday":   [7,0,20,0],
+    "wednesday": [7,0,20,0],
+    "thursday":  [7,0,20,0],
+    "friday":    [7,0,20,0],
+    "saturday":  [10,0,22,0],
+    "sunday":   false,
+  },
 };
 
-let orient = [
-  [7,00,20,00],
-  [7,00,20,00],
-  [7,00,20,00],
-  [7,00,20,00],
-  [7,00,20,00],
-  [10,00,22,00],
-  [0,00,00,00],
-];
+let orient = {
+  "monday":   [7,0,20,0],
+  "tuesday":  [7,0,20,0],
+  "wednesday":[7,0,20,0],
+  "thursday": [7,0,20,0],
+  "friday":   [7,0,20,0],
+  "saturday": [10,0,22,0],
+  "sunday":   false,
+};
 
-let supertramp = [
-  [8,00,20,00],
-  [8,00,20,00],
-  [8,00,20,00],
-  [8,00,20,00],
-  [8,00,20,00],
-  [0,0,0,0],
-  [10,00,17,00],
-];
+let supertramp = {
+  "monday":   [8,0,20,0],
+  "tuesday":  [8,0,20,0],
+  "wednesday":[8,0,20,0],
+  "thursday": [8,0,20,0],
+  "friday":   [8,0,20,0],
+  "saturday": false,
+  "sunday":   [10,0,17,0],
+};
 
-let onesip = [
-  [9,00,18,00],
-  [9,00,18,00],
-  [9,00,18,00],
-  [9,00,18,00],
-  [9,00,18,00],
-  [0,0,0,0],
-  [10,00,17,00],
-];
+let onesip = {
+  "monday":   [9,0,18,0],
+  "tuesday":  [9,0,18,0],
+  "wednesday":[9,0,18,0],
+  "thursday": [9,0,18,0],
+  "friday":   [9,0,18,0],
+  "saturday": false,
+  "sunday":   [10,0,17,0],
+};
 
-let mujsalekkavy = [
-  [9,00,21,00],
-  [9,00,21,00],
-  [9,00,21,00],
-  [9,00,21,00],
-  [9,00,21,00],
-  [9,00,21,00],
-  [10,00,18,00],
-];
+let mujsalekkavy = {
+  "monday":   [9,0,21,0],
+  "tuesday":  [9,0,21,0],
+  "wednesday":[9,0,21,0],
+  "thursday": [9,0,21,0],
+  "friday":   [9,0,21,0],
+  "saturday": [9,0,21,0],
+  "sunday":   [10,0,18,0],
+};
+
+let toutvabien = {
+  "monday":   [8,30,17,0],
+  "tuesday":  [8,30,17,0],
+  "wednesday":[8,30,17,0],
+  "thursday": [8,30,17,0],
+  "friday":   [8,30,17,0],
+  "saturday": [9,30,17,0],
+  "sunday":   false, 
+};
+
+let emabar = {
+  "monday":   [8,0,18,0],
+  "tuesday":  [8,0,18,0],
+  "wednesday":[8,0,18,0],
+  "thursday": [8,0,18,0],
+  "friday":   [8,0,18,0],
+  "saturday": [10,0,18,0],
+  "sunday":   [10,0,18,0], 
+};
+
+let coffesource = {
+  "monday":   [7,30,19,0],
+  "tuesday":  [7,30,19,0],
+  "wednesday":[7,30,19,0],
+  "thursday": [7,30,19,0],
+  "friday":   [7,30,19,0],
+  "saturday": [10,0,15,0],
+  "sunday":   false, 
+};
+
+let letka = {
+  "monday":   [8,0,0,0],
+  "tuesday":  [8,0,0,0],
+  "wednesday":[8,0,0,0],
+  "thursday": [8,0,0,0],
+  "friday":   [8,0,0,0],
+  "saturday": [8,0,0,0],
+  "sunday":   [9,0,22,0],
+};
+
+let cafejen = {
+  "monday":   [8,0,17,0],
+  "tuesday":  [8,0,17,0],
+  "wednesday":[8,0,17,0],
+  "thursday": [8,0,17,0],
+  "friday":   [8,0,17,0],
+  "saturday": [8,30,13,0],
+  "sunday":   false, 
+};
+
+let kofarna = {
+  "monday":   [7,30,21,0],
+  "tuesday":  [7,30,21,0],
+  "wednesday":[7,30,21,0],
+  "thursday": [7,30,21,0],
+  "friday":   [7,30,21,0],
+  "saturday": [9,0,21,0],
+  "sunday":   [9,0,18,0],
+};
