@@ -10,10 +10,14 @@
         class="icon btn btn-light"
         v-for="(filter, index) in filters"
         :key="index"
-        :class="{ selected: filter.selected }"
+        :class="{ selected: state.filters[filter.key] }"
       >
         <img :src="`../assets/img/${filter.icon}.png`" />{{ filter.label }}
-        <input type="checkbox" v-model="filter.selected" v-show="false" />
+        <input
+          type="checkbox"
+          v-model="state.filters[filter.key]"
+          v-show="false"
+        />
       </label>
     </div>
     <div class="d-flex ">
@@ -38,7 +42,6 @@ export default {
           icon: "milk",
           label: "Alternative milk",
           key: "milkSelected",
-          selected: false,
         },
         {
           icon: "decaf",
