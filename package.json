@@ -2,8 +2,6 @@
   "name": "vue-starter",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "type": "module",
   "scripts": {
     "build": "webpack -d",
     "watch": "webpack -wd",
@@ -24,6 +22,7 @@
   "dependencies": {
     "bootstrap": "^4.5.0",
     "bootstrap-vue": "^2.15.0",
+    "firebase": "^7.15.3",
     "vue": "^2.6.11",
     "vue-router": "^3.3.2",
     "vuefire": "^2.2.2",

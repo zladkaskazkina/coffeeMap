@@ -146,7 +146,7 @@ html {
   width: 40vw;
   height: 50%;
 
-  background-image: url("../assets/searchicon.svg"); /* Add a search icon to input */
+  background-image: url("../assets/img/searchicon.svg"); /* Add a search icon to input */
   background-position: 10px 12px; /* Position the search icon */
   background-repeat: no-repeat; /* Do not repeat the icon image */
 

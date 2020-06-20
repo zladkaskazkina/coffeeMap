@@ -48,9 +48,9 @@ export default {
 
     }
   },
-  methods: { 
-  filterIt(){
-    
+  methods: {
+    filterIt(){
+
     }
 
 
@@ -72,13 +72,13 @@ export default {
 
     //   return filteredPlaces;
     // },
-    
-    
+  }
+
 }
 </script>
 
 <style scoped>
-/*colors: 
+/*colors:
 lightbrown: #cd6e48
 yellow: #f9be60
 */
@@ -132,3 +132,4 @@ img {
   }
 }
 </style>
+

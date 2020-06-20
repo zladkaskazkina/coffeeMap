@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Map from './components/Map.vue';
-import CafePart from './components/CafePart.vue';
+import CafePart from './components/cafePart.vue';
 import CafeCard from './components/CafeCard.vue';
 import Filter from './components/Filter.vue';
-import App from './components/App';
+import App from './components/App.vue';
 import './index.html';
 import { firestorePlugin } from 'vuefire';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';

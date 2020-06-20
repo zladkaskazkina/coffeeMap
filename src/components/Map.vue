@@ -17,8 +17,8 @@
   </div>
 </template>
 <script>
-import { db } from "../db.js";
-import cafePart from ".cafePart.vue";
+import { db } from "../utils/db.js";
+import cafePart from "./cafePart.vue";
 
 export default {
   name: "Map",

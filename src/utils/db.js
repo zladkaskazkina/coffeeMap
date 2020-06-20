@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 
 // Get a Firestore instance
-const db = firebase
+export const db = firebase
   .initializeApp({
     apiKey: "AIzaSyClxc7iAjxsD0XGc-NVj5UInTpFoWeXkmc",
     authDomain: "coffeemap-aeaf4.firebaseapp.com",
