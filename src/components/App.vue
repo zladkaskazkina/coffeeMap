@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="main">
     <div class="fixBar">
       <div class="nav">
         <router-link class="navItem" to="/">Map</router-link>
@@ -17,7 +17,9 @@
     </div>
     <router-view></router-view>
     <div class="footer">
-      <div action="mailto:you@yourdmainhere.com" class="suggest">Add new Coffeeshop</div>
+      <div action="mailto:you@yourdmainhere.com" class="suggest">
+        Add new Coffeeshop
+      </div>
     </div>
   </div>
 </template>
@@ -30,11 +32,11 @@ export default {
   data() {
     return {
       searchValue: "",
-      profiles: []
+      profiles: [],
     };
   },
   firestore: {
-    profiles: db.collection("coffeeShops").orderBy("title")
+    profiles: db.collection("coffeeShops").orderBy("title"),
   },
   methods: {
     searchIt() {
@@ -46,8 +48,8 @@ export default {
     },
     showSearched(cafe) {
       //otevri karticku na mape
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -101,7 +103,9 @@ img {
 html {
   font-family: "Muli", sans-serif;
 }
-
+.main {
+  height: 100vh;
+}
 .fixBar {
   display: flex;
   flex-direction: column;
@@ -153,7 +157,6 @@ html {
 
   border: 1px solid #ddd; /* Add a grey border */
 }
-
 
 .footer {
   position: sticky;

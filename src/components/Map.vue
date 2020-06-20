@@ -1,24 +1,26 @@
 <template>
-<div class="background">
-  <div class= "responsiveWidth">
-  <div class="container mainPart">
-    <div class="topPart">
-      <div class="mapPart">
-        <div class="mapPart__filters"></div>
-        <div class="mapPart__map" id="map"></div>
+  <!-- <div class="background">
+    <div class="responsiveWidth"> -->
+  <div class="container">
+    <div class="mainPart">
+      <div class="topPart">
+        <div class="mapPart">
+          <div class="mapPart__map" id="map"></div>
+        </div>
+      </div>
+      <div class="coffees">
+        <cafePart
+          v-on:click="openCard"
+          v-for="(cafe, index) in profiles"
+          :title="cafe.title"
+          :src="cafe.src"
+          :key="index"
+        />
       </div>
     </div>
-    <CafeCard />
-    <cafePart
-      v-on:click="openCard"
-      v-for="(cafe, index) in profiles"
-      :title="cafe.title"
-      :src="cafe.src"
-      :key="index"
-    />
   </div>
-  </div>
-  </div>
+  <!-- </div>
+  </div> -->
 </template>
 <script>
 import { db } from "../utils/db.js";
@@ -29,7 +31,7 @@ export default {
   name: "Map",
   components: {
     cafePart,
-    CafeCard
+    CafeCard,
   },
   data() {
     return {
@@ -41,7 +43,7 @@ export default {
       website: "",
       location: {},
       openingHours: {},
-      filters: {}
+      filters: {},
     };
   },
   methods: {
@@ -52,10 +54,10 @@ export default {
     },
     openCard(id) {
       // otevira karticku
-    }
+    },
   },
   firestore: {
-    profiles: db.collection("coffeeShops").orderBy("title")
+    profiles: db.collection("coffeeShops").orderBy("title"),
   },
   mounted() {
     const profiles = db.collection("coffeeShops").orderBy("title");
@@ -78,18 +80,17 @@ export default {
         profiles[i].location.lng,
         profiles[i].location.lat
       );
-    let marker = new SMap.Marker(coords);
-    layer.addMarker(marker);
+      let marker = new SMap.Marker(coords);
+      layer.addMarker(marker);
       // vlozeni karticky
-    let card = new SMap.Card();
+      let card = new SMap.Card();
       card.getBody().innerHTML = "Já jsem <em>obsah vizitky</em>!";
-    // znacka z predchozi ukazky
-    marker.decorate(SMap.Marker.Feature.Card, card);
-  }
-  }
+      // znacka z predchozi ukazky
+      marker.decorate(SMap.Marker.Feature.Card, card);
+    }
+  },
 };
 </script>
-
 
 <style>
 .background {
@@ -122,8 +123,30 @@ export default {
   height: 100vw;
   z-index: 0;
 }
-
-/* vizitka */
+/* .cafePart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cafePart__img {
+  width: 100%;
+  margin: 10px 0;
+  position: relative;
+}
+.cafePart__bg {
+  width: 100%;
+  filter: brightness(50%);
+  object-fit: cover;
+} */
+/* .cafePart__title {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  transform: translate(0%, -50%);
+  color: #eff0f4;
+} */
+/* vizitka
 .title {
   margin: 0;
 }
@@ -137,17 +160,17 @@ export default {
 .openingHours {
   width: 160px;
   font-size: 12px;
-}
+} */
 /* Responzivita */
 @media only screen and (min-width: 720px) {
-.responsiveWidth {
-  padding: 1rem;
-}
+  /* .responsiveWidth {
+    padding: 1rem;
+  } */
 
   .mainPart {
     flex-direction: row-reverse;
     align-items: stretch;
-    width: 900px
+    width: 100%;
   }
   .topPart {
     flex: 5;
@@ -155,14 +178,24 @@ export default {
   .mapPart__map {
     height: 100vh;
   }
-
+  .coffees {
+    flex: 2;
+    margin-right: 1rem;
+  }
+  /* .cafePart {
+    flex: 2;
+    margin-right: 1rem;
+  }
+  .cafePart__img {
+    margin-top: 0;
+  } */
 }
 @media only screen and (min-width: 1024px) {
- .responsiveWidth {
-  width:80%;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
+  /* .responsiveWidth {
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  } */
 }
 </style>

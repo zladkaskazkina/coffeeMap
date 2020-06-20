@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
+  <div class="cafe">
     <div class="cafePart">
       <div class="cafePart__img">
         <img
           class="cafePart__bg"
-          v-bind:src="`./assets/img/caffe/${src}.jpg`"
+          v-bind:src="`./assets/img/caffe/jen.jpg`"
           alt="kavarna"
         />
         <h2 class="cafePart__title">{{ title }}</h2>
@@ -21,10 +21,13 @@ export default {
 </script>
 
 <style>
-.cafePart {
+/* .cafe {
   display: flex;
   flex-direction: column;
   align-items: center;
+} */
+.cafePart {
+  width: 100%;
 }
 .cafePart__img {
   width: 100%;
@@ -45,10 +48,14 @@ export default {
   color: #eff0f4;
 }
 @media only screen and (min-width: 720px) {
-  .cafePart {
+  /* .cafe {
     flex: 2;
     margin-right: 1rem;
-  }
+  } */
+  /* .cafePart {
+    flex: 2;
+    margin-right: 1rem;
+  } */
   .cafePart__img {
     margin-top: 0;
   }
