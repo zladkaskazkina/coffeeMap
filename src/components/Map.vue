@@ -8,7 +8,7 @@
         <div class="mapPart__map" id="map"></div>
       </div>
     </div>
-    <cafeCard />
+    <CafeCard />
     <cafePart
       v-on:click="openCard"
       v-for="(cafe, index) in profiles"
@@ -22,12 +22,14 @@
 </template>
 <script>
 import { db } from "../utils/db.js";
+import CafeCard from "./CafeCard.vue";
 import cafePart from "./cafePart.vue";
 
 export default {
   name: "Map",
   components: {
-    cafePart
+    cafePart,
+    CafeCard
   },
   data() {
     return {
@@ -56,6 +58,7 @@ export default {
     profiles: db.collection("coffeeShops").orderBy("title")
   },
   mounted() {
+    const profiles = db.collection("coffeeShops").orderBy("title");
     // vlozeni mapy
     let main = document.querySelector("#map");
     console.log(main);
