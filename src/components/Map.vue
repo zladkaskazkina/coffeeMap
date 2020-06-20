@@ -6,6 +6,7 @@
         <div class="mapPart__map" id="map"></div>
       </div>
     </div>
+    <cafeCard />
     <cafePart
       v-on:click="openCard"
       v-for="(cafe, index) in profiles"
@@ -38,21 +39,17 @@ export default {
     };
   },
   methods: {
-    openCard(id) {
-      let card = new SMap.Card();
-      //vlozit div ???
-      card.getBody().innerHTML = `<div></div>`;
-
-      id.decorate(SMap.Marker.Feature.Card, card);
+    renderCard(card) {
+      return {
+        //komponenta karticky
+      };
     },
-    isOpenNow(place) {
-      // what day is today
-      // place.openingHours
-      return;
+    openCard(id) {
+      // otevira karticku
     }
   },
   firestore: {
-    profiles: db.collection("profiles").orderBy("id")
+    profiles: db.collection("coffeeShops").orderBy("title")
   },
   mounted() {
     // vlozeni mapy
@@ -62,16 +59,26 @@ export default {
     let map = new SMap(main, center, 13);
     map.addDefaultLayer(SMap.DEF_BASE).enable();
     map.addDefaultControls();
-  },
-  created() {
-    // vlozeni znacky
-    // forEach na vse znacky
+    //pridani vrstvy pro znacky
     let layer = new SMap.Layer.Marker();
     map.addLayer(layer);
     layer.enable();
-    let coords = SMap.Coords.fromWGS84(14.40315, 50.06934);
-    let marker = new SMap.Marker(coords);
-    layer.addMarker(marker);
+    // vlozeni znacky
+    // forEach na vse znacky
+    for (let i = 0; i < profiles.length; i++) {
+      //pridani koordinat
+      let coords = SMap.Coords.fromWGS84(
+        profiles[i].location.lng,
+        profiles[i].location.lat
+      );
+      let marker = new SMap.Marker(coords);
+      layer.addMarker(marker);
+      // vlozeni karticky
+      let card = new SMap.Card();
+      card.getBody().innerHTML = "Já jsem <em>obsah vizitky</em>!";
+      // znacka z predchozi ukazky
+      marker.decorate(SMap.Marker.Feature.Card, card);
+    }
   }
 };
 </script>

@@ -1,11 +1,11 @@
 <template>
   <div>
     <h1>O projektu</h1>
-    <h2>Formulář</h2>
+    <h2>Add new coffe point</h2>
     <form @submit.prevent="addProfile">
-      <label for="first-name">
-        Jméno
-        <input type="text" id="first-name" v-model.trim="firstName" placeholder="Jméno" />
+      <label for="title">
+        Name
+        <input type="text" id="title" v-model.trim="title" placeholder="Jméno" />
       </label>
       <label for="last-name">
         Příjmení
@@ -76,7 +76,7 @@ export default {
   name: "About",
   data() {
     return {
-      coffeeShops: [],
+      profiles: [],
       title: "",
       address: "",
       website: "",
@@ -89,14 +89,14 @@ export default {
   },
   // Ordering the showed profiles by lastName
   firestore: {
-    profiles: db.collection("profiles").orderBy("lastName")
+    profiles: db.collection("coffeeShops").orderBy("title")
   },
   methods: {
     addProfile(event) {
-      db.collection("profiles")
+      db.collection("coffeeShops")
         .add({
-          firstName: this.firstName,
-          lastName: this.lastName,
+          title: this.title,
+          address: this.lastName,
           branch: this.branch,
           institution: this.institution,
           offer: this.offer,

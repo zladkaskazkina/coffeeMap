@@ -50,14 +50,7 @@ export default {
   },
   methods: { 
   filterIt(){
-    this.$bind(
-      'coffeeShops',
-    db
-      .collection('coffeeShops')
-      // .where('title', '>', 200)
-      .equalTo()
-      .orderBy('title')
-)
+    
     }
 
 
