@@ -79,11 +79,6 @@ export default {
     };
   },
   methods: {
-    clearFilters() {
-      for (const property in state.filters) {
-        state.filters[property] = false;
-      }
-    },
     decafSelect() {
       this.decafSelected = !this.decafSelected;
     },

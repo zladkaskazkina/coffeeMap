@@ -12,8 +12,8 @@ export async function getCoffeeShops() {
 }
 
 export const state = {
-	getFilteredShops: function (filters, shops) {
-		console.log(filters);
+	getFilteredShops: function (filters, shops, searchValue = "") {
+
 		return shops.filter(shop => {
 			let fits = true;
 			if (filters.milkSelected) fits = shop.nonDairy && fits;
@@ -24,11 +24,13 @@ export const state = {
 			if (filters.familySelected) fits = fits && shop.baby;
 			if (filters.petSelected) fits = fits && shop.pet;
 			if (filters.outdoorSelected) fits = fits && shop.terrace;
+			if (!shop.title.toLowerCase().match(searchValue.toLowerCase())) fits = fits && false;
 
 			return fits;
 		});
 	},
 	clearFilters: function (filters) {
+
 		for (const property in filters) {
 			filters[property] = false;
 		}
@@ -43,6 +45,7 @@ export const state = {
 		petSelected: false,
 		outdoorSelected: false,
 	},
+	searchValue: "",
 	coffeeShops: getCoffeeShops(),
 	// TODO
 

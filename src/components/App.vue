@@ -4,8 +4,7 @@
       <div class="nav">
         <router-link class="navItem" to="/">Map</router-link>
         <input
-          v-model.trim="searchValue"
-          @submit="searchIt"
+          v-model.trim="state.searchValue"
           class="searchBar"
           type="text"
           placeholder="Search"
@@ -13,9 +12,14 @@
         <router-link class="navItem filterSection" to="/filter">
           <i class="fas fa-filter"></i>
         </router-link>
-        <button class="navItem clearFilters">
+        <button
+          class="navItem clearFilters"
+          @click="state.clearFilters(state.filters)"
+        >
           <i class="fas fa-times cross"></i>
-          <span class="d-none d-md-inline"> Clear filters </span>
+          <span class="d-none d-md-inline">
+            Clear filters
+          </span>
         </button>
       </div>
     </div>
@@ -35,6 +39,7 @@
 
 <script>
 import db from "../utils/db";
+import { state } from "../utils/state.js";
 
 export default {
   name: "App",
@@ -42,6 +47,7 @@ export default {
     return {
       searchValue: "",
       profiles: [],
+      state,
     };
   },
   firestore: {

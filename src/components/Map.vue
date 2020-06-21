@@ -58,7 +58,11 @@ export default {
     addMarkers: function() {
       if (this.map != null && this.layer != null) {
         state.coffeeShops.then((shops) => {
-          const profiles = state.getFilteredShops(state.filters, shops);
+          const profiles = state.getFilteredShops(
+            state.filters,
+            shops,
+            state.searchValue
+          );
           console.log(profiles);
           this.layer.removeAll();
           for (let i = 0; i < profiles.length; i++) {
@@ -85,7 +89,11 @@ export default {
   computed: {
     filteredProfiles() {
       if (this.intialShops) {
-        return state.getFilteredShops(state.filters, this.intialShops);
+        return state.getFilteredShops(
+          state.filters,
+          this.intialShops,
+          state.searchValue
+        );
       } else {
         return [];
       }
@@ -103,9 +111,11 @@ export default {
     let main = document.querySelector("#map");
 
     let center = SMap.Coords.fromWGS84(14.40315, 50.06934);
-    this.map = new SMap(main, center, 13);
+    this.map = new SMap(main, center, 12);
     this.map.addDefaultLayer(SMap.DEF_BASE).enable();
     this.map.addDefaultControls();
+    var sync = new SMap.Control.Sync();
+    this.map.addControl(sync);
     //pridani vrstvy pro znacky
     this.layer = new SMap.Layer.Marker();
     this.map.addLayer(this.layer);
@@ -113,21 +123,17 @@ export default {
     // vlozeni znacky
     this.addMarkers();
   },
+
   updated() {
     if (this.map != null && this.layer != null) {
       this.addMarkers();
+      this.map.syncPort();
     }
   },
 };
 </script>
 
 <style>
-.background {
-  background-color: pink;
-  width: 100%;
-  height: 100%;
-}
-
 /* pro prepis stylu Bootstrapu */
 
 .container {
@@ -148,7 +154,7 @@ export default {
 }
 .mapPart__map {
   position: relative;
-  top: 50px;
+
   width: 100%;
   height: 100vw;
   z-index: 0;
@@ -196,7 +202,10 @@ export default {
   /* .responsiveWidth {
     padding: 1rem;
   } */
-
+  .mapPart {
+    height: 100%;
+    padding-top: 45px;
+  }
   .mainPart {
     flex-direction: row-reverse;
     align-items: stretch;
@@ -206,8 +215,11 @@ export default {
     flex: 5;
   }
   .mapPart__map {
-    height: 100vh;
-    position: fixed;
+    width: 100%;
+    height: 100%;
+    max-height: calc(100vh - 80px);
+    position: sticky;
+    top: 45px;
   }
   .coffees {
     flex: 2;
