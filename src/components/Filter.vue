@@ -8,7 +8,7 @@
     >
       <label
         class="icon btn btn-light"
-        v-for="(filter, index) in filters"
+        v-for="(filter, index) in state.filterLabels"
         :key="index"
         :class="{ selected: state.filters[filter.key] }"
       >
@@ -34,73 +34,9 @@ export default {
   data() {
     return {
       state,
-      filters: [
-        {
-          icon: "milk",
-          label: "Alternative milk",
-          key: "milkSelected",
-        },
-        {
-          icon: "decaf",
-          label: "Decaf coffee",
-          key: "decafSelected",
-        },
-        {
-          icon: "soup",
-          label: "Hot food",
-          key: "foodSelected",
-        },
-        {
-          icon: "disabled",
-          label: "Barrier-free",
-          key: "barrierSelected",
-        },
-        {
-          icon: "laptop",
-          label: "Freelance friendly",
-          key: "freelanceSelected",
-        },
-        {
-          icon: "baby",
-          label: "Family friendly",
-          key: "familySelected",
-        },
-        {
-          icon: "pawprint",
-          label: "Pet friendly",
-          key: "petSelected",
-        },
-        {
-          icon: "outdoors",
-          label: "Outside seating",
-          key: "outdoorSelected",
-        },
-      ],
     };
   },
-  methods: {
-    decafSelect() {
-      this.decafSelected = !this.decafSelected;
-    },
-    foodSelect() {
-      this.foodSelected = !this.foodSelected;
-    },
-    barrierSelect() {
-      this.barrierSelected = !this.barrierSelected;
-    },
-    freelanceSelect() {
-      this.freelanceSelected = !this.freelanceSelected;
-    },
-    familySelect() {
-      this.familySelected = !this.familySelected;
-    },
-    petSelect() {
-      this.petSelected = !this.petSelected;
-    },
-    outdoorSelect() {
-      this.outdoorSelected = !this.outdoorSelected;
-    },
-  },
+  methods: {},
 };
 </script>
 
