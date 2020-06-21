@@ -47,6 +47,7 @@ export const state = {
 	},
 	searchValue: "",
 	coffeeShops: getCoffeeShops(),
+	mapCards: [],
 	// TODO
 
 };

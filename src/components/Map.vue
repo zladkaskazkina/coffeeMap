@@ -1,6 +1,6 @@
 <template>
   <!-- <div class="background">
-    <div class="responsiveWidth"> -->
+  <div class="responsiveWidth">-->
   <div class="container">
     <div class="mainPart">
       <div class="topPart">
@@ -10,17 +10,16 @@
       </div>
       <div class="coffees">
         <cafePart
-          v-on:click="openCard"
           v-for="(cafe, index) in filteredProfiles"
           :title="cafe.title"
-          :src="cafe.src"
+          :src="cafe.imgSrc"
           :key="index"
         />
       </div>
     </div>
   </div>
   <!-- </div>
-  </div> -->
+  </div>-->
 </template>
 <script>
 import { db } from "../utils/db.js";
@@ -33,7 +32,7 @@ export default {
   name: "Map",
   components: {
     cafePart,
-    CafeCard,
+    CafeCard
   },
   data() {
     return {
@@ -49,15 +48,13 @@ export default {
       map: null,
       layer: null,
       intialShops: null,
+      state
     };
   },
   methods: {
-    openCard: function() {
-      console.log("open");
-    },
     addMarkers: function() {
       if (this.map != null && this.layer != null) {
-        state.coffeeShops.then((shops) => {
+        state.coffeeShops.then(shops => {
           const profiles = state.getFilteredShops(
             state.filters,
             shops,
@@ -65,6 +62,7 @@ export default {
           );
           console.log(profiles);
           this.layer.removeAll();
+          state.mapCards = [];
           for (let i = 0; i < profiles.length; i++) {
             //pridani.doc(this.user.id)
             let coords = SMap.Coords.fromWGS84(
@@ -79,12 +77,16 @@ export default {
             card.setSize(300, 220);
             card.getContainer().innerHTML = cardCafe;
 
+            state.mapCards.push({ card, coords });
+            // fuknce otevreni card:
+            //mapa.addCard(cardCafe, coords)
+
             // znacka z predchozi ukazky
             marker.decorate(SMap.Marker.Feature.Card, card);
           }
         });
       }
-    },
+    }
   },
   computed: {
     filteredProfiles() {
@@ -97,21 +99,21 @@ export default {
       } else {
         return [];
       }
-    },
+    }
   },
   firestore: {
-    profiles: db.collection("coffeeShops").orderBy("title"),
+    profiles: db.collection("coffeeShops").orderBy("title")
   },
   created() {
-    getCoffeeShops().then((shops) => {
+    getCoffeeShops().then(shops => {
       this.intialShops = shops;
     });
   },
   mounted() {
     let main = document.querySelector("#map");
 
-    let center = SMap.Coords.fromWGS84(14.40315, 50.06934);
-    this.map = new SMap(main, center, 12);
+    let center = SMap.Coords.fromWGS84(14.448158, 50.100294);
+    this.map = new SMap(main, center, 13);
     this.map.addDefaultLayer(SMap.DEF_BASE).enable();
     this.map.addDefaultControls();
     var sync = new SMap.Control.Sync();
@@ -129,7 +131,7 @@ export default {
       this.addMarkers();
       this.map.syncPort();
     }
-  },
+  }
 };
 </script>
 
