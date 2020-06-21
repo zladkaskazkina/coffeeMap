@@ -83,9 +83,9 @@ export default {
   },
   methods: {
     clearFilters() {
-      this.filters.forEach((element) => {
-        element.selected = false;
-      });
+      for (const property in state.filters) {
+        state.filters[property] = false;
+      }
     },
     decafSelect() {
       this.decafSelected = !this.decafSelected;

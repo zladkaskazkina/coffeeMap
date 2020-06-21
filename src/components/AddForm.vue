@@ -1,71 +1,76 @@
 <template>
   <div>
-    <h1>O projektu</h1>
-    <h2>Add new coffe point</h2>
+    <h1>Suggest new coffee point</h1>
     <form @submit.prevent="addProfile">
       <label for="title">
         Name
-        <input type="text" id="title" v-model.trim="title" placeholder="Jméno" />
-      </label>
-      <label for="last-name">
-        Příjmení
-        <input type="text" id="last-name" v-model.trim="lastName" placeholder="Příjmení" />
-      </label>
-      <br />
-      <label for="branch">
-        Obor
-        <input type="text" id="branch" v-model.trim="branch" placeholder="Obor" />
-      </label>
-      <br />
-      <label for="institution">
-        Instituce
         <input
           type="text"
-          id="institution"
-          v-model.trim="institution"
-          placeholder="Instituce"
+          id="title"
+          v-model.trim="title"
+          placeholder="Name of coffeeshop"
+        />
+      </label>
+      <label for="Address">
+        Address
+        <input
+          type="text"
+          id="addresss"
+          v-model.trim="address"
+          placeholder="Addresss"
         />
       </label>
       <br />
-      <label for="offer">
-        Nabízím:
-        <textarea id="offer" v-model.trim="offer" placeholder="Vysvětlím teorii relativity"></textarea>
+      <label for="City">
+        City
+        <input type="text" id="city" v-model.trim="city" placeholder="City" />
       </label>
       <br />
-      <label for="whom">
-        Pro koho:
-        <input
-          type="text"
-          id="whom"
-          v-model.trim="whom"
-          placeholder="1.a 2. st. ZŠ, SŠ, dospělý"
-        />
+      <label for="Web">
+        Website
+        <input type="text" id="web" v-model.trim="web" placeholder="Website" />
       </label>
+      <br />
 
-      <label for="region-select">
-        Pro oblast:
-        <select name="type" id="region-select" v-model="region">
-          <option>--Můžete vybrat i více možností--</option>
-          <option>Celá ČR</option>
-        </select>
+      <label for="filters">
+        Filters:
+        <input type="checkbox" v-model="decaf" />
+        <label for="decaf">Decaf coffee</label>
+
+        <input type="checkbox" v-model="milk" />
+        <label for="milk">Alternative milk</label>
+
+        <input type="checkbox" v-model="food" />
+        <label for="food">Hot Food</label>
+
+        <input type="checkbox" v-model="barrier" />
+        <label for="barrier">Barrier-free</label>
+
+        <input type="checkbox" v-model="freelance" />
+        <label for="freelance">Freelance Friendly</label>
+
+        <input type="checkbox" v-model="baby" />
+        <label for="baby">Family Friendly</label>
+
+        <input type="checkbox" v-model="pet" />
+        <label for="pet">Pet Friendly</label>
+
+        <input type="checkbox" v-model="terrace" />
+        <label for="terrace">Outside seating</label>
       </label>
       <br />
       <label for="contact">
-        Kontakt
+        Contact
         <input
           type="text"
           id="contact"
           v-model.trim="contact"
-          placeholder="jmeno.prijmeni@email.cz"
+          placeholder="yourname@gmail.com"
         />
       </label>
       <br />
-      <button type="submit" @click="addProfile">Přidej profil</button>
+      <button type="submit" @click="addProfile">Add coffeeshop</button>
     </form>
-
-    <ul>
-      <li v-for="profile in profiles" :key="profile.id">{{ profile }}</li>
-    </ul>
   </div>
 </template>
 
@@ -79,17 +84,22 @@ export default {
       profiles: [],
       title: "",
       address: "",
+      city: "",
       website: "",
       terrace: "",
       baby: "",
-      whom: "",
-      region: "",
-      contact: ""
+      decaf: "",
+      milk: "",
+      pet: "",
+      barrier: "",
+      food: "",
+      freelance: "",
+      contact: "",
     };
   },
   // Ordering the showed profiles by lastName
   firestore: {
-    profiles: db.collection("coffeeShops").orderBy("title")
+    profiles: db.collection("coffeeShops").orderBy("title"),
   },
   methods: {
     addProfile(event) {
@@ -102,9 +112,9 @@ export default {
           offer: this.offer,
           whom: this.whom,
           region: this.region,
-          contact: this.contact
+          contact: this.contact,
         })
-        .then(docRef => {
+        .then((docRef) => {
           docRef.update({ id: docRef.id });
         });
       // Clearing the input value
@@ -117,7 +127,7 @@ export default {
       this.region = "";
       this.contact = "";
       event.preventDefault();
-    }
-  }
+    },
+  },
 };
-</script> 
+</script>
