@@ -15,9 +15,9 @@
       "freelance": 1,
       "pets": 1,
       "nonDairy": 1,
-      "barrierFree": 0,
+      "barrierFree": 1,
       "deCaf": 1,
-      "hotFood": 0,
+      "hotFood": 1,
       "openingHours": {
         "monday": [9, 0, 18, 0],
         "tuesday": [9, 0, 18, 0],
@@ -38,14 +38,14 @@
         "lng": 14.4253655
       },
       "imgSrc": "letka",
-      "terrace": 1,
+      "terrace": 0,
       "baby": 1,
       "freelance": 1,
       "pets": 1,
       "nonDairy": 1,
       "barrierFree": 1,
-      "deCaf": 1,
-      "hotFood": 0,
+      "deCaf": 0,
+      "hotFood": 1,
       "openingHours": {
         "monday": [8, 0, 0, 0],
         "tuesday": [8, 0, 0, 0],
@@ -66,7 +66,7 @@
         "lng": 14.3985533
       },
       "imgSrc": "mazelab",
-      "terrace": 1,
+      "terrace": 0,
       "baby": 1,
       "freelance": 1,
       "pets": 1,
@@ -100,7 +100,7 @@
       "pets": 1,
       "nonDairy": 1,
       "barrierFree": 0,
-      "deCaf": 1,
+      "deCaf": 0,
       "hotFood": 0,
       "openingHours": {
         "monday": [8, 0, 18, 0],
@@ -122,7 +122,7 @@
         "lng": 14.4495214
       },
       "imgSrc": "coffeesource",
-      "terrace": 1,
+      "terrace": 0,
       "baby": 1,
       "freelance": 1,
       "pets": 1,
@@ -238,7 +238,7 @@
       "terrace": 1,
       "baby": 1,
       "freelance": 1,
-      "pets": 1,
+      "pets": 0,
       "nonDairy": 1,
       "barrierFree": 0,
       "deCaf": 1,
@@ -436,7 +436,7 @@
       "freelance": 1,
       "pets": 1,
       "nonDairy": 1,
-      "barrierFree": 0,
+      "barrierFree": 1,
       "deCaf": 1,
       "hotFood": 1,
       "openingHours": {
@@ -492,7 +492,7 @@
       "freelance": 1,
       "pets": 1,
       "nonDairy": 1,
-      "barrierFree": 0,
+      "barrierFree": 1,
       "deCaf": 0,
       "hotFood": 1,
       "openingHours": {
@@ -701,8 +701,6 @@
         "saturday":  [9, 0, 21, 0],
         "sunday":    [9, 30, 20, 0]
       }
-    }
-    
+    }    
   ]
-
 }

@@ -14,6 +14,7 @@
           :title="cafe.title"
           :src="cafe.imgSrc"
           :key="index"
+          :onClick="() => openCard(cafe.website)"
         />
       </div>
     </div>
@@ -51,7 +52,16 @@ export default {
       state
     };
   },
-  methods: {
+  methods: {    
+      openCard: function(profileWebsite) {
+      console.log("open");
+      state.mapCards.forEach(mapCard => {
+        if(profileWebsite === mapCard.website){
+          this.map.addCard(mapCard.card, mapCard.coords);
+        }
+      });
+      
+    },
     addMarkers: function() {
       if (this.map != null && this.layer != null) {
         state.coffeeShops.then(shops => {
@@ -77,9 +87,7 @@ export default {
             card.setSize(300, 220);
             card.getContainer().innerHTML = cardCafe;
 
-            state.mapCards.push({ card, coords });
-            // fuknce otevreni card:
-            //mapa.addCard(cardCafe, coords)
+            state.mapCards.push({ card, coords, website: profiles[i].website});
 
             // znacka z predchozi ukazky
             marker.decorate(SMap.Marker.Feature.Card, card);
@@ -212,6 +220,7 @@ export default {
     flex-direction: row-reverse;
     align-items: stretch;
     width: 100%;
+    min-height: 100vh;
   }
   .topPart {
     flex: 5;
