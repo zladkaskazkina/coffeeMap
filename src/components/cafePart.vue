@@ -1,5 +1,6 @@
 <template>
-  <div class="cafe">
+  <div class="cafe"
+  v-on:click="openCard()">
     <div class="cafePart">
       <div class="cafePart__img">
         <!--MUSIME PRIDAT DYNAMICKY ${imgSrc}-->
@@ -18,7 +19,11 @@
 export default {
   name: "Cafe",
   props: ["id", "title", "src"],
-  methods: {},
+  methods: {
+      openCard: function() {
+      console.log("open");
+    },
+  },
 };
 </script>
 
