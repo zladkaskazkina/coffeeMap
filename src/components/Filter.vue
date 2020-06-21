@@ -65,7 +65,7 @@ img {
   width: 2rem;
   height: 2rem;
   margin-right: 1rem;
-  opacity: 0.65;
+  opacity: 0.70;
 }
 
 .icon {

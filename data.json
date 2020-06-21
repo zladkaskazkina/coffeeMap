@@ -541,7 +541,7 @@
       "location": {
         "lat": 50.08716,
         "lng": 14.4193173
-      },      
+      },
       "imgSrc": "pauseteria",
       "terrace": 0,
       "baby": 0,
@@ -552,13 +552,13 @@
       "deCaf": 0,
       "hotFood": 0,
       "openingHours": {
-        "monday":    [8, 0, 19, 0],
-        "tuesday":   [8, 0, 19, 0],
+        "monday": [8, 0, 19, 0],
+        "tuesday": [8, 0, 19, 0],
         "wednesday": [8, 0, 19, 0],
-        "thursday":  [8, 0, 19, 0],
-        "friday":    [8, 0, 19, 0],
-        "saturday":  [9, 0, 19, 0],
-        "sunday":    [9, 0, 19, 0]
+        "thursday": [8, 0, 19, 0],
+        "friday": [8, 0, 19, 0],
+        "saturday": [9, 0, 19, 0],
+        "sunday": [9, 0, 19, 0]
       }
     },
     {
@@ -570,7 +570,7 @@
         "lat": 50.0758169,
         "lng": 14.440434
       },
-            
+
       "imgSrc": "mezisrnky",
       "terrace": 1,
       "baby": 1,
@@ -581,13 +581,13 @@
       "deCaf": 0,
       "hotFood": 1,
       "openingHours": {
-        "monday":    [8, 0, 16, 0],
-        "tuesday":   [8, 0, 16, 0],
+        "monday": [8, 0, 16, 0],
+        "tuesday": [8, 0, 16, 0],
         "wednesday": [8, 0, 16, 0],
-        "thursday":  [8, 0, 16, 0],
-        "friday":    [8, 0, 16, 0],
-        "saturday":  [9, 0, 16, 0],
-        "sunday":    [9, 0, 16, 0]
+        "thursday": [8, 0, 16, 0],
+        "friday": [8, 0, 16, 0],
+        "saturday": [9, 0, 16, 0],
+        "sunday": [9, 0, 16, 0]
       }
     },
     {
@@ -609,24 +609,24 @@
       "deCaf": 0,
       "hotFood": 1,
       "openingHours": {
-        "monday":    [8, 0, 22, 0],
-        "tuesday":   [8, 0, 22, 0],
+        "monday": [8, 0, 22, 0],
+        "tuesday": [8, 0, 22, 0],
         "wednesday": [8, 0, 22, 0],
-        "thursday":  [8, 0, 22, 0],
-        "friday":    [8, 0, 22, 0],
-        "saturday":  [10, 0, 20, 0],
-        "sunday":    [13, 0, 20, 0]
+        "thursday": [8, 0, 22, 0],
+        "friday": [8, 0, 22, 0],
+        "saturday": [10, 0, 20, 0],
+        "sunday": [13, 0, 20, 0]
       }
     },
     {
       "title": "Cafefin",
       "totalScore": 4.4,
       "address": "nám. J. z Poděbrad 1407/4, Vinohrady",
-      "website": "https://www.cafefinvpraze.com/", 
+      "website": "https://www.cafefinvpraze.com/",
       "location": {
         "lat": 50.0781066,
         "lng": 14.4484185
-      },      
+      },
       "imgSrc": "cafefin",
       "terrace": 0,
       "baby": 1,
@@ -637,13 +637,13 @@
       "deCaf": 0,
       "hotFood": 1,
       "openingHours": {
-        "monday":    [9, 0, 20, 0],
-        "tuesday":   [9, 0, 20, 0],
+        "monday": [9, 0, 20, 0],
+        "tuesday": [9, 0, 20, 0],
         "wednesday": [9, 0, 20, 0],
-        "thursday":  [9, 0, 20, 0],
-        "friday":    [9, 0, 20, 0],
-        "saturday":  [9, 0, 20, 0],
-        "sunday":    [9, 0, 19, 0]
+        "thursday": [9, 0, 20, 0],
+        "friday": [9, 0, 20, 0],
+        "saturday": [9, 0, 20, 0],
+        "sunday": [9, 0, 19, 0]
       }
     },
     {
@@ -654,7 +654,7 @@
       "location": {
         "lat": 50.0752615,
         "lng": 14.452469
-      },      
+      },
       "imgSrc": "spizirna",
       "terrace": 1,
       "baby": 1,
@@ -665,13 +665,13 @@
       "deCaf": 0,
       "hotFood": 1,
       "openingHours": {
-        "monday":    [8, 0, 22, 0],
-        "tuesday":   [8, 0, 22, 0],
+        "monday": [8, 0, 22, 0],
+        "tuesday": [8, 0, 22, 0],
         "wednesday": [8, 0, 22, 0],
-        "thursday":  [8, 0, 22, 0],
-        "friday":    [8, 0, 22, 0],
-        "saturday":  [9, 0, 18, 0],
-        "sunday":    [9, 0, 18, 0]
+        "thursday": [8, 0, 22, 0],
+        "friday": [8, 0, 22, 0],
+        "saturday": [9, 0, 18, 0],
+        "sunday": [9, 0, 18, 0]
       }
     },
     {
@@ -682,7 +682,7 @@
       "location": {
         "lat": 50.0752901,
         "lng": 14.4541132
-      },      
+      },
       "imgSrc": "coffeecorner",
       "terrace": 1,
       "baby": 1,
@@ -693,14 +693,154 @@
       "deCaf": 0,
       "hotFood": 1,
       "openingHours": {
-        "monday":    [8, 0, 21, 0],
-        "tuesday":   [8, 0, 21, 0],
+        "monday": [8, 0, 21, 0],
+        "tuesday": [8, 0, 21, 0],
         "wednesday": [8, 0, 21, 0],
-        "thursday":  [8, 0, 21, 0],
-        "friday":    [8, 0, 21, 0],
-        "saturday":  [9, 0, 21, 0],
-        "sunday":    [9, 30, 20, 0]
+        "thursday": [8, 0, 21, 0],
+        "friday": [8, 0, 21, 0],
+        "saturday": [9, 0, 21, 0],
+        "sunday": [9, 30, 20, 0]
       }
-    }    
+    },
+    {
+      "title": "Prádelna Café",
+      "totalScore": 4.5,
+      "address": "Slavíkova 21, Vinohrady",
+      "website": "https://www.pradelna-cafe.cz/",
+      "location": {
+        "lat": 50.0803653,
+        "lng": 14.4463805
+      },
+      "imgSrc": "pradelna",
+      "terrace": 0,
+      "baby": 1,
+      "freelance": 0,
+      "pets": 1,
+      "nonDairy": 1,
+      "barrierFree": 0,
+      "deCaf": 1,
+      "hotFood": 1,
+      "openingHours": {
+        "monday": [9, 0, 0, 0],
+        "tuesday": [9, 0, 0, 0],
+        "wednesday": [9, 0, 0, 0],
+        "thursday": [9, 0, 0, 0],
+        "friday": [9, 0, 22, 0],
+        "saturday": [10, 0, 0, 0],
+        "sunday": [10, 0, 22, 0]
+      }
+    },
+    {
+      "title": "Etapa",
+      "totalScore": 4.7,
+      "address": "Urxova 479/6, Karlín",
+      "website": "https://www.etapa.cz/",
+      "location": {
+        "lat": 50.094537,
+        "lng": 14.4578217
+      },
+      "imgSrc": "etapa",
+      "terrace": 1,
+      "baby": 1,
+      "freelance": 0,
+      "pets": 1,
+      "nonDairy": 1,
+      "barrierFree": 0,
+      "deCaf": 1,
+      "hotFood": 1,
+      "openingHours": {
+        "monday": [8, 30, 16, 0],
+        "tuesday": [8, 30, 16, 0],
+        "wednesday": [8, 30, 16, 0],
+        "thursday": [8, 30, 16, 0],
+        "friday": [8, 30, 16, 0],
+        "saturday": [9, 0, 16, 0],
+        "sunday": [9, 0, 16, 0]
+      }
+    },
+    {
+      "title": "The Miners Coffee & Characters",
+      "totalScore": 4.5,
+      "address": "Slavíkova 5, Vinohrady",
+      "website": "https://www.theminers.eu/",
+      "location": {
+        "lat": 50.078741,
+        "lng": 14.4480936
+      },
+      "imgSrc": "miners",
+      "terrace": 1,
+      "baby": 1,
+      "freelance": 0,
+      "pets": 1,
+      "nonDairy": 1,
+      "barrierFree": 0,
+      "deCaf": 1,
+      "hotFood": 1,
+      "openingHours": {
+        "monday": [7, 0, 20, 0],
+        "tuesday": [7, 0, 20, 0],
+        "wednesday": [7, 0, 20, 0],
+        "thursday": [7, 0, 20, 0],
+        "friday": [7, 0, 20, 0],
+        "saturday": [8, 0, 20, 0],
+        "sunday": [8, 30, 20, 0]
+      }
+    },
+    {
+      "title": "The Miners Coffee & Characters",
+      "totalScore": 4.5,
+      "address": "Slavíkova 5, Vinohrady",
+      "website": "https://www.theminers.eu/",
+      "location": {
+        "lat": 50.078741,
+        "lng": 14.4480936
+      },
+      "imgSrc": "miners",
+      "terrace": 1,
+      "baby": 1,
+      "freelance": 0,
+      "pets": 1,
+      "nonDairy": 1,
+      "barrierFree": 0,
+      "deCaf": 1,
+      "hotFood": 1,
+      "openingHours": {
+        "monday": [7, 0, 20, 0],
+        "tuesday": [7, 0, 20, 0],
+        "wednesday": [7, 0, 20, 0],
+        "thursday": [7, 0, 20, 0],
+        "friday": [7, 0, 20, 0],
+        "saturday": [8, 0, 20, 0],
+        "sunday": [8, 30, 20, 0]
+      }
+    },
+    {
+      "title": "Café Pavlač",
+      "totalScore": 4.6,
+      "address": "V. Nejedlého 23, Žižkov",
+      "website": "https://www.facebook.com/cafepavlac/",
+      "location": {
+        "lat": 50.0842345,
+        "lng": 14.448757
+      },
+      "imgSrc": "pavlac",
+      "terrace": 1,
+      "baby": 1,
+      "freelance": 1,
+      "pets": 1,
+      "nonDairy": 1,
+      "barrierFree": 1,
+      "deCaf": 1,
+      "hotFood": 1,
+      "openingHours": {
+        "monday": [11, 0, 23, 0],
+        "tuesday": [11, 0, 23, 0],
+        "wednesday": [11, 0, 23, 0],
+        "thursday": [11, 0, 23, 0],
+        "friday": [11, 0, 23, 0],
+        "saturday": [11, 0, 23, 0],
+        "sunday": false
+      }
+    }
   ]
 }
