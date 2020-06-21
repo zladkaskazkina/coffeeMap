@@ -1,12 +1,13 @@
 <template>
   <div class="form">
-    <h2 class="form__header">Suggest new coffee point</h2>
+    <h2 class="form__header">Suggest a new coffee point</h2>
     <form
       class="form__body"
       @submit.prevent="sendEmail"
       method="post"
       enctype="text/plain"
     >
+      <textarea name="body" v-model="formData.emailBody" v-show="false" />
       <div class="form__inputs">
         <label for="title">
           <b-form-input
@@ -14,7 +15,7 @@
             id="title"
             v-model.trim="formData.title"
             name="title"
-            placeholder="Name of coffeeshop"
+            placeholder="Name of a coffeeshop"
           />
         </label>
         <label for="Address">
@@ -47,7 +48,7 @@
           />
         </label>
       </div>
-      <h3 class="form__part-title">Filters:</h3>
+      <h4 class="form__part-title">Select features:</h4>
       <div
         class="filterList d-flex flex-column flex-md-row flex-md-wrap align-items-center justify-content-center"
       >
@@ -62,6 +63,7 @@
           }}
           <input
             type="checkbox"
+            :name="`${formData.filters[filter.key]}`"
             v-model="formData.filters[filter.key]"
             v-show="false"
           />
@@ -123,6 +125,7 @@
         <b-form-input
           type="email"
           id="contact"
+          name="email"
           v-model.trim="formData.contact"
           placeholder="youremail@gmail.com"
         />
@@ -184,6 +187,7 @@ export default {
         food: "",
         freelance: "",
         contact: "",
+        emailBody: "",
         filters: {
           milkSelected: false,
           decafSelected: false,
@@ -206,28 +210,69 @@ export default {
   methods: {
     sendEmail: function(e) {
       const self = this;
-      emailjs
-        .sendForm(
-          "gmail",
-          "template_uEHmIFup",
-          e.target,
-          "user_ueeaU5dH6cZdfvVasht6D"
-        )
-        .then(
-          (result) => {
-            this.formData = { ...clearData, filters: { ...clearData.filters } };
-            alert("Thank you for your suggestion, we will chcek it out");
-            this.$router.push("/");
-          },
-          (error) => {
-            alert("Sorry, the form wasn't send, try it again later, please");
-          }
-        );
+      this.formData.emailBody = `
+              This coffeeshop has these features:
+              ${
+                this.formData.filters.familySelected
+                  ? "Family: yes"
+                  : "Family: no"
+              }
+              |
+              ${
+                this.formData.filters.decafSelected ? "Decaf: yes" : "Decaf: no"
+              }
+              |
+              ${this.formData.filters.milkSelected ? "Milk: yes" : "Milk: no"}
+              |
+              ${this.formData.filters.petSelected ? "Pet: yes" : "Pet: no"}
+              |
+              ${
+                this.formData.filters.freelanceSelected
+                  ? "Freelance: yes"
+                  : "Freelance: no"
+              }
+              |
+              ${
+                this.formData.filters.barrierSelected
+                  ? "Barrier: yes"
+                  : "Barrier: no"
+              }
+              |
+              ${this.formData.filters.foodSelected ? "Food: yes" : "Food: no"}
+              |
+              ${
+                this.formData.filters.outdoorSelected
+                  ? "Outdoor: yes"
+                  : "Outdoor: no"
+              }
+              |`;
+      setTimeout(() => {
+        emailjs
+          .sendForm(
+            "gmail",
+            "template_uEHmIFup",
+            e.target,
+            "user_ueeaU5dH6cZdfvVasht6D"
+          )
+          .then(
+            (result) => {
+              this.formData = {
+                ...clearData,
+                filters: { ...clearData.filters },
+              };
+              alert("Thank you for your suggestion, we will chcek it out");
+              this.$router.push("/");
+            },
+            (error) => {
+              alert("Sorry, the form wasn't send, try it again later, please");
+            }
+          );
+      }, 1);
     },
   },
 };
 </script>
-<style>
+<style scoped>
 .form {
   padding: 50px;
   text-align: center;
@@ -236,11 +281,12 @@ export default {
   margin: 15px auto;
 }
 .form__body {
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid rgb(230, 225, 225);
   border-radius: 5px;
+  background-color: white;
 }
 .icon {
   width: 100%;
@@ -256,7 +302,7 @@ export default {
   flex-wrap: wrap;
   justify-content: space-around;
   width: 100%;
-  margin: 0 auto;
+  margin: 0 0.5rem;
 }
 .form__part-title {
   margin: 10px;
@@ -284,9 +330,11 @@ export default {
   width: 2rem;
   height: 2rem;
   margin-right: 1rem;
+  opacity: 0.7;
 }
 .form__contact {
   width: 100%;
+  margin: 0 0.5rem;
 }
 .form__btn {
   background-color: #cd6e48 !important;
@@ -302,11 +350,11 @@ export default {
   .form__filter {
     width: 60%;
   }
-  .form__inputs {
+  /* .form__inputs {
     width: 60%;
   }
   .form__contact {
     width: 60%;
-  }
+  } */
 }
 </style>
