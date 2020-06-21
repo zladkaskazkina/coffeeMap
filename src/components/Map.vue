@@ -14,6 +14,11 @@
           :key="index"
           :onClick="() => openCard(cafe.website)"
         />
+        <div class="noFind"
+        v-if="!filteredProfiles.length"> Sorry, we could not find anything! Try again or 
+         <router-link class="noFindSuggest" to="/form">suggest a new coffeeshop. </router-link>
+        
+        </div>
       </div>
     </div>
   </div>
@@ -182,6 +187,15 @@ export default {
 .coffees {
   width: 100%;
   overflow: hidden;
+}
+
+.noFind {
+  padding: 5rem 3rem;
+  text-align: center;;
+}
+
+.noFindSuggest {
+  color: #16283e;
 }
 /* Responzivita */
 
