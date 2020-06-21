@@ -11,23 +11,24 @@
           placeholder="Search"
         />
         <router-link class="navItem filterSection" to="/filter">
-          <i class="fas fa-filter"></i>         
+          <i class="fas fa-filter"></i>
         </router-link>
         <button class="navItem clearFilters">
-            <i class="fas fa-times cross"></i>
+          <i class="fas fa-times cross"></i>
           <span class="d-none d-md-inline"> Clear filters </span>
-         </button>
+        </button>
       </div>
     </div>
     <router-view></router-view>
     <div class="footer">
-      <div class="author">Icons created by Freepic, downloaded from www.flaticon.com </div>
-      <div class="suggestCafe">
-        <a class="suggest" href="mailto:you@yourdmainhere.com">
-          Add new Coffeeshop
-        </a>
+      <div class="author">
+        Icons created by Freepic, downloaded from www.flaticon.com
       </div>
-      
+      <div class="suggestCafe">
+        <router-link class="suggest" to="/form">
+          Add new Coffeeshop</router-link
+        >
+      </div>
     </div>
   </div>
 </template>
@@ -149,20 +150,20 @@ html {
   padding: 0.5rem;
   color: #fff;
 }
-.clearFilters{
+.clearFilters {
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 0;
-  margin:0;
+  margin: 0;
   align-self: stretch;
   background-color: transparent;
-} 
+}
 
 .clearFilters:focus {
   outline: none;
 }
 
-.cross{
+.cross {
   padding-right: 3px;
 }
 
@@ -189,7 +190,7 @@ html {
   position: fixed;
   bottom: 0;
   left: 0;
-  right: 0; 
+  right: 0;
   background-color: #55bece;
   display: flex;
   justify-content: space-between;
@@ -201,9 +202,9 @@ html {
   padding: 0.5rem;
   font-weight: 400;
   font-size: 0.8rem;
-  letter-spacing: 0.1rem;  
+  letter-spacing: 0.1rem;
 }
-.suggest:hover{
+.suggest:hover {
   text-decoration: none;
   color: white;
   background-color: #16283e;
