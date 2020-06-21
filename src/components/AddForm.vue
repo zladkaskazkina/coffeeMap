@@ -7,6 +7,7 @@
       method="post"
       enctype="text/plain"
     >
+      <textarea name="body" v-model="formData.emailBody" v-show="false" />
       <div class="form__inputs">
         <label for="title">
           <b-form-input
@@ -62,7 +63,7 @@
           }}
           <input
             type="checkbox"
-            :name="`${filter.key}`"
+            :name="`${formData.filters[filter.key]}`"
             v-model="formData.filters[filter.key]"
             v-show="false"
           />
@@ -124,6 +125,7 @@
         <b-form-input
           type="email"
           id="contact"
+          name="email"
           v-model.trim="formData.contact"
           placeholder="youremail@gmail.com"
         />
@@ -185,6 +187,7 @@ export default {
         food: "",
         freelance: "",
         contact: "",
+        emailBody: "",
         filters: {
           milkSelected: false,
           decafSelected: false,
@@ -207,23 +210,64 @@ export default {
   methods: {
     sendEmail: function(e) {
       const self = this;
-      emailjs
-        .sendForm(
-          "gmail",
-          "template_uEHmIFup",
-          e.target,
-          "user_ueeaU5dH6cZdfvVasht6D"
-        )
-        .then(
-          (result) => {
-            this.formData = { ...clearData, filters: { ...clearData.filters } };
-            alert("Thank you for your suggestion, we will chcek it out");
-            this.$router.push("/");
-          },
-          (error) => {
-            alert("Sorry, the form wasn't send, try it again later, please");
-          }
-        );
+      this.formData.emailBody = `
+              This coffeeshop has these features:
+              ${
+                this.formData.filters.familySelected
+                  ? "Family: yes"
+                  : "Family: no"
+              }
+              |
+              ${
+                this.formData.filters.decafSelected ? "Decaf: yes" : "Decaf: no"
+              }
+              |
+              ${this.formData.filters.milkSelected ? "Milk: yes" : "Milk: no"}
+              |
+              ${this.formData.filters.petSelected ? "Pet: yes" : "Pet: no"}
+              |
+              ${
+                this.formData.filters.freelanceSelected
+                  ? "Freelance: yes"
+                  : "Freelance: no"
+              }
+              |
+              ${
+                this.formData.filters.barrierSelected
+                  ? "Barrier: yes"
+                  : "Barrier: no"
+              }
+              |
+              ${this.formData.filters.foodSelected ? "Food: yes" : "Food: no"}
+              |
+              ${
+                this.formData.filters.outdoorSelected
+                  ? "Outdoor: yes"
+                  : "Outdoor: no"
+              }
+              |`;
+      setTimeout(() => {
+        emailjs
+          .sendForm(
+            "gmail",
+            "template_uEHmIFup",
+            e.target,
+            "user_ueeaU5dH6cZdfvVasht6D"
+          )
+          .then(
+            (result) => {
+              this.formData = {
+                ...clearData,
+                filters: { ...clearData.filters },
+              };
+              alert("Thank you for your suggestion, we will chcek it out");
+              this.$router.push("/");
+            },
+            (error) => {
+              alert("Sorry, the form wasn't send, try it again later, please");
+            }
+          );
+      }, 1);
     },
   },
 };
