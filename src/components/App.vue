@@ -10,8 +10,9 @@
           type="text"
           placeholder="Search"
         />
-        <router-link class="navItem" to="/filter">
+        <router-link class="navItem filterSection" to="/filter">
           <i class="fas fa-filter"></i>
+          <button class="btn btn-sm btn-light"><i class="fas fa-times"></i><span class="d-none d-md-inline"> Clear filters </span></button>
         </router-link>
       </div>
     </div>
@@ -22,6 +23,7 @@
           Add new Coffeeshop
         </a>
       </div>
+      <div class="author">Icons created by Freepic, downloaded from Flaticon.com </div>
     </div>
   </div>
 </template>
@@ -138,11 +140,18 @@ html {
   font-size: 1.2rem;
   letter-spacing: 0.2rem;
 }
+
 .navItem:hover {
   background-color: #55bece;
   text-decoration: none;
   padding: 0.5rem;
   color: #fff;
+}
+
+.filterSection {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .searchBar {
@@ -158,6 +167,12 @@ html {
   font-size: 16px; /* Increase font-size */
 
   border: 1px solid #ddd; /* Add a grey border */
+}
+
+.clear {
+  width: 20%;
+  height: 30px;
+  text-align: center;
 }
 
 .footer {
@@ -178,5 +193,9 @@ html {
 .suggest:hover {
   text-decoration: none;
   color: white;
+}
+
+.author {
+  font-size: 1px;
 }
 </style>

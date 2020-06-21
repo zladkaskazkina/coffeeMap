@@ -8,7 +8,7 @@
       "location": {
         "lat": 50.0912818,
         "lng": 14.4253929
-      },      
+      },
       "imgSrc": "onesip",
       "terrace": 1,
       "baby": 1,
@@ -19,13 +19,13 @@
       "deCaf": 1,
       "hotFood": 0,
       "openingHours": {
-        "monday":   [9,0,18,0],
-        "tuesday":  [9,0,18,0],
-        "wednesday":[9,0,18,0],
-        "thursday": [9,0,18,0],
-        "friday":   [9,0,18,0],
+        "monday": [9, 0, 18, 0],
+        "tuesday": [9, 0, 18, 0],
+        "wednesday": [9, 0, 18, 0],
+        "thursday": [9, 0, 18, 0],
+        "friday": [9, 0, 18, 0],
         "saturday": false,
-        "sunday":   [10,0,17,0]
+        "sunday": [10, 0, 17, 0]
       }
     },
     {
@@ -37,7 +37,7 @@
         "lat": 50.0982349,
         "lng": 14.4253655
       },
-      "imgSrc": "letka",      
+      "imgSrc": "letka",
       "terrace": 1,
       "baby": 1,
       "freelance": 1,
@@ -47,13 +47,13 @@
       "deCaf": 1,
       "hotFood": 0,
       "openingHours": {
-        "monday":   [8,0,0,0],
-        "tuesday":  [8,0,0,0],
-        "wednesday":[8,0,0,0],
-        "thursday": [8,0,0,0],
-        "friday":   [8,0,0,0],
-        "saturday": [8,0,0,0],
-        "sunday":   [9,0,22,0]
+        "monday": [8, 0, 0, 0],
+        "tuesday": [8, 0, 0, 0],
+        "wednesday": [8, 0, 0, 0],
+        "thursday": [8, 0, 0, 0],
+        "friday": [8, 0, 0, 0],
+        "saturday": [8, 0, 0, 0],
+        "sunday": [9, 0, 22, 0]
       }
     },
     {
@@ -74,14 +74,14 @@
       "barrierFree": 0,
       "deCaf": 1,
       "hotFood": 0,
-      "openingHours":{
-        "monday":   [9,0,18,0],
-        "tuesday":  [9,0,18,0],
-        "wednesday":[9,0,18,0],
-        "thursday": [9,0,18,0],
-        "friday":   [9,0,18,0],
-        "saturday": [9,0,18,0],
-        "sunday":   [10,0,17,0]
+      "openingHours": {
+        "monday": [9, 0, 18, 0],
+        "tuesday": [9, 0, 18, 0],
+        "wednesday": [9, 0, 18, 0],
+        "thursday": [9, 0, 18, 0],
+        "friday": [9, 0, 18, 0],
+        "saturday": [9, 0, 18, 0],
+        "sunday": [10, 0, 17, 0]
       }
     },
     {
@@ -103,13 +103,13 @@
       "deCaf": 1,
       "hotFood": 0,
       "openingHours": {
-        "monday":   [8,0,18,0],
-        "tuesday":  [8,0,18,0],
-        "wednesday":[8,0,18,0],
-        "thursday": [8,0,18,0],
-        "friday":   [8,0,18,0],
-        "saturday": [10,0,18,0],
-        "sunday":   [10,0,18,0]
+        "monday": [8, 0, 18, 0],
+        "tuesday": [8, 0, 18, 0],
+        "wednesday": [8, 0, 18, 0],
+        "thursday": [8, 0, 18, 0],
+        "friday": [8, 0, 18, 0],
+        "saturday": [10, 0, 18, 0],
+        "sunday": [10, 0, 18, 0]
       }
     },
     {
@@ -130,14 +130,14 @@
       "barrierFree": 0,
       "deCaf": 1,
       "hotFood": 0,
-      "openingHours":{
-        "monday":   [7,30,19,0],
-        "tuesday":  [7,30,19,0],
-        "wednesday":[7,30,19,0],
-        "thursday": [7,30,19,0],
-        "friday":   [7,30,19,0],
-        "saturday": [10,0,15,0],
-        "sunday":   false
+      "openingHours": {
+        "monday": [7, 30, 19, 0],
+        "tuesday": [7, 30, 19, 0],
+        "wednesday": [7, 30, 19, 0],
+        "thursday": [7, 30, 19, 0],
+        "friday": [7, 30, 19, 0],
+        "saturday": [10, 0, 15, 0],
+        "sunday": false
       }
     },
     {
@@ -158,14 +158,14 @@
       "barrierFree": 0,
       "deCaf": 1,
       "hotFood": 0,
-      "openingHours":{
-        "monday":   [8,30,17,0],
-        "tuesday":  [8,30,17,0],
-        "wednesday":[8,30,17,0],
-        "thursday": [8,30,17,0],
-        "friday":   [8,30,17,0],
-        "saturday": [9,30,17,0],
-        "sunday":   false
+      "openingHours": {
+        "monday": [8, 30, 17, 0],
+        "tuesday": [8, 30, 17, 0],
+        "wednesday": [8, 30, 17, 0],
+        "thursday": [8, 30, 17, 0],
+        "friday": [8, 30, 17, 0],
+        "saturday": [9, 30, 17, 0],
+        "sunday": false
       }
     },
     {
@@ -186,14 +186,14 @@
       "barrierFree": 0,
       "deCaf": 1,
       "hotFood": 0,
-      "openingHours":{
-        "monday":   [8,0,20,0],
-        "tuesday":  [8,0,20,0],
-        "wednesday":[8,0,20,0],
-        "thursday": [8,0,20,0],
-        "friday":   [8,0,20,0],
+      "openingHours": {
+        "monday": [8, 0, 20, 0],
+        "tuesday": [8, 0, 20, 0],
+        "wednesday": [8, 0, 20, 0],
+        "thursday": [8, 0, 20, 0],
+        "friday": [8, 0, 20, 0],
         "saturday": false,
-        "sunday":   [10,0,17,0]
+        "sunday": [10, 0, 17, 0]
       }
     },
     {
@@ -204,7 +204,7 @@
       "location": {
         "lat": 50.0713921,
         "lng": 14.4559498
-        },
+      },
       "imgSrc": "jen",
       "terrace": 1,
       "baby": 1,
@@ -214,14 +214,14 @@
       "barrierFree": 0,
       "deCaf": 1,
       "hotFood": 0,
-      "openingHours":{
-        "monday":   [8,0,17,0],
-        "tuesday":  [8,0,17,0],
-        "wednesday":[8,0,17,0],
-        "thursday": [8,0,17,0],
-        "friday":   [8,0,17,0],
-        "saturday": [8,30,13,0],
-        "sunday":   false
+      "openingHours": {
+        "monday": [8, 0, 17, 0],
+        "tuesday": [8, 0, 17, 0],
+        "wednesday": [8, 0, 17, 0],
+        "thursday": [8, 0, 17, 0],
+        "friday": [8, 0, 17, 0],
+        "saturday": [8, 30, 13, 0],
+        "sunday": false
       }
     },
     {
@@ -243,14 +243,15 @@
       "barrierFree": 0,
       "deCaf": 1,
       "hotFood": 0,
-      "openingHours":{
-        "monday":   [9,0,21,0],
-        "tuesday":  [9,0,21,0],
-        "wednesday":[9,0,21,0],
-        "thursday": [9,0,21,0],
-        "friday":   [9,0,21,0],
-        "saturday": [9,0,21,0],
-        "sunday":   [10,0,18,0]}
+      "openingHours": {
+        "monday": [9, 0, 21, 0],
+        "tuesday": [9, 0, 21, 0],
+        "wednesday": [9, 0, 21, 0],
+        "thursday": [9, 0, 21, 0],
+        "friday": [9, 0, 21, 0],
+        "saturday": [9, 0, 21, 0],
+        "sunday": [10, 0, 18, 0]
+      }
     },
     {
       "title": "Kafe Orient",
@@ -270,14 +271,14 @@
       "barrierFree": 0,
       "deCaf": 1,
       "hotFood": 0,
-      "openingHours":{
-        "monday":   [7,0,20,0],
-        "tuesday":  [7,0,20,0],
-        "wednesday":[7,0,20,0],
-        "thursday": [7,0,20,0],
-        "friday":   [7,0,20,0],
-        "saturday": [10,0,22,0],
-        "sunday":   false
+      "openingHours": {
+        "monday": [7, 0, 20, 0],
+        "tuesday": [7, 0, 20, 0],
+        "wednesday": [7, 0, 20, 0],
+        "thursday": [7, 0, 20, 0],
+        "friday": [7, 0, 20, 0],
+        "saturday": [10, 0, 22, 0],
+        "sunday": false
       }
     },
     {
@@ -298,14 +299,238 @@
       "barrierFree": 0,
       "deCaf": 1,
       "hotFood": 0,
-      "openingHours":{
-        "monday":   [7,30,21,0],
-        "tuesday":  [7,30,21,0],
-        "wednesday":[7,30,21,0],
-        "thursday": [7,30,21,0],
-        "friday":   [7,30,21,0],
-        "saturday": [9,0,21,0],
-        "sunday":   [9,0,18,0]
+      "openingHours": {
+        "monday": [7, 30, 21, 0],
+        "tuesday": [7, 30, 21, 0],
+        "wednesday": [7, 30, 21, 0],
+        "thursday": [7, 30, 21, 0],
+        "friday": [7, 30, 21, 0],
+        "saturday": [9, 0, 21, 0],
+        "sunday": [9, 0, 18, 0]
+      }
+    },
+    {
+      "title": "Dos Mundos Café",
+      "totalScore": 4.7,
+      "address": "M. Horákové 600, Holešovice",
+      "website": "dos-mundos.cz",
+      "location": {
+        "lat": 50.0999146,
+        "lng": 14.4279163
+      },
+      "imgSrc": "dosmundos",
+      "terrace": 0,
+      "baby": 1,
+      "freelance": 1,
+      "pets": 1,
+      "nonDairy": 1,
+      "barrierFree": 0,
+      "deCaf": 1,
+      "hotFood": 0,
+      "openingHours": {
+        "monday": [8, 0, 18, 0],
+        "tuesday": [8, 0, 18, 0],
+        "wednesday": [8, 0, 18, 0],
+        "thursday": [8, 0, 18, 0],
+        "friday": [8, 0, 18, 0],
+        "saturday": [10, 0, 17, 0],
+        "sunday": [10, 0, 17, 0]
+      }
+    },
+    {
+      "title": "Místo",
+      "totalScore": 4.6,
+      "address": "Bubenečská 12, Dejvice",
+      "website": "mistoprovas.cz",
+      "location": {
+        "lat": 50.09905,
+        "lng": 14.4044445
+      },
+      "imgSrc": "misto",
+      "terrace": 0,
+      "baby": 1,
+      "freelance": 1,
+      "pets": 1,
+      "nonDairy": 1,
+      "barrierFree": 0,
+      "deCaf": 1,
+      "hotFood": 1,
+      "openingHours": {
+        "monday": [9, 0, 21, 0],
+        "tuesday": [9, 0, 21, 0],
+        "wednesday": [9, 0, 21, 0],
+        "thursday": [9, 0, 21, 0],
+        "friday": [9, 0, 21, 0],
+        "saturday": [9, 0, 21, 0],
+        "sunday": [10, 0, 18, 0]
+      }
+    },
+    {
+      "title": "Zanzibar Praha",
+      "totalScore": 4.4,
+      "address": "Anglická 42, Vinohrady",
+      "website": "zanzi.cz",
+      "location": {
+        "lat": 50.0772886,
+        "lng": 14.4320027
+      },
+      "imgSrc": "zanzibar",
+      "terrace": 1,
+      "baby": 1,
+      "freelance": 1,
+      "pets": 1,
+      "nonDairy": 1,
+      "barrierFree": 0,
+      "deCaf": 1,
+      "hotFood": 1,
+      "openingHours": {
+        "monday": [8, 0, 23, 0],
+        "tuesday": [8, 0, 23, 0],
+        "wednesday": [8, 0, 23, 0],
+        "thursday": [8, 0, 23, 0],
+        "friday": [8, 0, 0, 0],
+        "saturday": [10, 0, 0, 0],
+        "sunday": [10, 0, 23, 0]
+      }
+    },
+    {
+      "title": "Café Modi",
+      "totalScore": 4.4,
+      "address": "Myslíkova 284/32, Nové Město",
+      "website": "cafemodi.cz",
+      "location": {
+        "lat": 50.0780484,
+        "lng": 14.4193012
+      },
+      "imgSrc": "modi",
+      "terrace": 0,
+      "baby": 1,
+      "freelance": 1,
+      "pets": 1,
+      "nonDairy": 1,
+      "barrierFree": 0,
+      "deCaf": 1,
+      "hotFood": 1,
+      "openingHours": {
+        "monday": [8, 0, 21, 0],
+        "tuesday": [8, 0, 21, 0],
+        "wednesday": [8, 0, 21, 0],
+        "thursday": [8, 0, 21, 0],
+        "friday": [8, 0, 21, 0],
+        "saturday": [12, 0, 17, 0],
+        "sunday": [12, 0, 17, 0]
+      }
+    },
+    {
+      "title": "Kavárna co hledá jméno",
+      "totalScore": 4.5,
+      "address": "Stroupežnického 493/10, Smíchov",
+      "website": "kavarnacohledajmeno.cz",
+      "location": {
+        "lat": 50.069659,
+        "lng": 14.403759
+      },
+      "imgSrc": "cohledajmeno",
+      "terrace": 1,
+      "baby": 1,
+      "freelance": 1,
+      "pets": 1,
+      "nonDairy": 1,
+      "barrierFree": 0,
+      "deCaf": 1,
+      "hotFood": 1,
+      "openingHours": {
+        "monday": [12, 0, 22, 0],
+        "tuesday": [8, 0, 22, 0],
+        "wednesday": [8, 0, 22, 0],
+        "thursday": [8, 0, 22, 0],
+        "friday": [8, 0, 22, 0],
+        "saturday": [9, 0, 20, 0],
+        "sunday": [9, 0, 20, 0]
+      }
+    },
+    {
+      "title": "Pilot Cafe",
+      "totalScore": 4.7,
+      "address": "Ovenecká 1072/17, Holešovice",
+      "website": "pilotcafe.cz",
+      "location": {
+        "lat": 50.0996074,
+        "lng": 14.4244027
+      },
+      "imgSrc": "pilot",
+      "terrace": 1,
+      "baby": 1,
+      "freelance": 1,
+      "pets": 1,
+      "nonDairy": 1,
+      "barrierFree": 0,
+      "deCaf": 1,
+      "hotFood": 1,
+      "openingHours": {
+        "monday": [8, 0, 17, 0],
+        "tuesday": [8, 0, 20, 0],
+        "wednesday": [8, 0, 20, 0],
+        "thursday": [8, 0, 20, 0],
+        "friday": [8, 0, 20, 0],
+        "saturday": [9, 0, 20, 0],
+        "sunday": [10, 0, 20, 0]
+      }
+    },
+    {
+      "title": "Vnitroblock",
+      "totalScore": 4.4,
+      "address": "Tusarova 791/31,Holešovice",
+      "website": "vnitroblock.cz",
+      "location": {
+        "lat": 50.1019463,
+        "lng": 14.4493286
+      },
+      "imgSrc": "pilot",
+      "terrace": 1,
+      "baby": 1,
+      "freelance": 1,
+      "pets": 1,
+      "nonDairy": 1,
+      "barrierFree": 0,
+      "deCaf": 0,
+      "hotFood": 1,
+      "openingHours": {
+        "monday": [12, 0, 22, 0],
+        "tuesday": [9, 0, 22, 0],
+        "wednesday": [9, 0, 22, 0],
+        "thursday": [9, 0, 22, 0],
+        "friday": [9, 0, 22, 0],
+        "saturday": [9, 0, 22, 0],
+        "sunday": [9, 0, 20, 0]
+      }
+    },
+    {
+      "title": "Espresso bar v Alza.cz",
+      "totalScore": 4.3,
+      "address": "Hala č. 8, Holešovická tržnice, Alza.cz",
+      "website": "https://www.alzacafe.cz/en/",
+      "location": {
+        "lat": 50.100294,
+        "lng": 14.448158
+      },
+      "imgSrc": "alza",
+      "terrace": 0,
+      "baby": 0,
+      "freelance": 1,
+      "pets": 0,
+      "nonDairy": 1,
+      "barrierFree": 0,
+      "deCaf": 0,
+      "hotFood": 0,
+      "openingHours": {
+        "monday": [8, 0, 20, 0],
+        "tuesday": [8, 0, 20, 0],
+        "wednesday": [8, 0, 20, 0],
+        "thursday": [8, 0, 20, 0],
+        "friday": [8, 0, 20, 0],
+        "saturday": [8, 0, 20, 0],
+        "sunday": [8, 0, 20, 0]
       }
     }
   ]
