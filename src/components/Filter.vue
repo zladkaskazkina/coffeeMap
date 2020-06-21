@@ -60,19 +60,22 @@ yellow: #f9be60
   align-items: center;
   justify-content: center;
 }
+
 img {
   width: 2rem;
   height: 2rem;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
+  opacity: 0.65;
 }
 
 .icon {
   width: 100%;
   margin: 0.5rem;
   padding: 0.5rem;
-  padding-left: 2rem;
+  padding-left: 1rem;
   display: flex;
   align-items: center;
+  box-shadow: 1px 1px 10px 0px #163b6929;
 }
 .find {
   background-color: #cd6e48;
@@ -87,17 +90,15 @@ img {
 
 .selected {
   background-color: #ffdd8f;
+  border-color: #fcd272;
 }
 
 @media only screen and (min-width: 768px) {
   .icon {
     width: 46%;
   }
-}
-
-@media only screen and (min-width: 1024px) {
   .filterComponent {
-    width: 1000px;
+    width: 700px;
   }
 }
 </style>

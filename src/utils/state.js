@@ -22,7 +22,7 @@ export const state = {
 			if (filters.barrierSelected) fits = fits && shop.barrierFree;
 			if (filters.freelanceSelected) fits = fits && shop.freelance;
 			if (filters.familySelected) fits = fits && shop.baby;
-			if (filters.petSelected) fits = fits && shop.pet;
+			if (filters.petSelected) fits = fits && shop.pets;
 			if (filters.outdoorSelected) fits = fits && shop.terrace;
 			if (!shop.title.toLowerCase().match(searchValue.toLowerCase())) fits = fits && false;
 
