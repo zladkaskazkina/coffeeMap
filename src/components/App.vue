@@ -11,19 +11,23 @@
           placeholder="Search"
         />
         <router-link class="navItem filterSection" to="/filter">
-          <i class="fas fa-filter"></i>
-          <button class="btn btn-sm btn-light"><i class="fas fa-times"></i><span class="d-none d-md-inline"> Clear filters </span></button>
+          <i class="fas fa-filter"></i>         
         </router-link>
+        <button class="navItem clearFilters">
+            <i class="fas fa-times cross"></i>
+          <span class="d-none d-md-inline"> Clear filters </span>
+         </button>
       </div>
     </div>
     <router-view></router-view>
     <div class="footer">
-      <div class="suggest">
+      <div class="author">Icons created by Freepic, downloaded from www.flaticon.com </div>
+      <div class="suggestCafe">
         <a class="suggest" href="mailto:you@yourdmainhere.com">
           Add new Coffeeshop
         </a>
       </div>
-      <div class="author">Icons created by Freepic, downloaded from Flaticon.com </div>
+      
     </div>
   </div>
 </template>
@@ -135,37 +139,43 @@ html {
   text-decoration: none;
   color: #55bece;
   padding: 0.5rem;
-  margin: 0 1rem;
   font-weight: 500;
   font-size: 1.2rem;
   letter-spacing: 0.2rem;
 }
-
 .navItem:hover {
   background-color: #55bece;
   text-decoration: none;
   padding: 0.5rem;
   color: #fff;
 }
+.clearFilters{
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0;
+  margin:0;
+  align-self: stretch;
+  background-color: transparent;
+} 
 
-.filterSection {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.clearFilters:focus {
+  outline: none;
+}
+
+.cross{
+  padding-right: 3px;
 }
 
 .searchBar {
   padding: 0.2rem;
+  margin: 0 10px;
   border-radius: 4px;
   width: 40vw;
   height: 50%;
-
   background-image: url("../assets/img/searchicon.svg"); /* Add a search icon to input */
   background-position: 10px 12px; /* Position the search icon */
   background-repeat: no-repeat; /* Do not repeat the icon image */
-
   font-size: 16px; /* Increase font-size */
-
   border: 1px solid #ddd; /* Add a grey border */
 }
 
@@ -178,21 +188,31 @@ html {
 .footer {
   position: fixed;
   bottom: 0;
+  left: 0;
+  right: 0; 
+  background-color: #55bece;
+  display: flex;
+  justify-content: space-between;
 }
 .suggest {
+  display: block;
   text-align: center;
-  background-color: #55bece;
   color: #fff;
-  padding: 0.2rem;
+  padding: 0.5rem;
   font-weight: 400;
-  font-size: 1rem;
-  letter-spacing: 0.2rem;
-  width: 100vw;
-  margin-bottom: 10px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;  
 }
-.suggest:hover {
+.suggest:hover{
   text-decoration: none;
   color: white;
+  background-color: #16283e;
+}
+
+.navItem:hover {
+  text-decoration: none;
+  padding: 0.5rem;
+  color: #fff;
 }
 
 .author {

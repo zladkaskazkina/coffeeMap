@@ -21,9 +21,6 @@
       </label>
     </div>
     <div class="d-flex ">
-      <div @click="clearFilters" class="btn btn-light clean m-5 ">
-        Clean filters
-      </div>
       <router-link class="find btn m-5" to="/">Save filters</router-link>
     </div>
   </div>
@@ -122,6 +119,7 @@ yellow: #f9be60
   box-sizing: border-box;
 }
 .filterComponent {
+  padding-top: 40px;
   margin: 0 auto;
 }
 
