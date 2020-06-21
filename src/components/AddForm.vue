@@ -1,6 +1,6 @@
 <template>
   <div class="form">
-    <h2 class="form__header">Suggest new coffee point</h2>
+    <h2 class="form__header">Suggest a new coffee point</h2>
     <form
       class="form__body"
       @submit.prevent="sendEmail"
@@ -14,7 +14,7 @@
             id="title"
             v-model.trim="formData.title"
             name="title"
-            placeholder="Name of coffeeshop"
+            placeholder="Name of a coffeeshop"
           />
         </label>
         <label for="Address">
@@ -47,7 +47,7 @@
           />
         </label>
       </div>
-      <h3 class="form__part-title">Filters:</h3>
+      <h4 class="form__part-title">Select features:</h4>
       <div
         class="filterList d-flex flex-column flex-md-row flex-md-wrap align-items-center justify-content-center"
       >
@@ -62,6 +62,7 @@
           }}
           <input
             type="checkbox"
+            :name="`${filter.key}`"
             v-model="formData.filters[filter.key]"
             v-show="false"
           />
@@ -227,7 +228,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .form {
   padding: 50px;
   text-align: center;
@@ -236,11 +237,12 @@ export default {
   margin: 15px auto;
 }
 .form__body {
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid rgb(230, 225, 225);
   border-radius: 5px;
+  background-color: white;
 }
 .icon {
   width: 100%;
@@ -256,7 +258,7 @@ export default {
   flex-wrap: wrap;
   justify-content: space-around;
   width: 100%;
-  margin: 0 auto;
+  margin: 0 0.5rem;
 }
 .form__part-title {
   margin: 10px;
@@ -284,9 +286,11 @@ export default {
   width: 2rem;
   height: 2rem;
   margin-right: 1rem;
+  opacity: 0.7;
 }
 .form__contact {
   width: 100%;
+  margin: 0 0.5rem;
 }
 .form__btn {
   background-color: #cd6e48 !important;
@@ -302,11 +306,11 @@ export default {
   .form__filter {
     width: 60%;
   }
-  .form__inputs {
+  /* .form__inputs {
     width: 60%;
   }
   .form__contact {
     width: 60%;
-  }
+  } */
 }
 </style>
