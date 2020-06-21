@@ -198,7 +198,7 @@ export default {
   font-size: 12px;
 } */
 /* Responzivita */
-@media only screen and (min-width: 720px) {
+@media only screen and (min-width: 768px) {
   /* .responsiveWidth {
     padding: 1rem;
   } */
