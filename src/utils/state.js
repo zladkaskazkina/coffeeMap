@@ -28,6 +28,7 @@ export const state = {
 			return fits;
 		});
 	},
+
 	filters: {
 		milkSelected: false,
 		decafSelected: false,

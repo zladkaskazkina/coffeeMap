@@ -147,7 +147,7 @@ export default {
   width: 100%;
 }
 .mapPart__map {
-  position: fixed;
+  position: relative;
   top: 50px;
   width: 100%;
   height: 100vw;
@@ -207,6 +207,7 @@ export default {
   }
   .mapPart__map {
     height: 100vh;
+    position: fixed;
   }
   .coffees {
     flex: 2;
