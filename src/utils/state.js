@@ -28,7 +28,11 @@ export const state = {
 			return fits;
 		});
 	},
-
+	clearFilters: function (filters) {
+		for (const property in filters) {
+			filters[property] = false;
+		}
+	},
 	filters: {
 		milkSelected: false,
 		decafSelected: false,

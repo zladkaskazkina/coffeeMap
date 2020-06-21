@@ -78,7 +78,7 @@
 // import Forms from "./Forms.vue";
 import { db } from "../utils/db";
 export default {
-  name: "About",
+  name: "Form",
   data() {
     return {
       profiles: [],

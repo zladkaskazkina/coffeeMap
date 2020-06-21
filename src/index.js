@@ -4,7 +4,9 @@ import Map from './components/Map.vue';
 import CafePart from './components/cafePart.vue';
 import CafeCard from './components/CafeCard.vue';
 import Filter from './components/Filter.vue';
+import Form from './components/AddForm.vue';
 import App from './components/App.vue';
+
 import './index.html';
 import { firestorePlugin } from 'vuefire';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
@@ -24,6 +26,7 @@ const router = new VueRouter({
     { path: '/filter', component: Filter },
     { path: '/', component: Map },
     { path: '/cafecard/:id', component: CafeCard },
+    { path: '/form', component: Form },
   ],
 });
 
