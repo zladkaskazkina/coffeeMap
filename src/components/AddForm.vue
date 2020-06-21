@@ -1,75 +1,136 @@
 <template>
-  <div>
-    <h1>Suggest new coffee point</h1>
-    <form @submit.prevent="addProfile">
-      <label for="title">
-        Name
-        <input
-          type="text"
-          id="title"
-          v-model.trim="title"
-          placeholder="Name of coffeeshop"
-        />
-      </label>
-      <label for="Address">
-        Address
-        <input
-          type="text"
-          id="addresss"
-          v-model.trim="address"
-          placeholder="Addresss"
-        />
-      </label>
+  <div class="form">
+    <h2 class="form__header">Suggest new coffee point</h2>
+    <form
+      class="form__body"
+      @submit.prevent="sendEmail"
+      method="post"
+      enctype="text/plain"
+    >
+      <div class="form__inputs">
+        <label for="title">
+          <b-form-input
+            type="text"
+            id="title"
+            v-model.trim="formData.title"
+            name="title"
+            placeholder="Name of coffeeshop"
+          />
+        </label>
+        <label for="Address">
+          <b-form-input
+            type="text"
+            id="addresss"
+            name="address"
+            v-model.trim="formData.address"
+            placeholder="Addresss"
+          />
+        </label>
+
+        <label for="City">
+          <b-form-input
+            type="text"
+            id="city"
+            name="city"
+            v-model.trim="formData.city"
+            placeholder="City"
+          />
+        </label>
+
+        <label for="Web">
+          <b-form-input
+            type="text"
+            id="web"
+            name="web"
+            v-model.trim="formData.web"
+            placeholder="Website"
+          />
+        </label>
+      </div>
+      <h3 class="form__part-title">Filters:</h3>
+      <div
+        class="filterList d-flex flex-column flex-md-row flex-md-wrap align-items-center justify-content-center"
+      >
+        <label
+          class="form__filter btn btn-light"
+          v-for="(filter, index) in state.filterLabels"
+          :class="{ selected: formData.filters[filter.key] }"
+          :key="index"
+        >
+          <img class="form__img" :src="`../assets/img/${filter.icon}.png`" />{{
+            filter.label
+          }}
+          <input
+            type="checkbox"
+            v-model="formData.filters[filter.key]"
+            v-show="false"
+          />
+        </label>
+      </div>
+      <!-- <div class="form__filters">
+  
+        <div class="form__filter btn btn-light">
+          <b-form-checkbox type="checkbox" v-model="decaf" v-show="false" />
+          <img class="form__img" src="../assets/img/decaf.png" />
+          <label for="decaf">Decaf coffee</label>
+        </div>
+        <div class="form__filter btn btn-light">
+          <b-form-checkbox type="checkbox" v-model="milk" v-show="false" />
+          <img class="form__img" src="../assets/img/decaf.png" />
+
+          <label for="milk">Alternative milk</label>
+        </div>
+        <div class="form__filter btn btn-light">
+          <b-form-checkbox type="checkbox" v-model="food" v-show="false" />
+          <img class="form__img" src="../assets/img/decaf.png" />
+
+          <label for="food">Hot Food</label>
+        </div>
+        <div class="form__filter btn btn-light">
+          <b-form-checkbox type="checkbox" v-model="barrier" v-show="false" />
+          <img class="form__img" src="../assets/img/decaf.png" />
+
+          <label for="barrier">Barrier-free</label>
+        </div>
+        <div class="form__filter btn btn-light">
+          <b-form-checkbox type="checkbox" v-model="freelance" v-show="false" />
+          <img class="form__img" src="../assets/img/decaf.png" />
+
+          <label for="freelance">Freelance Friendly</label>
+        </div>
+        <div class="form__filter btn btn-light">
+          <b-form-checkbox type="checkbox" v-model="baby" v-show="false" />
+          <img class="form__img" src="../assets/img/decaf.png" />
+
+          <label for="baby">Family Friendly</label>
+        </div>
+        <div class="form__filter btn btn-light">
+          <b-form-checkbox type="checkbox" v-model="pet" v-show="false" />
+          <img class="form__img" src="../assets/img/decaf.png" />
+
+          <label for="pet">Pet Friendly</label>
+        </div>
+        <div class="form__filter btn btn-light">
+          <b-form-checkbox type="checkbox" v-model="terrace" v-show="false" />
+          <img class="form__img" src="../assets/img/decaf.png" />
+
+          <label for="terrace">Outside seating</label>
+        </div>
+        
+      </div> -->
       <br />
-      <label for="City">
-        City
-        <input type="text" id="city" v-model.trim="city" placeholder="City" />
-      </label>
-      <br />
-      <label for="Web">
-        Website
-        <input type="text" id="web" v-model.trim="web" placeholder="Website" />
-      </label>
-      <br />
-
-      <label for="filters">
-        Filters:
-        <input type="checkbox" v-model="decaf" />
-        <label for="decaf">Decaf coffee</label>
-
-        <input type="checkbox" v-model="milk" />
-        <label for="milk">Alternative milk</label>
-
-        <input type="checkbox" v-model="food" />
-        <label for="food">Hot Food</label>
-
-        <input type="checkbox" v-model="barrier" />
-        <label for="barrier">Barrier-free</label>
-
-        <input type="checkbox" v-model="freelance" />
-        <label for="freelance">Freelance Friendly</label>
-
-        <input type="checkbox" v-model="baby" />
-        <label for="baby">Family Friendly</label>
-
-        <input type="checkbox" v-model="pet" />
-        <label for="pet">Pet Friendly</label>
-
-        <input type="checkbox" v-model="terrace" />
-        <label for="terrace">Outside seating</label>
-      </label>
-      <br />
-      <label for="contact">
-        Contact
-        <input
-          type="text"
+      <label class="form__contact" for="contact">
+        <b-form-input
+          type="email"
           id="contact"
-          v-model.trim="contact"
-          placeholder="yourname@gmail.com"
+          v-model.trim="formData.contact"
+          placeholder="youremail@gmail.com"
         />
       </label>
       <br />
-      <button type="submit" @click="addProfile">Add coffeeshop</button>
+      <button class="form__btn btn m-5" type="submit">
+        Add coffeeshop
+      </button>
     </form>
   </div>
 </template>
@@ -77,24 +138,65 @@
 <script>
 // import Forms from "./Forms.vue";
 import { db } from "../utils/db";
+import { state } from "../utils/state";
+
+let clearData = {
+  title: "",
+  address: "",
+  city: "",
+  web: "",
+  terrace: "",
+  baby: "",
+  decaf: "",
+  milk: "",
+  pet: "",
+  barrier: "",
+  food: "",
+  freelance: "",
+  contact: "",
+  filters: {
+    milkSelected: false,
+    decafSelected: false,
+    foodSelected: false,
+    barrierSelected: false,
+    freelanceSelected: false,
+    familySelected: false,
+    petSelected: false,
+    outdoorSelected: false,
+  },
+};
+
 export default {
   name: "Form",
   data() {
     return {
-      profiles: [],
-      title: "",
-      address: "",
-      city: "",
-      website: "",
-      terrace: "",
-      baby: "",
-      decaf: "",
-      milk: "",
-      pet: "",
-      barrier: "",
-      food: "",
-      freelance: "",
-      contact: "",
+      formData: {
+        title: "",
+        address: "",
+        city: "",
+        web: "",
+        terrace: "",
+        baby: "",
+        decaf: "",
+        milk: "",
+        pet: "",
+        barrier: "",
+        food: "",
+        freelance: "",
+        contact: "",
+        filters: {
+          milkSelected: false,
+          decafSelected: false,
+          foodSelected: false,
+          barrierSelected: false,
+          freelanceSelected: false,
+          familySelected: false,
+          petSelected: false,
+          outdoorSelected: false,
+        },
+      },
+
+      state,
     };
   },
   // Ordering the showed profiles by lastName
@@ -102,32 +204,109 @@ export default {
     profiles: db.collection("coffeeShops").orderBy("title"),
   },
   methods: {
-    addProfile(event) {
-      db.collection("coffeeShops")
-        .add({
-          title: this.title,
-          address: this.address,
-          branch: this.branch,
-          institution: this.institution,
-          offer: this.offer,
-          whom: this.whom,
-          region: this.region,
-          contact: this.contact,
-        })
-        .then((docRef) => {
-          docRef.update({ id: docRef.id });
-        });
-      // Clearing the input value
-      this.firstName = "";
-      this.lastName = "";
-      this.branch = "";
-      this.institution = "";
-      this.offer = "";
-      this.whom = "";
-      this.region = "";
-      this.contact = "";
-      event.preventDefault();
+    sendEmail: function(e) {
+      const self = this;
+      emailjs
+        .sendForm(
+          "gmail",
+          "template_uEHmIFup",
+          e.target,
+          "user_ueeaU5dH6cZdfvVasht6D"
+        )
+        .then(
+          (result) => {
+            this.formData = { ...clearData, filters: { ...clearData.filters } };
+            alert("Thank you for your suggestion, we will chcek it out");
+            this.$router.push("/");
+          },
+          (error) => {
+            alert("Sorry, the form wasn't send, try it again later, please");
+          }
+        );
     },
   },
 };
 </script>
+<style>
+.form {
+  padding: 50px;
+  text-align: center;
+}
+.form__header {
+  margin: 15px auto;
+}
+.form__body {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid rgb(230, 225, 225);
+  border-radius: 5px;
+}
+.icon {
+  width: 100%;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  padding-left: 2rem;
+  display: flex;
+  align-items: center;
+}
+.form__inputs {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  margin: 0 auto;
+}
+.form__part-title {
+  margin: 10px;
+}
+.form__filters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.form__filter {
+  width: 100%;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  flex: 1 40%;
+  display: flex !important;
+  align-items: center;
+}
+.form__filter:target {
+  background-color: #ffdd8f;
+}
+.form__img {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+}
+.form__contact {
+  width: 100%;
+}
+.form__btn {
+  background-color: #cd6e48 !important;
+  color: #eff0f4;
+}
+.form__Btn:hover {
+  background-color: #f9be60 !important;
+}
+.selected {
+  background-color: #ffdd8f !important;
+}
+@media only screen and (min-width: 768px) {
+  .form__filter {
+    width: 60%;
+  }
+  .form__inputs {
+    width: 60%;
+  }
+  .form__contact {
+    width: 60%;
+  }
+}
+</style>
