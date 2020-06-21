@@ -3,35 +3,21 @@
     <div class="fixBar">
       <div class="nav">
         <router-link class="navItem" to="/">Map</router-link>
-        <input
-          v-model.trim="state.searchValue"
-          class="searchBar"
-          type="text"
-          placeholder="Search"
-        />
+        <input v-model.trim="state.searchValue" class="searchBar" type="text" placeholder="Search" />
         <router-link class="navItem filterSection" to="/filter">
           <i class="fas fa-filter"></i>
         </router-link>
-        <button
-          class="navItem clearFilters"
-          @click="state.clearFilters(state.filters)"
-        >
+        <button class="navItem clearFilters" @click="state.clearFilters(state.filters)">
           <i class="fas fa-times cross"></i>
-          <span class="d-none d-md-inline">
-            Clear filters
-          </span>
+          <span class="d-none d-md-inline">Clear filters</span>
         </button>
       </div>
     </div>
     <router-view></router-view>
     <div class="footer">
-      <div class="author">
-        Icons created by Freepic, downloaded from www.flaticon.com
-      </div>
+      <div class="author">Icons created by Freepic, downloaded from www.flaticon.com</div>
       <div class="suggestCafe">
-        <router-link class="suggest" to="/form">
-          Add new Coffeeshop</router-link
-        >
+        <router-link class="suggest" to="/form">Add new Coffeeshop</router-link>
       </div>
     </div>
   </div>
@@ -47,11 +33,11 @@ export default {
     return {
       searchValue: "",
       profiles: [],
-      state,
+      state
     };
   },
   firestore: {
-    profiles: db.collection("coffeeShops").orderBy("title"),
+    profiles: db.collection("coffeeShops").orderBy("title")
   },
   methods: {
     searchIt() {
@@ -63,8 +49,8 @@ export default {
     },
     showSearched(cafe) {
       //otevri karticku na mape
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -128,7 +114,7 @@ html {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 1;
+  z-index: 10;
 }
 .nav {
   list-style-type: none;
@@ -200,6 +186,7 @@ html {
   background-color: #55bece;
   display: flex;
   justify-content: space-between;
+  z-index: 10;
 }
 .suggest {
   display: block;

@@ -1,16 +1,11 @@
 <template>
-  <div class="cafe"
-  v-on:click="onClick">
+  <div class="cafe" v-on:click="onClick">
     <div class="cafePart">
       <div class="cafePart__img">
         <!--MUSIME PRIDAT DYNAMICKY ${imgSrc}-->
-        <img
-          class="cafePart__bg"
-          v-bind:src="`./assets/img/caffe/${src}.jpg`" 
-          alt="kavarna"
-        /> 
-        
-        <h2 class="cafePart__title">{{ title }}</h2>
+        <img class="cafePart__bg" v-bind:src="`./assets/img/caffe/${src}.jpg`" alt="kavarna" />
+
+        <h3 class="cafePart__title">{{ title }}</h3>
       </div>
     </div>
   </div>
@@ -19,46 +14,61 @@
 export default {
   name: "Cafe",
   props: ["id", "title", "src", "onClick"],
-  methods: {},
+  methods: {}
 };
 </script>
 
 <style>
-/* .cafe {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
 .cafePart {
   width: 100%;
+  cursor: pointer;
 }
+.cafePart:hover .cafePart__bg {  
+  filter: brightness(85%);
+}
+.cafePart:hover .cafePart__title {  
+  transform:  translate(0%, -50%) scale(1.05);
+}
+
 .cafePart__img {
   width: 100%;
-  margin: 10px 0;
-  position: relative;
+  border-bottom: 1px solid gray;
+  position: relative;  
+  height: 0;
+  padding-bottom: 60%;
+  overflow: visible;
 }
 .cafePart__bg {
+  display: block;
   width: 100%;
-  filter: brightness(50%);
+  height: 100%;
+  filter: brightness(60%);
   object-fit: cover;
+  position: absolute;
+  transition: 150ms filter;
 }
 .cafePart__title {
+  padding: 10px;
   position: absolute;
   top: 50%;
   width: 100%;
   text-align: center;
-  transform: translate(0%, -50%);
+  transform: translate(0%, -50%);  
+  transition: 100ms transform;
   color: #eff0f4;
 }
-@media only screen and (min-width: 720px) {
-  /* .cafe {
-    flex: 2;
-    margin-right: 1rem;
-  } */
-  /* .cafePart {
-    flex: 2;
-    margin-right: 1rem;
-  } */
+@media only screen and (min-width: 375px) {
+ .cafePart{
+  width: 50%;
+  float: left;
+}
+}
+
+@media only screen and (min-width: 768px) {
+  .cafePart{
+  width: 100%;
+  float: none;
+}
   .cafePart__img {
     margin-top: 0;
   }

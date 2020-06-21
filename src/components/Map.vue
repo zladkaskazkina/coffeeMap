@@ -1,6 +1,4 @@
 <template>
-  <!-- <div class="background">
-  <div class="responsiveWidth">-->
   <div class="container">
     <div class="mainPart">
       <div class="topPart">
@@ -19,9 +17,9 @@
       </div>
     </div>
   </div>
-  <!-- </div>
-  </div>-->
 </template>
+
+
 <script>
 import { db } from "../utils/db.js";
 import CafeCard from "./CafeCard.vue";
@@ -52,15 +50,18 @@ export default {
       state
     };
   },
-  methods: {    
-      openCard: function(profileWebsite) {
+  methods: {
+    openCard: function(profileWebsite) {
       console.log("open");
       state.mapCards.forEach(mapCard => {
-        if(profileWebsite === mapCard.website){
+        if (profileWebsite === mapCard.website) {
           this.map.addCard(mapCard.card, mapCard.coords);
+          this.map.setCenter(mapCard.coords, true);          
+          if (window.screen.width < 768) {
+            window.scrollTo(0, 0);
+          }
         }
       });
-      
     },
     addMarkers: function() {
       if (this.map != null && this.layer != null) {
@@ -86,11 +87,10 @@ export default {
             let card = new SMap.Card();
             card.setSize(300, 220);
             card.getContainer().innerHTML = cardCafe;
-
-            state.mapCards.push({ card, coords, website: profiles[i].website});
-
             // znacka z predchozi ukazky
             marker.decorate(SMap.Marker.Feature.Card, card);
+            //ukladame si vizitky a souradnice pro to, aby se otevrely pri kliknuti na obrazek
+            state.mapCards.push({ card, coords, website: profiles[i].website });
           }
         });
       }
@@ -132,12 +132,21 @@ export default {
     this.layer.enable();
     // vlozeni znacky
     this.addMarkers();
+    //pridavam event listener na klik pro zavreni vizitky
+    this.map.getSignals().addListener(window, "marker-click", e => {
+       e.data.event.stopPropagation()
+    })
+    this.map.getSignals().addListener(window, "map-click", e => {
+        this.map.removeCard();
+    });
   },
 
   updated() {
     if (this.map != null && this.layer != null) {
       this.addMarkers();
       this.map.syncPort();
+      const centerZoom = this.map.computeCenterZoom(state.mapCards.map(mapCard => mapCard.coords));
+      this.map.setCenterZoom(centerZoom[0], centerZoom[1]);
     }
   }
 };
@@ -169,49 +178,15 @@ export default {
   height: 100vw;
   z-index: 0;
 }
-/* .cafePart {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.cafePart__img {
+
+.coffees {
   width: 100%;
-  margin: 10px 0;
-  position: relative;
+  overflow: hidden;
 }
-.cafePart__bg {
-  width: 100%;
-  filter: brightness(50%);
-  object-fit: cover;
-} */
-/* .cafePart__title {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  text-align: center;
-  transform: translate(0%, -50%);
-  color: #eff0f4;
-} */
-/* vizitka
-.title {
-  margin: 0;
-}
-.profil {
-  display: flex;
-  padding: 0;
-}
-.cafeImg {
-  width: 100px;
-}
-.openingHours {
-  width: 160px;
-  font-size: 12px;
-} */
 /* Responzivita */
+
 @media only screen and (min-width: 768px) {
-  /* .responsiveWidth {
-    padding: 1rem;
-  } */
+  
   .mapPart {
     height: 100%;
     padding-top: 45px;
@@ -233,23 +208,16 @@ export default {
     top: 45px;
   }
   .coffees {
+    padding-top: 45px;
     flex: 2;
-    margin-right: 1rem;
+    z-index: 1;
+    box-shadow: 3px 5px 20px 0px #4f5459;
   }
-  /* .cafePart {
-    flex: 2;
-    margin-right: 1rem;
-  }
-  .cafePart__img {
-    margin-top: 0;
-  } */
 }
 @media only screen and (min-width: 1024px) {
-  /* .responsiveWidth {
-    width: 80%;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  } */
+  .mainPart {
+    max-width: 1400px;
+    margin: auto;
+  }
 }
 </style>
