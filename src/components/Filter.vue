@@ -10,6 +10,7 @@
         class="icon btn btn-light"
         v-for="(filter, index) in state.filterLabels"
         :key="index"
+        :class="{ selected: state.filters[filter.key] }"
       >
         <img :src="`../assets/img/${filter.icon}.png`" />{{ filter.label }}
         <input
