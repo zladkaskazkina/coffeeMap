@@ -1,6 +1,6 @@
 <template>
   <div class="form">
-    <h2 class="form__header">Suggest a new coffee point</h2>
+    <h2 class="form__header">Suggest a new coffeeshop</h2>
     <form
       class="form__body"
       @submit.prevent="sendEmail"
@@ -69,57 +69,7 @@
           />
         </label>
       </div>
-      <!-- <div class="form__filters">
-  
-        <div class="form__filter btn btn-light">
-          <b-form-checkbox type="checkbox" v-model="decaf" v-show="false" />
-          <img class="form__img" src="../assets/img/decaf.png" />
-          <label for="decaf">Decaf coffee</label>
-        </div>
-        <div class="form__filter btn btn-light">
-          <b-form-checkbox type="checkbox" v-model="milk" v-show="false" />
-          <img class="form__img" src="../assets/img/decaf.png" />
-
-          <label for="milk">Alternative milk</label>
-        </div>
-        <div class="form__filter btn btn-light">
-          <b-form-checkbox type="checkbox" v-model="food" v-show="false" />
-          <img class="form__img" src="../assets/img/decaf.png" />
-
-          <label for="food">Hot Food</label>
-        </div>
-        <div class="form__filter btn btn-light">
-          <b-form-checkbox type="checkbox" v-model="barrier" v-show="false" />
-          <img class="form__img" src="../assets/img/decaf.png" />
-
-          <label for="barrier">Barrier-free</label>
-        </div>
-        <div class="form__filter btn btn-light">
-          <b-form-checkbox type="checkbox" v-model="freelance" v-show="false" />
-          <img class="form__img" src="../assets/img/decaf.png" />
-
-          <label for="freelance">Freelance Friendly</label>
-        </div>
-        <div class="form__filter btn btn-light">
-          <b-form-checkbox type="checkbox" v-model="baby" v-show="false" />
-          <img class="form__img" src="../assets/img/decaf.png" />
-
-          <label for="baby">Family Friendly</label>
-        </div>
-        <div class="form__filter btn btn-light">
-          <b-form-checkbox type="checkbox" v-model="pet" v-show="false" />
-          <img class="form__img" src="../assets/img/decaf.png" />
-
-          <label for="pet">Pet Friendly</label>
-        </div>
-        <div class="form__filter btn btn-light">
-          <b-form-checkbox type="checkbox" v-model="terrace" v-show="false" />
-          <img class="form__img" src="../assets/img/decaf.png" />
-
-          <label for="terrace">Outside seating</label>
-        </div>
-        
-      </div> -->
+      
       <br />
       <label class="form__contact" for="contact">
         <b-form-input
@@ -132,7 +82,7 @@
       </label>
       <br />
       <button class="form__btn btn m-5" type="submit">
-        Add coffeeshop
+        Send suggestion
       </button>
     </form>
   </div>
@@ -227,23 +177,17 @@ export default {
               ${this.formData.filters.petSelected ? "Pet: yes" : "Pet: no"}
               |
               ${
-                this.formData.filters.freelanceSelected
-                  ? "Freelance: yes"
-                  : "Freelance: no"
+                this.formData.filters.freelanceSelected ? "Freelance: yes"  : "Freelance: no"
               }
               |
               ${
-                this.formData.filters.barrierSelected
-                  ? "Barrier: yes"
-                  : "Barrier: no"
+                this.formData.filters.barrierSelected  ? "Barrier: yes"  : "Barrier: no"
               }
               |
               ${this.formData.filters.foodSelected ? "Food: yes" : "Food: no"}
               |
               ${
-                this.formData.filters.outdoorSelected
-                  ? "Outdoor: yes"
-                  : "Outdoor: no"
+                this.formData.filters.outdoorSelected  ? "Outdoor: yes" : "Outdoor: no"
               }
               |`;
       setTimeout(() => {
@@ -260,11 +204,11 @@ export default {
                 ...clearData,
                 filters: { ...clearData.filters },
               };
-              alert("Thank you for your suggestion, we will chcek it out");
+              alert("Thank you for your suggestion, we will chcek it out!");
               this.$router.push("/");
             },
             (error) => {
-              alert("Sorry, the form wasn't send, try it again later, please");
+              alert("Sorry, the form wasn't send, try it again later, please.");
             }
           );
       }, 1);
@@ -350,11 +294,5 @@ export default {
   .form__filter {
     width: 60%;
   }
-  /* .form__inputs {
-    width: 60%;
-  }
-  .form__contact {
-    width: 60%;
-  } */
 }
 </style>

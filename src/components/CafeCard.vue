@@ -1,4 +1,3 @@
-
 <template>
   <div class="card">
     <div class="header">
@@ -161,4 +160,3 @@ img{
   margin: 1rem;
 }
 </style>
-

@@ -196,7 +196,7 @@ export default {
 
 .noFindSuggest {
   color: #16283e;
-}
+} 
 /* Responzivita */
 
 @media only screen and (min-width: 768px) {
@@ -228,6 +228,7 @@ export default {
     box-shadow: 3px 5px 20px 0px #4f5459;
   }
 }
+
 @media only screen and (min-width: 1024px) {
   .mainPart {
     max-width: 1400px;

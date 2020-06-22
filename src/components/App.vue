@@ -15,9 +15,12 @@
     </div>
     <router-view></router-view>
     <div class="footer">
-      <div class="author">Icons created by Freepic, downloaded from www.flaticon.com</div>
+      <div>
+        <div class="author">Icons created by Freepic, downloaded from www.flaticon.com</div>
+        <!-- <div class="copyright">© Benešová & Krucká</div> -->
+      </div>
       <div class="suggestCafe">
-        <router-link class="suggest" to="/form">Add new Coffeeshop</router-link>
+        <router-link class="suggest" to="/form">Add coffeeshop</router-link>
       </div>
     </div>
   </div>
@@ -104,9 +107,15 @@ img {
 html {
   font-family: "Muli", sans-serif;
 }
+
+
+/* vlastni stylovani */
+
 .main {
   height: 100vh;
 }
+
+/* top */ 
 .fixBar {
   display: flex;
   flex-direction: column;
@@ -178,6 +187,9 @@ html {
   text-align: center;
 }
 
+
+/* bottom */
+
 .footer {
   position: fixed;
   bottom: 0;
@@ -207,6 +219,12 @@ html {
   text-decoration: none;
   padding: 0.5rem;
   color: #fff;
+}
+
+.copyright {
+  font-size: 0.65rem;
+  padding: 0.2rem;
+  width: 150px;
 }
 
 .author {

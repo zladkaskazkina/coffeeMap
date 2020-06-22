@@ -1,5 +1,3 @@
-//${true ? .. : ..}
-//ADD CLASS HIDDEN DISPLAY NONE
 export default function renderCard(cafe) {
   return `<div class="innerCard">
     <div class="header">
@@ -82,9 +80,9 @@ export default function renderCard(cafe) {
           </table>
         </div>
       </div>
+
       <div class="rightSide">
-        <div class="filters">
-          
+        <div class="filters">          
           <div class="icon ${cafe.nonDairy ? "" : "hidden"}"><img src="../assets/img/milk.png"></div>
           <div class="icon ${cafe.deCaf ? "" : "hidden"}"><img src="../assets/img/decaf.png"></div>
           <div class="icon ${cafe.hotFood ? "" : "hidden"}"><img src="../assets/img/soup.png"></div>
@@ -94,6 +92,7 @@ export default function renderCard(cafe) {
           <div class="icon ${cafe.pets ? "" : "hidden"}"><img src="../assets/img/pawprint.png"></div>
           <div class="icon ${cafe.terrace ? "" : "hidden"}"><img src="../assets/img/outdoors.png"></div>
         </div>
+
         <div class="links">      
           <a href="${cafe.website}" target="_blank">
             <div class="web btn btn-light">Website</div>

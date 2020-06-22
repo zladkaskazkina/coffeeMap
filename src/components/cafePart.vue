@@ -57,10 +57,11 @@ export default {
   transition: 100ms transform;
   color: #eff0f4;
 }
-@media only screen and (min-width: 375px) {
+@media only screen and (min-width: 480px) {
  .cafePart{
   width: 50%;
   float: left;
+  border-left: 1px solid gray;
 }
 }
 
@@ -68,6 +69,7 @@ export default {
   .cafePart{
   width: 100%;
   float: none;
+  border-left: none;
 }
   .cafePart__img {
     margin-top: 0;
