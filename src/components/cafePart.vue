@@ -2,8 +2,11 @@
   <div class="cafe" v-on:click="onClick">
     <div class="cafePart">
       <div class="cafePart__img">
-        <!--MUSIME PRIDAT DYNAMICKY ${imgSrc}-->
-        <img class="cafePart__bg" v-bind:src="`./assets/img/caffe/${src}.jpg`" alt="kavarna" />
+        <img
+          class="cafePart__bg"
+          v-bind:src="`./assets/img/caffe/${src}.jpg`"
+          alt="kavarna"
+        />
 
         <h3 class="cafePart__title">{{ title }}</h3>
       </div>
@@ -14,7 +17,7 @@
 export default {
   name: "Cafe",
   props: ["id", "title", "src", "onClick"],
-  methods: {}
+  methods: {},
 };
 </script>
 
@@ -23,17 +26,17 @@ export default {
   width: 100%;
   cursor: pointer;
 }
-.cafePart:hover .cafePart__bg {  
+.cafePart:hover .cafePart__bg {
   filter: brightness(85%);
 }
-.cafePart:hover .cafePart__title {  
-  transform:  translate(0%, -50%) scale(1.05);
+.cafePart:hover .cafePart__title {
+  transform: translate(0%, -50%) scale(1.05);
 }
 
 .cafePart__img {
   width: 100%;
   border-bottom: 1px solid gray;
-  position: relative;  
+  position: relative;
   height: 0;
   padding-bottom: 60%;
   overflow: visible;
@@ -53,22 +56,22 @@ export default {
   top: 50%;
   width: 100%;
   text-align: center;
-  transform: translate(0%, -50%);  
+  transform: translate(0%, -50%);
   transition: 100ms transform;
   color: #eff0f4;
 }
 @media only screen and (min-width: 375px) {
- .cafePart{
-  width: 50%;
-  float: left;
-}
+  .cafePart {
+    width: 50%;
+    float: left;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-  .cafePart{
-  width: 100%;
-  float: none;
-}
+  .cafePart {
+    width: 100%;
+    float: none;
+  }
   .cafePart__img {
     margin-top: 0;
   }

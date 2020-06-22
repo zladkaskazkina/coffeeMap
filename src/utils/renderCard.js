@@ -58,7 +58,7 @@ export default function renderCard(cafe) {
               ${cafe.openingHours.friday ? `
               ${cafe.openingHours.friday[0].toString().padStart(2, '0')}:${cafe.openingHours.friday[1].toString().padStart(2, '0')} - 
               ${cafe.openingHours.friday[2].toString().padStart(2, '0')}:${cafe.openingHours.friday[3].toString().padStart(2, '0')}`
-     : "CLOSED"}
+      : "CLOSED"}
               </td>
             </tr>
             <tr>
@@ -85,14 +85,14 @@ export default function renderCard(cafe) {
       <div class="rightSide">
         <div class="filters">
           
-          <div class="icon ${cafe.nonDairy ? "" : "hidden"}"><img src="../assets/img/milk.png"></div>
-          <div class="icon ${cafe.deCaf ? "" : "hidden"}"><img src="../assets/img/decaf.png"></div>
-          <div class="icon ${cafe.hotFood ? "" : "hidden"}"><img src="../assets/img/soup.png"></div>
-          <div class="icon ${cafe.barrierFree ? "" : "hidden"}"><img src="../assets/img/disabled.png"></div>
-          <div class="icon ${cafe.freelance ? "" : "hidden"}"><img src="../assets/img/laptop.png"></div>
-          <div class="icon ${cafe.baby ? "" : "hidden"}"><img src="../assets/img/baby.png"></div>
-          <div class="icon ${cafe.pets ? "" : "hidden"}"><img src="../assets/img/pawprint.png"></div>
-          <div class="icon ${cafe.terrace ? "" : "hidden"}"><img src="../assets/img/outdoors.png"></div>
+          <div class="icon ${cafe.nonDairy ? "" : "hidden"}"><img title="alternative milk" src="../assets/img/milk.png"></div>
+          <div class="icon ${cafe.deCaf ? "" : "hidden"}"><img title="decaf coffee" src="../assets/img/decaf.png"></div>
+          <div class="icon ${cafe.hotFood ? "" : "hidden"}"><img title="hot food" src="../assets/img/soup.png"></div>
+          <div class="icon ${cafe.barrierFree ? "" : "hidden"}"><img title="barrier-free" src="../assets/img/disabled.png"></div>
+          <div class="icon ${cafe.freelance ? "" : "hidden"}"><img title="freelance friendly" src="../assets/img/laptop.png"></div>
+          <div class="icon ${cafe.baby ? "" : "hidden"}"><img title="family friendly" src="../assets/img/baby.png"></div>
+          <div class="icon ${cafe.pets ? "" : "hidden"}"><img title="pet friendly" src="../assets/img/pawprint.png"></div>
+          <div class="icon ${cafe.terrace ? "" : "hidden"}"><img title="outside seating" src="../assets/img/outdoors.png"></div>
         </div>
         <div class="links">      
           <a href="${cafe.website}" target="_blank">
