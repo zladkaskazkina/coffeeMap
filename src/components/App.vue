@@ -3,11 +3,19 @@
     <div class="fixBar">
       <div class="nav">
         <router-link class="navItem" to="/">Map</router-link>
-        <input v-model.trim="state.searchValue" class="searchBar" type="text" placeholder="Search" />
+        <input
+          v-model.trim="state.searchValue"
+          class="searchBar"
+          type="text"
+          placeholder="Search by name"
+        />
         <router-link class="navItem filterSection" to="/filter">
           <i class="fas fa-filter"></i>
         </router-link>
-        <button class="navItem clearFilters" @click="state.clearFilters(state.filters)">
+        <button
+          class="navItem clearFilters"
+          @click="state.clearFilters(state.filters)"
+        >
           <i class="fas fa-times cross"></i>
           <span class="d-none d-md-inline">Clear filters</span>
         </button>
@@ -16,7 +24,9 @@
     <router-view></router-view>
     <div class="footer">
       <div>
-        <div class="author">Icons created by Freepic, downloaded from www.flaticon.com</div>
+        <!-- <div class="author">
+          Icons created by Freepic, downloaded from www.flaticon.com
+        </div> -->
         <!-- <div class="copyright">© Benešová & Krucká</div> -->
       </div>
       <div class="suggestCafe">
@@ -36,11 +46,11 @@ export default {
     return {
       searchValue: "",
       profiles: [],
-      state
+      state,
     };
   },
   firestore: {
-    profiles: db.collection("coffeeShops").orderBy("title")
+    profiles: db.collection("coffeeShops").orderBy("title"),
   },
   methods: {
     searchIt() {
@@ -52,8 +62,8 @@ export default {
     },
     showSearched(cafe) {
       //otevri karticku na mape
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -108,14 +118,13 @@ html {
   font-family: "Muli", sans-serif;
 }
 
-
 /* vlastni stylovani */
 
 .main {
   height: 100vh;
 }
 
-/* top */ 
+/* top */
 .fixBar {
   display: flex;
   flex-direction: column;
@@ -187,21 +196,23 @@ html {
   text-align: center;
 }
 
-
 /* bottom */
 
 .footer {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #55bece;
-  display: flex;
-  justify-content: space-between;
+  bottom: 5px;
+  width: 100%;
+  /* left: 0;
+  right: 0; */
+
   z-index: 10;
 }
+.suggestCafe {
+  text-align: center;
+}
 .suggest {
-  display: block;
+  border-radius: 5px;
+  background-color: #55bece;
   text-align: center;
   color: #fff;
   padding: 0.5rem;
