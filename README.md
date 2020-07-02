@@ -3,6 +3,8 @@ The final project for Digital Academy by Czechitas.
 
 The map of coffeeshops in Prague with filters, searchbar and form for suggestion a new one.
 
+https://filtercafe.netlify.app/
+
 ## Getting Started
 
 ### Installing
