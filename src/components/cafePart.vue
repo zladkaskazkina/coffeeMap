@@ -2,7 +2,11 @@
   <div class="cafe" v-on:click="onClick">
     <div class="cafePart">
       <div class="cafePart__img">
-        <img class="cafePart__bg" v-bind:src="`./assets/img/caffe/${src}.jpg`" alt="kavarna" />
+        <img
+          class="cafePart__bg"
+          v-bind:src="`./assets/img/caffe/${src}.jpg`"
+          alt="kavarna"
+        />
 
         <h3 class="cafePart__title">{{ title }}</h3>
       </div>
@@ -13,7 +17,7 @@
 export default {
   name: "Cafe",
   props: ["id", "title", "src", "onClick"],
-  methods: {}
+  methods: {},
 };
 </script>
 
@@ -23,7 +27,7 @@ export default {
   cursor: pointer;
 }
 .cafePart:hover .cafePart__bg {
-  filter: brightness(85%);
+  filter: brightness(90%);
 }
 .cafePart:hover .cafePart__title {
   transform: translate(0%, -50%) scale(1.05);
@@ -31,7 +35,7 @@ export default {
 
 .cafePart__img {
   width: 100%;
-  border-bottom: 1px solid gray;
+  border-bottom: 2px solid #e3f2f7;
   position: relative;
   height: 0;
   padding-bottom: 60%;
@@ -41,7 +45,7 @@ export default {
   display: block;
   width: 100%;
   height: 100%;
-  filter: brightness(60%);
+  filter: brightness(50%);
   object-fit: cover;
   position: absolute;
   transition: 150ms filter;
@@ -54,13 +58,13 @@ export default {
   text-align: center;
   transform: translate(0%, -50%);
   transition: 100ms transform;
-  color: #eff0f4;
+  color: #e3f2f7;
 }
 @media only screen and (min-width: 480px) {
   .cafePart {
     width: 50%;
     float: left;
-    border-left: 1px solid gray;
+    border-left: 2px solid #e3f2f7;
   }
 }
 

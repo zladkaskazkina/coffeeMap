@@ -82,15 +82,15 @@ img {
   color: #eff0f4;
 }
 .clean:hover {
-  background-color: #f9be60;
+  background-color: #5bc4c5;
 }
 .icon:hover {
-  background-color: #f9be60;
+  background-color: #5bc4c5;
 }
 
 .selected {
-  background-color: #ffdd8f;
-  border-color: #fcd272;
+  background-color: #d1a184;
+  border-color: #d1a184;
 }
 
 @media only screen and (min-width: 768px) {

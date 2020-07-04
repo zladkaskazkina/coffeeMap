@@ -2,8 +2,9 @@
   <div class="card">
     <div class="header">
       <div class="title">Kavárna, co hledá jméno</div>
-      <div class="rating">4,8
-        <div class="star"><img src="../assets/img/star.png" alt="Star"></div>
+      <div class="rating">
+        4,8
+        <div class="star"><img src="../assets/img/star.png" alt="Star" /></div>
       </div>
     </div>
     <div class="address">
@@ -11,7 +12,7 @@
     </div>
     <div class="content">
       <div class="leftSide">
-          <div class="openingHours">
+        <div class="openingHours">
           OPENING HOURS
           <table>
             <tr>
@@ -47,34 +48,48 @@
       </div>
       <div class="rightSide">
         <div class="filters">
-          <div class="icon"><img src="../assets/img/disabled.png" alt="Wheelchair"></div>
-          <div class="icon"><img src="../assets/img/soup.png" alt="Hot Food"></div>
-          <div class="icon"><img src="../assets/img/milk.png" alt="VegiMilk"></div>
-          <div class="icon"><img src="../assets/img/soup.png" alt="Hot Food"></div>
-          <div class="icon"><img src="../assets/img/soup.png" alt="Hot Food"></div>
-          <div class="icon"><img src="../assets/img/soup.png" alt="Hot Food"></div>
-          <div class="icon"><img src="../assets/img/soup.png" alt="Hot Food"></div>
-          <div class="icon"><img src="../assets/img/soup.png" alt="Hot Food"></div>
+          <div class="icon">
+            <img src="../assets/img/disabled.png" alt="Wheelchair" />
+          </div>
+          <div class="icon">
+            <img src="../assets/img/soup.png" alt="Hot Food" />
+          </div>
+          <div class="icon">
+            <img src="../assets/img/milk.png" alt="VegiMilk" />
+          </div>
+          <div class="icon">
+            <img src="../assets/img/soup.png" alt="Hot Food" />
+          </div>
+          <div class="icon">
+            <img src="../assets/img/soup.png" alt="Hot Food" />
+          </div>
+          <div class="icon">
+            <img src="../assets/img/soup.png" alt="Hot Food" />
+          </div>
+          <div class="icon">
+            <img src="../assets/img/soup.png" alt="Hot Food" />
+          </div>
+          <div class="icon">
+            <img src="../assets/img/soup.png" alt="Hot Food" />
+          </div>
         </div>
-        <div class="links">      
+        <div class="links">
           <div class="web btn btn-light">Web</div>
         </div>
       </div>
     </div>
-    
   </div>
 </template>
-
 
 <style scoped>
 .card {
   width: 300px;
   height: 200px;
-  background-color: #eff0f4;  
+  background-color: #eff0f4;
 }
 
 .header {
-  display: flex;  
+  display: flex;
   background-color: hsl(188, 55%, 57%);
   padding: 3px 5px;
 }
@@ -82,8 +97,7 @@
   width: 80%;
 }
 
-
-.address{
+.address {
   font-size: 0.8rem;
   color: rgb(98, 98, 98);
   margin: 3px 5px;
@@ -98,7 +112,7 @@
 
 .star {
   height: 15px;
-  width: 15px;  
+  width: 15px;
   position: relative;
 }
 
@@ -109,7 +123,7 @@
 }
 
 .leftSide {
-  width: 55%
+  width: 55%;
 }
 .openingHours {
   font-size: 0.7rem;
@@ -132,14 +146,14 @@ td {
 }
 .icon {
   border-radius: 5px;
-  width:25px;
-  height:25px;
+  width: 25px;
+  height: 25px;
   margin: 2px;
   box-shadow: 0px 1px 3px 1px gray;
   position: relative;
 }
-img{
-  width:80%;
+img {
+  width: 80%;
   height: 80%;
   position: absolute;
   margin: auto;
@@ -153,7 +167,7 @@ img{
   background-color: rgb(240, 208, 149);
 }
 .web {
-  background-color: #cd6e48;
+  background-color: #cd6e48 !important;
   width: 90%;
 }
 .fab {

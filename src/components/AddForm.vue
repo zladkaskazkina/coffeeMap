@@ -69,7 +69,7 @@
           />
         </label>
       </div>
-      
+
       <br />
       <label class="form__contact" for="contact">
         <b-form-input
@@ -177,17 +177,23 @@ export default {
               ${this.formData.filters.petSelected ? "Pet: yes" : "Pet: no"}
               |
               ${
-                this.formData.filters.freelanceSelected ? "Freelance: yes"  : "Freelance: no"
+                this.formData.filters.freelanceSelected
+                  ? "Freelance: yes"
+                  : "Freelance: no"
               }
               |
               ${
-                this.formData.filters.barrierSelected  ? "Barrier: yes"  : "Barrier: no"
+                this.formData.filters.barrierSelected
+                  ? "Barrier: yes"
+                  : "Barrier: no"
               }
               |
               ${this.formData.filters.foodSelected ? "Food: yes" : "Food: no"}
               |
               ${
-                this.formData.filters.outdoorSelected  ? "Outdoor: yes" : "Outdoor: no"
+                this.formData.filters.outdoorSelected
+                  ? "Outdoor: yes"
+                  : "Outdoor: no"
               }
               |`;
       setTimeout(() => {
@@ -268,7 +274,7 @@ export default {
   align-items: center;
 }
 .form__filter:target {
-  background-color: #ffdd8f;
+  background-color: #5bc4c5;
 }
 .form__img {
   width: 2rem;
@@ -284,11 +290,11 @@ export default {
   background-color: #cd6e48 !important;
   color: #eff0f4;
 }
-.form__Btn:hover {
-  background-color: #f9be60 !important;
+.form__filter:hover {
+  background-color: #5bc4c5 !important;
 }
 .selected {
-  background-color: #ffdd8f !important;
+  background-color: #d1a184 !important;
 }
 @media only screen and (min-width: 768px) {
   .form__filter {

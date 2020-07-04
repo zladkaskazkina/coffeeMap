@@ -14,16 +14,16 @@
           :key="index"
           :onClick="() => openCard(cafe.website)"
         />
-        <div class="noFind"
-        v-if="!filteredProfiles.length"> Sorry, we could not find anything! Try again or 
-         <router-link class="noFindSuggest" to="/form">suggest a new coffeeshop. </router-link>
-        
+        <div class="noFind" v-if="!filteredProfiles.length">
+          Sorry, we could not find anything! Try again or
+          <router-link class="noFindSuggest" to="/form"
+            >suggest a new coffeeshop.
+          </router-link>
         </div>
       </div>
     </div>
   </div>
 </template>
-
 
 <script>
 import { db } from "../utils/db.js";
@@ -36,7 +36,7 @@ export default {
   name: "Map",
   components: {
     cafePart,
-    CafeCard
+    CafeCard,
   },
   data() {
     return {
@@ -52,16 +52,16 @@ export default {
       map: null,
       layer: null,
       intialShops: null,
-      state
+      state,
     };
   },
   methods: {
     openCard: function(profileWebsite) {
       console.log("open");
-      state.mapCards.forEach(mapCard => {
+      state.mapCards.forEach((mapCard) => {
         if (profileWebsite === mapCard.website) {
           this.map.addCard(mapCard.card, mapCard.coords);
-          this.map.setCenter(mapCard.coords, true);          
+          this.map.setCenter(mapCard.coords, true);
           if (window.screen.width < 768) {
             window.scrollTo(0, 0);
           }
@@ -70,7 +70,7 @@ export default {
     },
     addMarkers: function() {
       if (this.map != null && this.layer != null) {
-        state.coffeeShops.then(shops => {
+        state.coffeeShops.then((shops) => {
           const profiles = state.getFilteredShops(
             state.filters,
             shops,
@@ -80,26 +80,36 @@ export default {
           this.layer.removeAll();
           state.mapCards = [];
           for (let i = 0; i < profiles.length; i++) {
-            //pridani.doc(this.user.id)
+            //add locations
             let coords = SMap.Coords.fromWGS84(
               profiles[i].location.lng,
               profiles[i].location.lat
             );
             let cardCafe = renderCard(profiles[i]);
-            let marker = new SMap.Marker(coords);
+            //add custom pin
+            const pin = JAK.mel("div");
+            const pinImg = JAK.mel("img", {
+              src: "../assets/img/pin-cafe1.png",
+            });
+            pinImg.classList.add("custom_pin");
+            pin.appendChild(pinImg);
+            //add markers
+            let marker = new SMap.Marker(coords, null, {
+              url: pin,
+            });
             this.layer.addMarker(marker);
-            // vlozeni karticky
+            // add card
             let card = new SMap.Card();
             card.setSize(300, 220);
             card.getContainer().innerHTML = cardCafe;
-            // znacka z predchozi ukazky
+            // cards add to markers
             marker.decorate(SMap.Marker.Feature.Card, card);
             //ukladame si vizitky a souradnice pro to, aby se otevrely pri kliknuti na obrazek
             state.mapCards.push({ card, coords, website: profiles[i].website });
           }
         });
       }
-    }
+    },
   },
   computed: {
     filteredProfiles() {
@@ -112,13 +122,13 @@ export default {
       } else {
         return [];
       }
-    }
+    },
   },
   firestore: {
-    profiles: db.collection("coffeeShops").orderBy("title")
+    profiles: db.collection("coffeeShops").orderBy("title"),
   },
   created() {
-    getCoffeeShops().then(shops => {
+    getCoffeeShops().then((shops) => {
       this.intialShops = shops;
     });
   },
@@ -138,11 +148,11 @@ export default {
     // vlozeni znacky
     this.addMarkers();
     //pridavam event listener na klik pro zavreni vizitky
-    this.map.getSignals().addListener(window, "marker-click", e => {
-       e.data.event.stopPropagation()
-    })
-    this.map.getSignals().addListener(window, "map-click", e => {
-        this.map.removeCard();
+    this.map.getSignals().addListener(window, "marker-click", (e) => {
+      e.data.event.stopPropagation();
+    });
+    this.map.getSignals().addListener(window, "map-click", (e) => {
+      this.map.removeCard();
     });
   },
 
@@ -150,10 +160,12 @@ export default {
     if (this.map != null && this.layer != null) {
       this.addMarkers();
       this.map.syncPort();
-      const centerZoom = this.map.computeCenterZoom(state.mapCards.map(mapCard => mapCard.coords));
+      const centerZoom = this.map.computeCenterZoom(
+        state.mapCards.map((mapCard) => mapCard.coords)
+      );
       this.map.setCenterZoom(centerZoom[0], centerZoom[1]);
     }
-  }
+  },
 };
 </script>
 
@@ -191,16 +203,25 @@ export default {
 
 .noFind {
   padding: 5rem 3rem;
-  text-align: center;;
+  text-align: center;
 }
 
 .noFindSuggest {
   color: #16283e;
-} 
+}
+.custom_pin {
+  width: 40px !important;
+}
+.web {
+  background-color: #cd6e48 !important;
+  color: white !important;
+}
+.web:hover {
+  background-color: #5bc4c5 !important;
+}
 /* Responzivita */
 
 @media only screen and (min-width: 768px) {
-  
   .mapPart {
     height: 100%;
     padding-top: 45px;

@@ -2,23 +2,29 @@
   <div class="main">
     <div class="fixBar">
       <div class="nav">
-        <router-link class="navItem" to="/">Map</router-link>
-        <input
-          v-model.trim="state.searchValue"
-          class="searchBar"
-          type="text"
-          placeholder="Search by name"
-        />
-        <router-link class="navItem filterSection" to="/filter">
-          <i class="fas fa-filter"></i>
-        </router-link>
-        <button
-          class="navItem clearFilters"
-          @click="state.clearFilters(state.filters)"
-        >
-          <i class="fas fa-times cross"></i>
-          <span class="d-none d-md-inline">Clear filters</span>
-        </button>
+        <div class="logopart">
+          <router-link class="navItem" to="/"
+            ><img class="logo" src="../assets/img/coffee-beans.png" alt=""
+          /></router-link>
+        </div>
+        <div class="otherpart">
+          <input
+            v-model.trim="state.searchValue"
+            class="searchBar"
+            type="text"
+            placeholder="Search by name"
+          />
+          <router-link class="navItem filterSection" to="/filter">
+            <i class="fas fa-filter"></i>
+          </router-link>
+          <button
+            class="navItem clearFilters"
+            @click="state.clearFilters(state.filters)"
+          >
+            <i class="fas fa-times cross"></i>
+            <span class="d-none d-md-inline">Clear filters</span>
+          </button>
+        </div>
       </div>
     </div>
     <router-view></router-view>
@@ -30,7 +36,9 @@
         <!-- <div class="copyright">© Benešová & Krucká</div> -->
       </div>
       <div class="suggestCafe">
-        <router-link class="suggest" to="/form">Add coffeeshop</router-link>
+        <router-link class="suggest" to="/form">
+          <img src="../assets/img/plus.png" alt="" />
+        </router-link>
       </div>
     </div>
   </div>
@@ -138,24 +146,39 @@ html {
   list-style-type: none;
   overflow: hidden;
   display: flex;
-  justify-content: center;
+  /* justify-content: space-between; */
   align-items: center;
   top: 0;
   width: 100vw;
-  background-color: #16283e;
+  background-color: #404a6a;
+}
+.logopart {
+  flex: 2;
+  text-align: center;
+}
+.otherpart {
+  flex: 5;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* text-align: center; */
 }
 .navItem {
   flex: 1;
   text-align: center;
   text-decoration: none;
-  color: #55bece;
+  color: #d1a184;
   padding: 0.5rem;
   font-weight: 500;
   font-size: 1.2rem;
   letter-spacing: 0.2rem;
 }
-.navItem:hover {
-  background-color: #55bece;
+.logo {
+  height: 32px;
+}
+.navItem:hover,
+.logopart:hover {
+  background-color: #5bc4c5;
   text-decoration: none;
   padding: 0.5rem;
   color: #fff;
@@ -201,29 +224,22 @@ html {
 .footer {
   position: fixed;
   bottom: 5px;
-  width: 100%;
-  /* left: 0;
-  right: 0; */
-
+  right: 10px;
   z-index: 10;
 }
-.suggestCafe {
-  text-align: center;
+
+.suggest img {
+  background-color: #d1a184;
+  width: 64px;
+  height: 64px;
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 10px 0px #163b6929;
 }
-.suggest {
-  border-radius: 5px;
-  background-color: #55bece;
-  text-align: center;
-  color: #fff;
-  padding: 0.5rem;
-  font-weight: 400;
-  font-size: 0.8rem;
-  letter-spacing: 0.1rem;
-}
-.suggest:hover {
+.suggest img:hover {
   text-decoration: none;
   color: white;
-  background-color: #16283e;
+  background-color: #5bc4c5;
 }
 
 .navItem:hover {
